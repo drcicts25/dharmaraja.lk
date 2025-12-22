@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: "Old-English";
-    src: url(../../fonts/oldenglish.ttf);
+    src: url(../fonts/oldenglish.ttf);
 }
 
 * {
@@ -538,3 +538,4 @@ footer {
         }
     }
 }
+
