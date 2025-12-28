@@ -76,20 +76,38 @@
         </main>
 
         <header id="header">
-            <section>
-                <input type="search" name="" id="inp-srch" />
-                <div id="menu-btn" onclick="menu();"><i></i><i></i><i></i></div>
-            </section>
-            <ul>
-                <li><a href="./">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="events_news.html">News And Events</a></li>
-                <li><a href="academics.html">Acadamics</a></li>
-                <li><a href="societies.html">Clubs & Societies</a></li>
-                <li><a href="sports.html">Sports & Games</a></li>
-                <li><a href="#footer">Contact</a></li>
-            </ul>
-        </header>
+    <div class="navbar-wrapper">
+        <!-- Desktop Logo (Hidden on mobile) -->
+        <div class="logo-box">
+            <a href="./" class="logo-wrap">
+                <img src="media/Crest - Colored.png" alt="Logo" class="main-logo" />
+                <div class="logo-text">
+                    <span class="college-name">Dharmaraja</span>
+                    <span class="college-sub">College</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Navigation Section -->
+        <div class="nav-box">
+            <nav class="nav-container">
+                <!-- Mobile Crest (Visible on overlay) -->
+                <img src="media/Crest - Colored.png" class="mobile-crest" alt="Crest">
+                <ul id="nav-list">
+                    <li><a href="./">Home</a></li>
+                    <li><a href="about.html">Who Are We</a></li>
+                    <li><a href="events_news.html">News & Events</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="societies.html">Clubs & Societies</a></li>
+                    <li><a href="sports.html">Sports & Games</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburger Button -->
+            <div id="menu-btn" onclick="menu();"><i></i><i></i><i></i></div>
+        </div>
+    </div>
+</header>
         <footer id="footer">
             <section>
                 <div>
@@ -144,5 +162,6 @@
         <script src="js/events_news.js"></script>
     </body>
 </html>
+
 
 
