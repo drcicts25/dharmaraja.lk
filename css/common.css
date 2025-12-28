@@ -352,7 +352,7 @@ footer {
 
     #nav-list {
         align-content: center; align-items: center; display: flex; flex-direction: column; background-color: #f0f0f0; 
-        width: 100%; max-width: 400px; padding: 40px 30px; border-radius: 30px; gap: 25px;
+        width: 230px; max-width: 400px; padding: 40px 30px; border-radius: 30px; gap: 25px;
     }
     #nav-list li a { color: #111; font-size: 1.4rem; font-weight: 600; }
 
@@ -500,3 +500,4 @@ footer {
         }
     }
 }
+
