@@ -331,7 +331,6 @@ footer {
 
 @media screen and (max-width: 1250px) {
     /* --- NEW NAVBAR FOR 1250 BREAKPOINT --- */
-    #header { padding: 15px; }
     .logo-box { display: none; } 
     .nav-box { background: transparent; padding: 0;
     margin-left: auto; }
@@ -501,3 +500,4 @@ footer {
         }
     }
 }
+
