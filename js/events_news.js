@@ -1,50 +1,67 @@
-/**
- * @ Author: MyoMoonlight
- * @ Create Time: 2024-08-25 02:17:41
- * @ Modified time: 2025-05-13 01:16:12
- */
-
-const sliders = [document.querySelector("#events > section"), document.querySelector("#news > section")];
-var cardSize = Math.min((window.innerWidth * 4) / 5, 300) + 40; // card size + gap
-
-function scrollSlider(n, s) {
-    if (n) {
-        sliders[s].scrollBy({ left: cardSize, behavior: "smooth" });
-    } else {
-        sliders[s].scrollBy({ left: -cardSize, behavior: "smooth" });
-    }
-}
-
-const eventCard = document.getElementById("template_eventcard").content;
-
 const eventCnt = document.querySelector("#events > section");
 const newsCnt = document.querySelector("#news > section");
-fetch("../data/events_news.json").then(async (d) => {
-    const j = await d.json();
+const template = document.getElementById("template_eventcard");
 
-    j.news.forEach((e) => {
-        const ev = eventCard.cloneNode(true);
-        ev.children[0].children[0].children[0].style.backgroundImage = `url(./media/events_news/${e.image})`;
-        ev.children[0].children[0].children[0].children[0].innerText = e.title;
-        ev.children[0].children[0].children[1].children[0].setAttribute("src", e.logo);
-        ev.children[0].children[0].children[1].children[1].innerText = e.description;
-        ev.children[0].children[0].children[1].children[0].setAttribute("href", e.reference);
-        eventCnt.appendChild(ev);
-    });
+if (template) {
+    const eventCardTemplate = template.content;
 
-    j.events.forEach((e) => {
-        const ev = eventCard.cloneNode(true);
-        ev.children[0].children[0].children[0].style.backgroundImage = `url(./media/events_news/${e.image})`;
-        ev.children[0].children[0].children[0].children[0].innerText = e.title;
-        ev.children[0].children[0].children[1].children[0].setAttribute("src", e.logo);
-        ev.children[0].children[0].children[1].children[1].innerText = e.description;
-        ev.children[0].children[0].children[1].children[0].setAttribute("href", e.reference);
-        newsCnt.appendChild(ev);
-    });
+    fetch("../data/events_news.json")
+        .then(response => {
+            if (!response.ok) throw new Error("Fetch failed");
+            return response.json();
+        })
+        .then(data => {
+            // --- 1. RENDER EVENTS ---
+            if (eventCnt && data.events) {
+                data.events.forEach(item => {
+                    const clone = eventCardTemplate.cloneNode(true);
+                    const cardInner = clone.querySelector(".card-cnt > div");
 
-    cardSize =
-        Math.min(
-            (window.innerWidth * 4) / 5,
-            document.querySelector("#events > section > div:nth-child(3)").clientWidth
-        ) + 40; // card size + gap
-});
+                    // Front
+                    cardInner.children[0].style.backgroundImage = `url(./media/events_news/${item.image})`;
+                    cardInner.children[0].querySelector("span").innerText = item.title;
+
+                    // Back
+                    cardInner.children[1].querySelector("img").src = item.logo;
+                    cardInner.children[1].querySelector("p").innerText = item.description;
+
+                    // Click Logic
+                    const exploreBtn = cardInner.children[1].querySelector(".explore");
+                    if (exploreBtn && item.reference) {
+                        exploreBtn.onclick = () => {
+                            window.location.href = item.reference;
+                        };
+                    }
+                    eventCnt.appendChild(clone);
+                });
+            }
+
+            // --- 2. RENDER NEWS ---
+            if (newsCnt && data.news) {
+                data.news.forEach(item => {
+                    const clone = eventCardTemplate.cloneNode(true);
+                    const cardInner = clone.querySelector(".card-cnt > div");
+
+                    // Front
+                    cardInner.children[0].style.backgroundImage = `url(./media/events_news/${item.image})`;
+                    cardInner.children[0].querySelector("span").innerText = item.title;
+
+                    // Back
+                    cardInner.children[1].querySelector("img").src = item.logo;
+                    cardInner.children[1].querySelector("p").innerText = item.description;
+
+                    // Click Logic
+                    const exploreBtn = cardInner.children[1].querySelector(".explore");
+                    if (exploreBtn && item.reference) {
+                        exploreBtn.onclick = () => {
+                            window.location.href = item.reference;
+                        };
+                    }
+                    newsCnt.appendChild(clone);
+                });
+            }
+        })
+        .catch(err => {
+            console.error("Data could not be loaded. Check your JSON path or Live Server.", err);
+        });
+}

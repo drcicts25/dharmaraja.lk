@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annual Prize Giving 2024 | Dharmaraja College</title>
+    <link rel="icon" type="image/x-icon" href="media/Crest - Colored.png">
+    
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/common-2.css" />
+
+    <style>
+        
+        body, html, main {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        #header, #footer, .navbar-wrapper, .nav-container, .logo-box {
+            background-color: #000000 !important;
+            border-color: #333333 !important;
+        }
+        #header *, #footer * {
+            color: #ffffff !important;
+        }
+        
+       
+        .main-logo, .mobile-crest, img[src*="logo-footer"], img[src*="facebook"], img[src*="instagram"], img[src*="whatsapp"], img[src*="call"], img[src*="location"], img[src*="mail"] {
+            filter: brightness(0) invert(1) !important;
+        }
+
+       
+        .event-banner {
+            width: 100%;
+            height: 450px;
+            background: #000 url('media/events_news/prizegiving.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .event-banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6); 
+        }
+        .event-banner img {
+            position: relative;
+            z-index: 2;
+            max-width: 90%;
+            max-height: 300px;
+            filter: brightness(0) invert(1); 
+        }
+in
+        
+        .details-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            background-color: #000000;
+        }
+
+        .section-title {
+            font-family: "Old-English", serif;
+            font-size: 2.8em;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .intro-text {
+            font-size: 1.2em;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            font-style: italic;
+            color: #aaaaaa; 
+        }
+
+        
+        .event-details-bar {
+            background-color: #000000; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            border: 1px solid #333333; 
+            color: #ffffff; 
+            text-align: center;
+            width: 100%;
+        }
+        .details-item {
+            flex: 1;
+            max-width: 300px; 
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .details-item .label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .details-item .value {
+            font-family: 'Cinzel', serif; 
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+        .details-item .sub-value {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888888;
+        }
+        .details-divider {
+            width: 1px;
+            height: 60px;
+            background-color: #333333; 
+            margin: 0 40px; 
+        }
+
+        
+       .guest-section {
+    display: flex;
+    background: #000000;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 80px;
+    max-height: 500px; /* Prevents it from being too tall */
+}
+
+.guest-image {
+    flex: 0 0 40%; /* Image takes up exactly 40% of the width */
+    overflow: hidden;
+}
+
+.guest-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps the face from stretching */
+    object-position: top; /* Ensures the head isn't cut off */
+}
+
+.guest-info {
+     font-family: "Old-English", serif;
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the text vertically */
+}
+
+/* 1. Update the Guest Section Border and Typography */
+.guest-section {
+    display: flex;
+    background: #000000;
+     
+    border: 1px solid #ffffff; 
+    border-left: 5px solid #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 80px;
+    max-height: 500px;
+}
+
+
+.guest-info h2 {
+    font-family: "Old-English", serif;
+    font-size: 2.5em; 
+    margin: 10px 0;
+}
+
+
+.award-card {
+    padding: 30px;
+    background: #000000;
+   
+    border: 1px solid #ffffff; 
+    
+    border-left: 4px solid #ffffff; 
+    transition: transform 0.3s ease;
+}
+        
+        .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    padding: 0 20px; /* Adds space so cards don't touch the screen edge */
+}
+
+.details-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px; /* Increased side padding from 20px to 40px */
+    background-color: #000000;
+}
+        
+        .award-card {
+            padding: 30px;
+            background: #000000;
+            border: 1px solid #333333;
+            border-left: 4px solid #ffffff; 
+            transition: transform 0.3s ease;
+        }
+        .award-card:hover {
+            transform: translateY(-5px);
+            background: #111111;
+        }
+        .award-card h4 {
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .award-card p {
+            color: #aaaaaa;
+        }
+
+        
+        .pinnacle-box {
+            background: #000000;
+            color: #ffffff;
+            padding: 50px;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid #ffffff;
+            margin-top: 80px;
+        }
+        .pinnacle-box h2 {
+            font-family: "Old-English", serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .guest-section { flex-direction: column; }
+            .guest-image { min-width: 100%; }
+            .section-title { font-size: 2em; }
+            .event-details-bar { flex-direction: column; gap: 30px; }
+            .details-divider { width: 60px; height: 1px; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        </header>
+
+    <main>
+        <section class="event-banner">
+             
+        </section>
+
+        <div class="details-container">
+            <h1 class="section-title">A Century of Honor</h1>
+            <p class="intro-text">
+                "The Annual Prize Giving of Dharmaraja College stands as one of the oldest and most prestigious ceremonies in the nation’s history."
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-10 mt-16 mb-16">
+                <section class="event-details-bar">
+                    <div class="details-item">
+                        <span class="label">DATE & TIME</span>
+                        <span class="value">MARCH 16</span>
+                        <span class="sub-value">MONDAY | 2:00 PM</span>
+                    </div>
+                    <div class="details-divider"></div>
+                    <div class="details-item">
+                        <span class="label">LOCATION</span>
+                        <span class="value">COLLEGE AUDITORIUM</span>
+                        <span class="sub-value">Kandy, Sri Lanka</span>
+                    </div>
+                </section>
+            </div> <br>
+            
+            <div class="guest-section">
+                <div class="guest-image">
+                    <img src="media/events_news/cheif_guest_2.jpeg" alt="Chief Guest">
+                </div>
+                <div class="guest-info">
+                    <h3>Chief Guest</h3>
+                    <h2>Hon. (Dr.) Jagath Wickramaratne</h2>
+                    <p><strong>Speaker of the Parliament of Sri Lanka</strong></p>
+                    <p>We were honored to welcome our distinguished alumnus. His presence underscored the college's legacy of producing leaders who serve the nation at the highest levels.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Hall of Excellence</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <h4>Co-Curricular Activities</h4>
+                    <p>Crowning the talented individuals of co-curricular excellence including overall performances with club activities, national and international levels of olympiads and also special individual performances.</p>
+                </div>
+                <div class="award-card">
+                    <h4>Secondary School</h4>
+                    <p>Celebrating academic foundations from Grade 5 Scholarship winners to Ordinary Level high-flyers.</p>
+                </div>
+                <div class="award-card">
+                    <h4>Advanced Level Streams</h4>
+                    <p>Excellence in Science, Maths, Commerce, and Arts, featuring prestigious memorial prizes.</p>
+                </div>
+            </div>
+
+            <div class="pinnacle-box">
+                <h2>Henry Steele Olcott Memorial Prize</h2>
+                <p>Awarded to the Student who best embodies the All-Round Excellence and Spirit of Dharmaraja College.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <section>
+            <div>
+                
+                <p>
+                    Dharmaraja College, founded in 1887 by sir Henry Steel Olcott, is a premier Buddhist boys'
+                    school in Kandy, Sri Lanka with around 300+ teaching staff and over 5,000 students.
+                </p>
+            </div>
+            <div>
+                <h3></h3>
+                <ul>
+                    <li><img src="media/call.png" />0812 234 495</li>
+                    <li><img src="media/call.png" />0812 234 495</li>
+                    <li><img src="media/location.png" />Dharmaraja College,Louis Peiris Mawatha, Kandy</li>
+                    <li><img src="media/mail.png" />info@dharmaraja.lk</li>
+                </ul>
+            </div>
+            <div>
+                <h3>FOLLOW US</h3>
+                <h4>GET IN TOUCH WITH US</h4>
+                <section>
+                    <a href="" target="_blank"><img src="media/facebook.png" alt="Facebook" /></a>
+                    <a href="" target="_blank"><img src="media/instagram.png" alt="Instagram" /></a>
+                    <a href="" target="_blank"><img src="media/whatsapp.png" alt="whatsapp" /></a>
+                </section>
+            </div>
+        </section>
+        <hr />
+        <h5>All Rights Reserved © 2025 Dharmaraja College<br>PROJECT BY ICT SOCIETY OF THE DHARMARAJA COLLEGE</h5>
+    </footer>
+
+</body>
+</html>
