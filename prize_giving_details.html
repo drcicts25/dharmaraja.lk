@@ -130,82 +130,84 @@ in
 
         
        .guest-section {
-    display: flex;
-    background: #000000;
-    border: 1px solid #333333;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 80px;
-    max-height: 500px; /* Prevents it from being too tall */
+            display: flex;
+            background: #000000;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 80px;
+            max-height: 500px; /* Prevents it from being too tall */
 }
 
-.guest-image {
-    flex: 0 0 40%; /* Image takes up exactly 40% of the width */
-    overflow: hidden;
-}
+        .guest-image {
+            flex: 0 0 40%; /* Image takes up exactly 40% of the width */
+            overflow: hidden;
+        }
 
-.guest-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Keeps the face from stretching */
-    object-position: top; /* Ensures the head isn't cut off */
-}
+        .guest-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Keeps the face from stretching */
+            object-position: top; /* Ensures the head isn't cut off */
+        }
 
-.guest-info {
-     font-family: "Old-English", serif;
-    flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers the text vertically */
-}
+        .guest-info {
+            font-family: "Old-English", serif;
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+        }
 
-/* 1. Update the Guest Section Border and Typography */
-.guest-section {
-    display: flex;
-    background: #000000;
-     
-    border: 1px solid #ffffff; 
-    border-left: 5px solid #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 80px;
-    max-height: 500px;
-}
-
-
-.guest-info h2 {
-    font-family: "Old-English", serif;
-    font-size: 2.5em; 
-    margin: 10px 0;
-}
-
-
-.award-card {
-    padding: 30px;
-    background: #000000;
-   
-    border: 1px solid #ffffff; 
-    
-    border-left: 4px solid #ffffff; 
-    transition: transform 0.3s ease;
-}
         
-        .awards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-    padding: 0 20px; /* Adds space so cards don't touch the screen edge */
-}
+        .guest-section {
+            display: flex;
+            background: #000000;
+            
+            border: 1px solid #ffffff; 
+            border-left: 5px solid #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 80px;
+            max-height: 500px;
+        }
 
-.details-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 40px; /* Increased side padding from 20px to 40px */
-    background-color: #000000;
-}
+
+        .guest-info h2 {
+            font-family: "Old-English", serif;
+            font-size: 2.5em; 
+            margin: 10px 0;
+        }
+        .guest-info h3 {
+            font-family:'Cinzel', serif;
+        }
+
+        .award-card {
+            padding: 30px;
+            background: #000000;
         
+            border: 1px solid #ffffff; 
+            
+            border-left: 4px solid #ffffff; 
+            transition: transform 0.3s ease;
+        }
+                
+         .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            padding: 0 20px; /* Adds space so cards don't touch the screen edge */
+        }
+
+        .details-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 40px; /* Increased side padding from 20px to 40px */
+            background-color: #000000;
+        }
+                
         .award-card {
             padding: 30px;
             background: #000000;

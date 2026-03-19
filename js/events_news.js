@@ -5,7 +5,7 @@ const template = document.getElementById("template_eventcard");
 if (template) {
     const eventCardTemplate = template.content;
 
-    fetch("../data/events_news.json")
+    fetch("./data/events_news.json")
         .then(response => {
             if (!response.ok) throw new Error("Fetch failed");
             return response.json();

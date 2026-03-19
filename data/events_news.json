@@ -1,5 +1,19 @@
 {
-    "news": [
+    "events": [
+         {
+            "title": "119th Battle of the Maroons",
+            "image": "Bigmatch_event.jpg",
+            "logo": "./media/events_news/space.png",
+            "description": "Two legendary schools. Three days of cricket. One unforgettable rivalry at Asgiriya Cricket Stadium, Kandy." ,
+            "reference": "./big_match.html"
+        },
+        {
+            "title": "Annual Prize Giving 2024",
+            "image": "prizegiving_card.png", 
+            "logo": "./media/events_news/space.png",
+            "description": "Recognizing and celebrating the outstanding achievements of our students in their academics performance" ,
+            "reference": "./prize_giving_details.html"
+        },
         {
             "title": "46th Installation Ceremony of ICDRC",
             "logo": "logo/image/path",
@@ -34,16 +48,11 @@
             "reference": "",
             "description": "ICT Day of the ICT Society of Dharmaraja College",
             "image": "506943282_1179023224236731_7842668854135316776_n.jpg"
-        },
-        {
-            "title": "Sync'25",
-            "logo": "logo/image/path",
-            "reference":"https://sync.drcicts.lk",
-            "description": "ICT Day of the ICT Society of Dharmaraja College",
-            "image": ""
         }
+      
     ],
-    "events": [
+    "news": [
+        
         {
             "title": "National War Heros' Day Commemoration",
             "logo": "logo/image/path",

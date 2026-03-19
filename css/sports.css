@@ -8,10 +8,12 @@
     margin-top: 80px;
     text-align: center;
     padding: 0 1em;
-    & > h2 {
+
+    &>h2 {
         padding: 1em 0;
     }
-    & > p {
+
+    &>p {
         margin: auto;
         max-width: 600px;
         font-weight: 500;
@@ -27,7 +29,7 @@
     margin-top: 100px;
     padding-top: 200px;
 
-    & > section.imgs {
+    &>section.imgs {
         height: 400px;
         width: 100%;
         top: 0;
@@ -37,7 +39,7 @@
         --mid-side-pos: 28%;
         --side-pos: 10%;
 
-        & > img {
+        &>img {
             opacity: 0;
             aspect-ratio: 1/1;
             object-fit: cover;
@@ -48,7 +50,7 @@
             width: 14%;
             transform: translateX(-50%);
             top: 100%;
-            
+
 
             &.left,
             &.right {
@@ -59,6 +61,7 @@
             &.left {
                 left: var(--side-pos);
             }
+
             &.right {
                 left: calc(100% - var(--side-pos));
             }
@@ -74,6 +77,7 @@
             &.mid-left {
                 left: var(--mid-side-pos);
             }
+
             &.mid-right {
                 left: calc(100% - var(--mid-side-pos));
             }
@@ -83,13 +87,13 @@
                 top: 0%;
                 left: 50%;
                 width: 20%;
-                
+
 
             }
         }
     }
 
-    & > img {
+    &>img {
         bottom: 150px;
         position: absolute;
         height: 3rem;
@@ -103,7 +107,7 @@
         }
     }
 
-    & > .text {
+    &>.text {
         padding: 100px 1em;
         padding-bottom: 50px;
         position: relative;
@@ -112,22 +116,26 @@
         /* background-color: #0003; */
     }
 
-    & > .text > div {
+    &>.text>div {
         display: none;
         margin: auto;
-        & > h2 {
+
+        &>h2 {
             font-size: 1.7em;
             padding: 1em 0;
             text-align: center;
         }
-        & > p {
+
+        &>p {
             max-width: 600px;
             margin: auto;
             text-align: center;
         }
-        & > a {
+
+        &>a {
             margin: 2em auto;
         }
+
         &.active {
             display: block;
             animation: activeText 0.4s 0s forwards 1 ease-in-out;
@@ -140,6 +148,7 @@
         display: block;
         opacity: 0;
     }
+
     100% {
         display: block;
         opacity: 1;
@@ -149,16 +158,19 @@
 @media screen and (max-width: 450px) {
     #roll {
         padding-top: 30vw;
-        & > section.imgs {
+
+        &>section.imgs {
             height: 40vw;
             --mid-side-pos: 16%;
 
-            & > img {
+            &>img {
+
                 &.left,
                 &.right {
                     opacity: 0;
                     top: 100%;
                 }
+
                 &.mid-left,
                 &.mid-right {
                     width: 20%;
@@ -171,13 +183,16 @@
                 }
             }
         }
-        & > img {
+
+        &>img {
             bottom: 70px;
             height: 2em;
         }
-        & > section.text {
+
+        &>section.text {
             padding-top: 0;
-            & > div > a {
+
+            &>div>a {
                 margin-bottom: 0.5em;
             }
         }

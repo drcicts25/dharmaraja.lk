@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Battle of the Maroons 2026 | Dharmaraja College</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="media/Crest - Colored.png">
+    <link rel="stylesheet" href="css/big_match.css">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="site-nav" id="siteNav">
+        <a href="#" class="nav-brand">
+            <img src="media/Crest - Colored.png" alt="Crest">
+            Dharmaraja
+        </a>
+        <div class="nav-links">
+            <a href="#details">Details</a>
+            <a href="#legacy">Legacy</a>
+            <a href="#score">Score</a>
+            
+            <a href="#squad">Squad</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-image-right" id="heroRightImg"></div>
+        <div class="hero-gradient-overlay"></div>
+        <div class="hero-inner">
+            <span class="hero-label">Annual Cricket Encounter · 2026</span>
+            <h1>Battle of<br>the Maroons</h1>
+            <p class="hero-desc">Two legendary schools. Three days of cricket. One unforgettable rivalry at Asgiriya
+                Cricket Stadium, Kandy.</p>
+            <div class="hero-actions">
+                <a href="#score" class="btn-primary">View Score <span>↗</span></a>
+                <a href="#details" class="btn-outline">Match Details <span>↗</span></a>
+            </div>
+            <div class="hero-stats-row">
+                <div class="hero-stat-text">
+                    <strong>119</strong>
+                    <span>Years of Rivalry</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat-text">
+                    <strong>1893</strong>
+                    <span>First Encounter</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat-text">
+                    <strong>3 Days</strong>
+                    <span>Test Format</span>
+                </div>
+            </div>
+            <div id="countdown-root"></div>
+        </div>
+    </header>
+
+    <!-- MATCH DETAILS -->
+    <section id="details" class="details">
+        <h2>Match Details</h2>
+        <p class="section-sub-dark">Everything you need to know about the 2026 encounter.</p>
+        <div class="details-grid">
+            <div class="detail-card">
+                <strong>Date</strong>
+                <p>March 20 – 22, 2026</p>
+                <span class="detail-note">3-day test match</span>
+            </div>
+            <div class="detail-card">
+                <strong>Venue</strong>
+                <p>Asgiriya Cricket Stadium</p>
+                <span class="detail-note">Kandy, Sri Lanka</span>
+            </div>
+            <div class="detail-card">
+                <strong>Start Time</strong>
+                <p>10:00 AM</p>
+                <span class="detail-note">Gates open at 7:30 AM</span>
+            </div>
+            <div class="detail-card">
+                <strong>Tickets</strong>
+                <p>A the Staduim Gates</p>
+                <span class="detail-note">Free entry for students</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEGACY & HERITAGE -->
+    <section id="legacy" class="legacy">
+        <div class="legacy-grid">
+            <div class="legacy-text">
+                <h2>A Legacy<br>Written in Maroon</h2>
+                <p>Since 1893, the Battle of the Maroons has been more than just a cricket match. It is a
+                    tradition that binds generations of old boys, students, and families from both
+                    Dharmaraja College and Kingswood College.</p>
+                <p>Played at the historic Asgiriya International Cricket Stadium this year, this encounter
+                    has produced some of Sri Lanka's finest cricketers and most memorable sporting moments.</p>
+                <div class="legacy-numbers">
+                    <div>
+                        <strong>10+</strong>
+                        <span>National Players Produced</span>
+                    </div>
+                    <div>
+                        <strong>5000+</strong>
+                        <span>Spectators Each Year</span>
+                    </div>
+                </div>
+            </div>
+            <div class="legacy-image">
+                <img src="media/2025_BOF_victory.jpg" alt="Historic match moment">
+                <div class="legacy-image-caption">A moment from the 2025 encounter</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RIVALRY RECORD -->
+    <section class="rivalry">
+        <h2>The Rivalry in Numbers</h2>
+        <div class="rivalry-bar-wrap">
+            <div class="rivalry-team">
+                <img src="media/logo_dharmaraja.png" alt="DRCK" class="rivalry-logo">
+                <span>Dharmaraja</span>
+            </div>
+            <div class="rivalry-bar">
+                <div class="bar-fill maroon" id="barDR" style="width: 0%"></div>
+                <div class="bar-fill blue" id="barKW" style="width: 0%"></div>
+            </div>
+            <div class="rivalry-team">
+                <span>Kingswood</span>
+                <img src="media/logo_kingswood.png" alt="KCK" class="rivalry-logo">
+            </div>
+        </div>
+        <div class="rivalry-stats">
+            <div class="rivalry-stat">
+                <strong class="maroon-text">36</strong>
+                <span>Dharmaraja Wins</span>
+            </div>
+            <div class="rivalry-stat">
+                <strong>63</strong>
+                <span>Total Draws</span>
+            </div>
+            <div class="rivalry-stat">
+                <strong class="blue-text">19</strong>
+                <span>Kingswood Wins</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCOREBOARD -->
+    <section id="score" class="score-section">
+        <h2>Score of the Day</h2>
+        <div id="scoreboard-root"></div>
+    </section>
+
+    <!-- MATCH HISTORY -->
+    
+    <!-- SQUAD -->
+    <section id="squad">
+        <h2>Our Team</h2>
+        <p class="section-sub-dark">The players representing Dharmaraja College in 2026.</p>
+        <div id="squad-gallery-root"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-col">
+                <img src="media/Crest - Colored.png" alt="Crest" class="footer-crest">
+                <p class="footer-school">Dharmaraja College</p>
+                <p class="footer-tagline">Excellence · Discipline · Tradition</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#details">Match Details</a>
+                <a href="#legacy">Our Legacy</a>
+                <a href="#score">Scoreboard</a>
+                <a href="#squad">Squad</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>info@dharmaraja.lk</p>
+                <p>0812 234 495</p>
+                <p>Kandy, Sri Lanka</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ICT Society of Dharmaraja College. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- REACT -->
+    <script type="text/babel">
+        function Countdown() {
+            const target = new Date('2026-03-20T10:00:00+05:30');
+            const [diff, setDiff] = React.useState(target - new Date());
+
+            React.useEffect(() => {
+                const t = setInterval(() => setDiff(target - new Date()), 1000);
+                return () => clearInterval(t);
+            }, []);
+
+            if (diff <= 0) return <p className="countdown-done">Match day is here!</p>;
+
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff / 3600000) % 24);
+            const m = Math.floor((diff / 60000) % 60);
+            const s = Math.floor((diff / 1000) % 60);
+
+            return (
+                <div className="countdown">
+                    <div><strong>{d}</strong><span>days</span></div>
+                    <div><strong>{h}</strong><span>hrs</span></div>
+                    <div><strong>{m}</strong><span>min</span></div>
+                    <div><strong>{s}</strong><span>sec</span></div>
+                </div>
+            );
+        }
+
+        function Scoreboard() {
+            return (
+                <div className="scoreboard">
+                    <div className="sb-team">
+                        <img src="media/logo_dharmaraja.png" alt="DRCK" className="sb-logo" />
+                        <h3>Dharmaraja</h3>
+                        <p className="sb-runs maroon">0/0</p>
+                        <span className="sb-overs">(0.0 ov)</span>
+                    </div>
+                    <span className="sb-vs">vs</span>
+                    <div className="sb-team">
+                        <img src="media/logo_kingswood.png" alt="KCK" className="sb-logo" />
+                        <h3>Kingswood</h3>
+                        <p className="sb-runs blue">0/0</p>
+                        <span className="sb-overs">(0.0 ov)</span>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('countdown-root')).render(<Countdown />);
+        ReactDOM.createRoot(document.getElementById('scoreboard-root')).render(<Scoreboard />);
+
+        function SquadGallery() {
+            const scrollRef = React.useRef(null);
+            const [activeIndex, setActiveIndex] = React.useState(0);
+
+            const handleScroll = () => {
+                if (!scrollRef.current) return;
+                const container = scrollRef.current;
+                const center = container.scrollLeft + container.clientWidth / 2;
+                const children = container.children;
+                let closestIndex = 0;
+                let minDistance = Infinity;
+
+                for (let i = 0; i < children.length; i++) {
+                    const child = children[i];
+                    const childCenter = child.offsetLeft + child.clientWidth / 2;
+                    const distance = Math.abs(center - childCenter);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestIndex = i;
+                    }
+                }
+                if (closestIndex !== activeIndex) {
+                    setActiveIndex(closestIndex);
+                }
+            };
+
+            const scroll = (direction) => {
+                if (scrollRef.current) {
+                    const nextIndex = direction === 'left'
+                        ? Math.max(0, activeIndex - 1)
+                        : Math.min(galleryItems.length - 1, activeIndex + 1);
+
+                    const child = scrollRef.current.children[nextIndex];
+                    if (child) {
+                        const targetScroll = child.offsetLeft - (scrollRef.current.clientWidth - child.clientWidth) / 2;
+                        scrollRef.current.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                    }
+                }
+            };
+
+            // Initialize focus on mount and handle resize
+            React.useEffect(() => {
+                const init = () => {
+                    if (scrollRef.current && scrollRef.current.children[0]) {
+                        const firstChild = scrollRef.current.children[0];
+                        const targetScroll = firstChild.offsetLeft - (scrollRef.current.clientWidth - firstChild.clientWidth) / 2;
+                        scrollRef.current.scrollLeft = targetScroll;
+                        handleScroll();
+                    }
+                };
+                setTimeout(init, 100);
+                window.addEventListener('resize', handleScroll);
+                return () => window.removeEventListener('resize', handleScroll);
+            }, []);
+
+            const galleryItems = Array.from({ length: 20 }, (_, i) => ({
+                id: i + 1,
+                image: `media/cricket_team/${i + 1}.webp`,
+                name: `Player ${i + 1}`,
+                role: 'Team Member'
+            }));
+
+            return (
+                <div className="squad-wrapper">
+                    <button className="nav-btn left" onClick={() => scroll('left')} aria-label="Previous">←</button>
+                    <div className="squad-scroll-container" ref={scrollRef} onScroll={handleScroll}>
+                        {galleryItems.map((player, index) => (
+                            <div key={player.id} className={`squad-card ${index === activeIndex ? 'focus' : ''}`}>
+                                <img src={player.image} alt={player.name} />
+                                <div className="squad-card-overlay">
+                                    <h3 className="squad-card-name">{player.name}</h3>
+                                    <span className="squad-card-role">{player.role}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <button className="nav-btn right" onClick={() => scroll('right')} aria-label="Next">→</button>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('squad-gallery-root')).render(<SquadGallery />);
+    </script>
+
+    <!-- VANILLA JS -->
+    <script>
+        // Nav show on scroll
+        const nav = document.getElementById('siteNav');
+        let prev = 0;
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            nav.classList.toggle('show', y > 400 && y < prev);
+            nav.classList.toggle('hide', y > 400 && y >= prev);
+            if (y <= 400) { nav.classList.remove('show'); nav.classList.remove('hide'); }
+            prev = y;
+        });
+
+        // Fade-in on scroll
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('section').forEach(s => obs.observe(s));
+
+        // Animated rivalry bar
+        const barObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    // 42 wins DR, 38 wins KW out of ~133 decided matches
+                    document.getElementById('barDR').style.width = '65.5%';
+            document.getElementById('barKW').style.width = '34.5%'
+                }
+            });
+        }, { threshold: 0.3 });
+        document.querySelector('.rivalry-bar') && barObs.observe(document.querySelector('.rivalry-bar'));
+
+        // Active nav link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(s => {
+                if (window.scrollY >= s.offsetTop - 200) current = s.id;
+            });
+            navLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
