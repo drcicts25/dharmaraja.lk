@@ -582,6 +582,11 @@ h2 {
   text-align: center;
 }
 
+.scoreboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .scoreboard {
   display: flex;
   align-items: center;
@@ -591,6 +596,47 @@ h2 {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.5rem;
+}
+
+.sb-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 1px solid var(--gray-100);
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.sb-status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sb-status-item span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray-400);
+}
+
+.sb-status-item strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.sb-status-divider {
+  width: 1px;
+  height: 16px;
+  background: var(--gray-100);
 }
 
 .sb-team {
@@ -1103,4 +1149,103 @@ footer {
     padding: 1.5rem 1rem;
     gap: 1rem;
   }
+}
+/* ── Innings Table ── */
+.innings-table {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+  margin-bottom: 1.2rem;
+}
+
+.innings-header-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  background: var(--gray-50);
+  padding: 0.7rem 1.5rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.innings-col-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--gray-400);
+  text-align: center;
+}
+
+.innings-col-label:first-child { text-align: left; }
+
+.innings-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.innings-row:last-child { border-bottom: none; }
+
+.innings-team-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sb-logo-sm {
+  width: 48px;
+  height: auto;
+}
+
+.innings-team-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.innings-score-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.sb-runs-sm {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+}
+
+.sb-runs-sm.maroon { color: var(--maroon); }
+.sb-runs-sm.blue   { color: var(--blue); }
+
+/* ── Result Banner ── */
+.sb-result {
+  text-align: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  padding: 0.9rem 1.5rem;
+  border-radius: 50px;
+  margin: 0 auto 1.2rem;
+  width: fit-content;
+  letter-spacing: 0.3px;
+}
+
+.blue-result {
+  background: #eef1f8;
+  color: var(--blue);
+  border: 1px solid #c5cfe8;
+}
+
+@media (max-width: 520px) {
+  .innings-header-row,
+  .innings-row { grid-template-columns: 1.4fr 1fr 1fr; padding: 0.8rem; }
+  .sb-runs-sm  { font-size: 1.6rem; }
+  .innings-team-name { font-size: 0.9rem; }
+  .sb-logo-sm  { width: 36px; }
 }

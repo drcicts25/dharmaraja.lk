@@ -24,7 +24,7 @@
             <a href="#details">Details</a>
             <a href="#legacy">Legacy</a>
             <a href="#score">Score</a>
-            
+
             <a href="#squad">Squad</a>
         </div>
     </nav>
@@ -158,7 +158,7 @@
     </section>
 
     <!-- MATCH HISTORY -->
-    
+
     <!-- SQUAD -->
     <section id="squad">
         <h2>Our Team</h2>
@@ -183,7 +183,7 @@
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p>info@dharmaraja.lk</p>
+                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="21484f474e61454940534c4053404b400f4d4a">[email&#160;protected]</a></p>
                 <p>0812 234 495</p>
                 <p>Kandy, Sri Lanka</p>
             </div>
@@ -204,7 +204,7 @@
                 return () => clearInterval(t);
             }, []);
 
-            if (diff <= 0) return <p className="countdown-done">Match day is here!</p>;
+            if (diff <= 0) return <p className="countdown-done">Match is complete!</p>;
 
             const d = Math.floor(diff / 86400000);
             const h = Math.floor((diff / 3600000) % 24);
@@ -223,26 +223,64 @@
 
         function Scoreboard() {
             return (
-                <div className="scoreboard">
-                    <div className="sb-team">
-                        <img src="media/logo_dharmaraja.png" alt="DRCK" className="sb-logo" />
-                        <h3>Dharmaraja</h3>
-                        <p className="sb-runs maroon">0/0</p>
-                        <span className="sb-overs">(0.0 ov)</span>
+                <div className="scoreboard-container">
+                    <div className="innings-table">
+                        <div className="innings-header-row">
+                            <div className="innings-col-label"></div>
+                            <div className="innings-col-label">1st Innings</div>
+                            <div className="innings-col-label">2nd Innings</div>
+                        </div>
+                        <div className="innings-row">
+                            <div className="innings-team-cell">
+                                <img src="media/logo_kingswood.png" alt="KCK" className="sb-logo-sm" />
+                                <span className="innings-team-name" style={{color:'#1a3d7c'}}>Kingswood</span>
+                            </div>
+                            <div className="innings-score-cell">
+                                <p className="sb-runs-sm blue">266</p>
+                                <span className="sb-overs">(74.5ov)</span>
+                            </div>
+                            <div className="innings-score-cell">
+                                <p className="sb-runs-sm blue">248/4d</p>
+                                <span className="sb-overs">(56.3ov)</span>
+                            </div>
+                        </div>
+                        <div className="innings-row">
+                            <div className="innings-team-cell">
+                                <img src="media/logo_dharmaraja.png" alt="DRCK" className="sb-logo-sm" />
+                                <span className="innings-team-name" style={{color:'#8a1528'}}>Dharmaraja</span>
+                            </div>
+                            <div className="innings-score-cell">
+                                <p className="sb-runs-sm maroon">160</p>
+                                <span className="sb-overs">(56.2ov)</span>
+                            </div>
+                            <div className="innings-score-cell">
+                                <p className="sb-runs-sm maroon">166</p>
+                                <span className="sb-overs">(72.3ov)</span>
+                            </div>
+                        </div>
                     </div>
-                    <span className="sb-vs">vs</span>
-                    <div className="sb-team">
-                        <img src="media/logo_kingswood.png" alt="KCK" className="sb-logo" />
-                        <h3>Kingswood</h3>
-                        <p className="sb-runs blue">0/0</p>
-                        <span className="sb-overs">(0.0 ov)</span>
+                    <div className="sb-result blue-result">
+                        Kingswood College won by 148 runs
+                    </div>
+                    <div className="sb-status">
+                        <div className="sb-status-item">
+                            <span>Day One</span>
+                            <strong>Completed</strong>
+                        </div>
+                        <div className="sb-status-divider"></div>
+                        <div className="sb-status-item">
+                            <span>Day Two</span>
+                            <strong>Completed</strong>
+                        </div>
+                        <div className="sb-status-divider"></div>
+                        <div className="sb-status-item">
+                            <span>Day Three</span>
+                            <strong>Completed</strong>
+                        </div>
                     </div>
                 </div>
             );
         }
-
-        ReactDOM.createRoot(document.getElementById('countdown-root')).render(<Countdown />);
-        ReactDOM.createRoot(document.getElementById('scoreboard-root')).render(<Scoreboard />);
 
         function SquadGallery() {
             const scrollRef = React.useRef(null);
@@ -255,7 +293,6 @@
                 const children = container.children;
                 let closestIndex = 0;
                 let minDistance = Infinity;
-
                 for (let i = 0; i < children.length; i++) {
                     const child = children[i];
                     const childCenter = child.offsetLeft + child.clientWidth / 2;
@@ -265,9 +302,7 @@
                         closestIndex = i;
                     }
                 }
-                if (closestIndex !== activeIndex) {
-                    setActiveIndex(closestIndex);
-                }
+                if (closestIndex !== activeIndex) setActiveIndex(closestIndex);
             };
 
             const scroll = (direction) => {
@@ -275,7 +310,6 @@
                     const nextIndex = direction === 'left'
                         ? Math.max(0, activeIndex - 1)
                         : Math.min(galleryItems.length - 1, activeIndex + 1);
-
                     const child = scrollRef.current.children[nextIndex];
                     if (child) {
                         const targetScroll = child.offsetLeft - (scrollRef.current.clientWidth - child.clientWidth) / 2;
@@ -284,7 +318,6 @@
                 }
             };
 
-            // Initialize focus on mount and handle resize
             React.useEffect(() => {
                 const init = () => {
                     if (scrollRef.current && scrollRef.current.children[0]) {
@@ -308,7 +341,7 @@
 
             return (
                 <div className="squad-wrapper">
-                    <button className="nav-btn left" onClick={() => scroll('left')} aria-label="Previous">←</button>
+                    <button className="nav-btn left" onClick={() => scroll('left')} aria-label="Previous">&#8592;</button>
                     <div className="squad-scroll-container" ref={scrollRef} onScroll={handleScroll}>
                         {galleryItems.map((player, index) => (
                             <div key={player.id} className={`squad-card ${index === activeIndex ? 'focus' : ''}`}>
@@ -320,11 +353,13 @@
                             </div>
                         ))}
                     </div>
-                    <button className="nav-btn right" onClick={() => scroll('right')} aria-label="Next">→</button>
+                    <button className="nav-btn right" onClick={() => scroll('right')} aria-label="Next">&#8594;</button>
                 </div>
             );
         }
 
+        ReactDOM.createRoot(document.getElementById('countdown-root')).render(<Countdown />);
+        ReactDOM.createRoot(document.getElementById('scoreboard-root')).render(<Scoreboard />);
         ReactDOM.createRoot(document.getElementById('squad-gallery-root')).render(<SquadGallery />);
     </script>
 
@@ -344,16 +379,15 @@
         // Fade-in on scroll
         const obs = new IntersectionObserver(entries => {
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
-        }, { threshold: 0.1 });
+        }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('section').forEach(s => obs.observe(s));
 
         // Animated rivalry bar
         const barObs = new IntersectionObserver(entries => {
             entries.forEach(e => {
                 if (e.isIntersecting) {
-                    // 42 wins DR, 38 wins KW out of ~133 decided matches
                     document.getElementById('barDR').style.width = '65.5%';
-            document.getElementById('barKW').style.width = '34.5%'
+                    document.getElementById('barKW').style.width = '34.5%';
                 }
             });
         }, { threshold: 0.3 });
@@ -365,14 +399,17 @@
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(s => {
-                if (window.scrollY >= s.offsetTop - 200) current = s.id;
+                if (window.scrollY >= s.offsetTop - 120) {
+                    current = s.getAttribute('id');
+                }
             });
-            navLinks.forEach(a => {
-                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
             });
         });
     </script>
-
 </body>
-
 </html>

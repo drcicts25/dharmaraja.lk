@@ -1,5 +1,7 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=Montserrat:wght@800&display=swap');
+
 h1 {
     font-family: "Old-English";
 }
@@ -197,6 +199,7 @@ h1 {
         font-size: 2.3em;
         font-family: sans-serif;
         font-weight: 700;
+        margin-bottom: 0.5rem;
     }
     & > h3 {
         padding: 0 1em;
@@ -215,7 +218,7 @@ h1 {
         max-width: 1250px;
         height: 0.2em;
         transform: translateY(1.3em);
-        margin: auto;
+        margin: 1.5rem auto;
         background-color: rgb(102, 102, 102);
         border-radius: 0.2em;
         z-index: -1;
@@ -387,4 +390,245 @@ h1 {
             font-size: 0.9em;
         }
     }
+}
+
+/* ── Scoreboard ── */
+.score-section {
+  padding: 4rem 2rem;
+  background: #fdfcf9; /* Subtle cream background to distinguish section */
+  margin-top: 80px; /* Matching the updates margin */
+  position: relative;
+}
+
+.score-section h1 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-family: "Old-English";
+    font-size: 2.8rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+}
+
+.scoreboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.5rem;
+}
+
+.sb-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 1px solid #e8e8e8;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.sb-status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sb-status-item span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+}
+
+.sb-status-item strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.sb-status-divider {
+  width: 1px;
+  height: 16px;
+  background: #e8e8e8;
+}
+
+.sb-team {
+  flex: 1;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sb-logo {
+  width: 110px;
+  height: auto;
+  margin-bottom: 1rem;
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.sb-team h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #999;
+  margin-bottom: 0.6rem;
+}
+
+.sb-runs {
+  font-family: 'DM Serif Display', serif;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.sb-runs.maroon { color: #8a1528; }
+.sb-runs.blue { color: #1a3d7c; }
+
+.sb-overs {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 0.4rem;
+  font-weight: 500;
+}
+
+.sb-vs {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #fff;
+  background: #1a1a1a;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  text-transform: lowercase;
+}
+
+/* ── Innings Table ── */
+.innings-table {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+  margin-bottom: 1.2rem;
+}
+
+.innings-header-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  background: #f5f5f5;
+  padding: 0.7rem 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.innings-col-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #999;
+  text-align: center;
+}
+
+.innings-col-label:first-child { text-align: left; }
+
+.innings-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.innings-row:last-child { border-bottom: none; }
+
+.innings-team-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sb-logo-sm {
+  width: 48px;
+  height: auto;
+}
+
+.innings-team-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.innings-score-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.sb-runs-sm {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+}
+
+.sb-runs-sm.maroon { color: #8a1528; }
+.sb-runs-sm.blue   { color: #1a3d7c; }
+
+/* ── Result Banner ── */
+.sb-result {
+  text-align: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  padding: 0.9rem 1.5rem;
+  border-radius: 50px;
+  margin: 0 auto 1.2rem;
+  width: fit-content;
+  letter-spacing: 0.3px;
+}
+
+.blue-result {
+  background: #eef1f8;
+  color: #1a3d7c;
+  border: 1px solid #c5cfe8;
+}
+
+@media (max-width: 520px) {
+  .innings-header-row,
+  .innings-row {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    padding: 0.8rem 0.8rem;
+  }
+  .sb-runs-sm { font-size: 1.6rem; }
+  .innings-team-name { font-size: 0.9rem; }
+  .sb-logo-sm { width: 36px; }
 }
