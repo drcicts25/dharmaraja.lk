@@ -188,6 +188,84 @@ h1 {
     }
 }
 
+/* --- Coaches Vacancy Block Styles --- */
+
+.coaches-vacancy-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #800000; /* Dharmaraja Maroon */
+    color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin: 25px 0; /* Creates space between the scoreboard and this block */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-left: 5px solid #FFD700; /* Dharmaraja Gold Accent */
+}
+
+.vacancy-content {
+    max-width: 70%;
+}
+
+.vacancy-title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.vacancy-desc {
+    margin: 8px 0 0 0;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
+.vacancy-action {
+    flex-shrink: 0; /* Prevents the button from shrinking on smaller screens */
+}
+
+.vacancy-btn {
+    display: inline-block;
+    background-color: #FFD700; /* Dharmaraja Gold */
+    color: #800000; /* Maroon Text */
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.vacancy-btn:hover {
+    background-color: #ffea75; /* Lighter Gold on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    color: #800000;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .coaches-vacancy-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        border-left: none;
+        border-top: 5px solid #FFD700; /* Moves the accent line to the top on mobile */
+    }
+
+    .vacancy-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .vacancy-title {
+        font-size: 1.2rem;
+    }
+}
+
 #updates {
     height: fit-content;
     margin-top: 80px;
