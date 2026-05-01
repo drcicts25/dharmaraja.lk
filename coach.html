@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vacancies | DRCK</title>
+    <link rel="icon" type="image/x-icon" href="media/Crest - Colored.png">
+    
+    <!-- Your existing global CSS -->
+    <link rel="stylesheet" href="css/common.css" />
+    
+    <!-- Optional: Keep if your header/footer relies on this, otherwise you can remove -->
+    <link rel="stylesheet" href="css/coach.css" /> 
+
+    <!-- CSS specifically for this new blank page & vacancy block -->
+    <style>
+        /* Container to hold content nicely below your navigation bar */
+        .inner-page-container {
+            max-width: 1200px;
+            margin: 150px auto 100px auto; /* 150px pushes it down past your fixed header */
+            padding: 0 20px;
+            min-height: 40vh; /* Ensures footer stays at the bottom */
+        }
+
+        .page-heading {
+            color: #800000;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* --- Coaches Vacancy Block Styles --- */
+        .coaches-vacancy-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #800000; /* Dharmaraja Maroon */
+            color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            margin: 25px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-left: 5px solid #FFD700; /* Dharmaraja Gold Accent */
+        }
+
+        .vacancy-content {
+            max-width: 70%;
+        }
+
+        .vacancy-title {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .vacancy-desc {
+            margin: 8px 0 0 0;
+            font-size: 0.95rem;
+            color: #e0e0e0;
+        }
+
+        .vacancy-action {
+            flex-shrink: 0;
+        }
+
+        .vacancy-btn {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #800000;
+            text-decoration: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .vacancy-btn:hover {
+            background-color: #ffea75;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            color: #800000;
+        }
+
+        @media (max-width: 768px) {
+            .inner-page-container {
+                margin-top: 100px;
+            }
+            .coaches-vacancy-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                border-left: none;
+                border-top: 5px solid #FFD700;
+            }
+            .vacancy-content {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            .vacancy-title {
+                font-size: 1.2rem;
+            }
+            .page-heading {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- EXACT HEADER FROM YOUR FILE -->
+    <header id="header">
+        <div class="navbar-wrapper">
+            <div class="logo-box">
+                <a href="./" class="logo-wrap">
+                    <img src="media/Crest - Colored.png" alt="Logo" class="main-logo" />
+                    <div class="logo-text">
+                        <span class="college-name">Dharmaraja</span>
+                        <span class="college-sub">College</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-box">
+                <nav class="nav-container">
+                    <img src="media/Crest - Colored.png" class="mobile-crest" alt="Crest">
+                    <ul id="nav-list">
+                        <li><a href="./">Home</a></li>
+                        <li><a href="about.html">Who Are We</a></li>
+                        <li><a href="events_news.html">News & Events</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="societies.html">Clubs & Societies</a></li>
+                        <li><a href="sports.html">Sports & Games</a></li>
+                        <li><a href="#footer">Contact</a></li>
+                    </ul>
+                </nav>
+                <div id="menu-btn" onclick="menu();"><i></i><i></i><i></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- NEW CLEAN MAIN SECTION -->
+    <main id="main">
+        
+        <div class="inner-page-container">
+            <h1 class="page-heading">Sports Department</h1>
+            
+           
+            
+
+        </div>
+
+    </main>
+
+    <!-- EXACT FOOTER FROM YOUR FILE -->
+    <footer id="footer">
+        <section>
+            <div>
+                <img src="media/logo-footer.png" alt="DRC" />
+                <p>
+                    Dharmaraja College, founded in 1887 by sir Henry Steel Olcott, is a premier Buddhist boys'
+                    school in Kandy, Sri Lanka with around 300+ teaching staff and over 5,000 students.
+                </p>
+            </div>
+            <div>
+                <h3></h3>
+                <ul>
+                    <li><img src="media/call.png" />0812 234 495</li>
+                    <li><img src="media/location.png" />Dharmaraja College,Louis Peiris Mawatha, Kandy.</li>
+                    <li><img src="media/mail.png" />info@dharmaraja.lk</li>
+                </ul>
+            </div>
+            <div>
+                <div>
+                    <h3>FOLLOW US</h3>
+                    <h4>GET IN TOUCH WITH US</h4>
+                </div>
+
+                <section>
+                    <a href="" target="_blank"><img src="media/facebook.png" alt="Facebook" /></a>
+                    <a href="" target="_blank"><img src="media/instagram.png" alt="Instagram" /></a>
+                    <a href="" target="_blank"><img src="media/whatsapp.png" alt="whatsapp" /></a>
+                </section>
+            </div>
+        </section>
+        <hr />
+        <h5>All Rights Reserved © 2025 Dharmaraja College<br>PROJECT BY ICT SOCIETY OF THE DHARMARAJA COLLEGE</h5>
+    </footer>
+
+    <!-- RETAINED NAV MENU SCRIPT -->
+    <script>
+        const header = document.querySelector("#header");
+        
+        // Mobile Menu Logic
+        var menuOpen = 0;
+        function menu() {
+            if (menuOpen) {
+                menuOpen = 0;
+                header.classList.remove("open");
+            } else {
+                menuOpen = 1;
+                header.classList.add("open");
+            }
+        }
+        
+        // Close menu when clicking main area
+        document.querySelector("#main").addEventListener("click", () => {
+            if (menuOpen) {
+                menuOpen = 0;
+                header.classList.remove("open");
+            }
+        });
+    </script>
+    
+    <!-- NOTE: I removed home_updates.js, home.js, and homenew.js here 
+         because those scripts will throw errors on this page since the home-page videos and sliders are gone. -->
+         
+</body>
+</html>
