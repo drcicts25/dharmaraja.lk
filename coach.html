@@ -1,121 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vacancies | DRCK</title>
+    <title>Coaches Vacancies | DRCK</title>
     <link rel="icon" type="image/x-icon" href="media/Crest - Colored.png">
     
-    <!-- Your existing global CSS -->
+    <!-- Existing Global CSS -->
     <link rel="stylesheet" href="css/common.css" />
     
-    <!-- Optional: Keep if your header/footer relies on this, otherwise you can remove -->
+    <!-- New CSS specifically for this page -->
     <link rel="stylesheet" href="css/coach.css" /> 
-
-    <!-- CSS specifically for this new blank page & vacancy block -->
-    <style>
-        /* Container to hold content nicely below your navigation bar */
-        .inner-page-container {
-            max-width: 1200px;
-            margin: 150px auto 100px auto; /* 150px pushes it down past your fixed header */
-            padding: 0 20px;
-            min-height: 40vh; /* Ensures footer stays at the bottom */
-        }
-
-        .page-heading {
-            color: #800000;
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        /* --- Coaches Vacancy Block Styles --- */
-        .coaches-vacancy-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #800000; /* Dharmaraja Maroon */
-            color: #ffffff;
-            padding: 25px 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            margin: 25px 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            border-left: 5px solid #FFD700; /* Dharmaraja Gold Accent */
-        }
-
-        .vacancy-content {
-            max-width: 70%;
-        }
-
-        .vacancy-title {
-            margin: 0;
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .vacancy-desc {
-            margin: 8px 0 0 0;
-            font-size: 0.95rem;
-            color: #e0e0e0;
-        }
-
-        .vacancy-action {
-            flex-shrink: 0;
-        }
-
-        .vacancy-btn {
-            display: inline-block;
-            background-color: #FFD700;
-            color: #800000;
-            text-decoration: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .vacancy-btn:hover {
-            background-color: #ffea75;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            color: #800000;
-        }
-
-        @media (max-width: 768px) {
-            .inner-page-container {
-                margin-top: 100px;
-            }
-            .coaches-vacancy-container {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-                border-left: none;
-                border-top: 5px solid #FFD700;
-            }
-            .vacancy-content {
-                max-width: 100%;
-                margin-bottom: 20px;
-            }
-            .vacancy-title {
-                font-size: 1.2rem;
-            }
-            .page-heading {
-                font-size: 2rem;
-            }
-        }
-    </style>
 </head>
-
 <body>
     
-    <!-- EXACT HEADER FROM YOUR FILE -->
+    <!-- HEADER (Kept exactly as requested) -->
     <header id="header">
         <div class="navbar-wrapper">
             <div class="logo-box">
@@ -127,7 +26,6 @@
                     </div>
                 </a>
             </div>
-
             <div class="nav-box">
                 <nav class="nav-container">
                     <img src="media/Crest - Colored.png" class="mobile-crest" alt="Crest">
@@ -146,34 +44,132 @@
         </div>
     </header>
 
-    <!-- NEW CLEAN MAIN SECTION -->
     <main id="main">
         
-        <div class="inner-page-container">
-            <h1 class="page-heading">Sports Department</h1>
-            
-           
-            
+        <!-- HERO SECTION -->
+        <section class="sports-hero">
+            <div class="hero-text">
+                <h1>Join Our Legacy</h1>
+                <p>Dharmaraja College has a rich history of producing outstanding sportsmen. We are looking for talented, passionate, and experienced individuals to join our sports department as Senior or Junior Instructors. Shape the future of Rajan sports today.</p>
+            </div>
+            <div class="hero-images">
+                <!-- Replace src with actual high-quality sports images from your media folder -->
+                <img src="media/dc-s&g-1.jpg" alt="Rugby Team">
+                <img src="media/dc-s&g-3.jpg" alt="Cricket Match">
+                <img src="media/logo_swimming.jpg" alt="Athletics">
+            </div>
+        </section>
 
-        </div>
+        <!-- FORM SECTION -->
+        <section class="form-section-wrapper">
+            <div class="form-container">
+                <h2>Coach Application Form</h2>
+                <p class="subtitle">Please fill out all the necessary details accurately. Fields marked with <span>*</span> are compulsory.</p>
+                
+                <!-- Notice enctype for file uploads -->
+               <form id="coachForm" enctype="multipart/form-data">
+                    
+                    <div class="input-group">
+                        <label>Full Name <span>*</span></label>
+                        <input type="text" name="full_name" required placeholder="Enter your full name">
+                    </div>
 
+                    <div class="input-group">
+                        <label>Age <span>*</span></label>
+                        <input type="number" name="age" required placeholder="e.g., 35" min="18" max="60">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Address <span>*</span></label>
+                        <textarea name="address" required placeholder="Enter your residential address"></textarea>
+                    </div>
+
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div class="input-group" style="flex: 1; min-width: 250px;">
+                            <label>Contact Number <span>*</span></label>
+                            <input type="tel" name="contact_number" required placeholder="Mobile or Landline">
+                        </div>
+                        <div class="input-group" style="flex: 1; min-width: 250px;">
+                            <label>Email Address <span>*</span></label>
+                            <input type="email" name="email" required placeholder="example@email.com">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Sport Applied For <span>*</span></label>
+                        <select name="sport_applied" id="sportSelect" required>
+                            <option value="" disabled selected>-- Select a Sport --</option>
+                            <!-- Options generated via JS below -->
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Age Group Applied For <span>*</span></label>
+                        <select name="age_group_applied" id="ageGroupSelect" required>
+                            <option value="" disabled selected>-- Select Sport First --</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Coaching Experience (Years & Details) <span>*</span></label>
+                        <textarea name="experience" required placeholder="Detail your past coaching experience (Minimum 5 years required)"></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Coaching Certifications <span>*</span></label>
+                        <textarea name="certifications" required placeholder="List your Level 1 certificates and above"></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Educational Qualifications <span>*</span></label>
+                        <textarea name="education" required placeholder="O/L, A/L, Degrees, or Diplomas"></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Key Skills</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item"><input type="checkbox" name="key_skills[]" value="Leadership"> Leadership</label>
+                            <label class="checkbox-item"><input type="checkbox" name="key_skills[]" value="Communication"> Communication</label>
+                            <label class="checkbox-item"><input type="checkbox" name="key_skills[]" value="Team Management"> Team Management</label>
+                            <label class="checkbox-item"><input type="checkbox" name="key_skills[]" value="Strategic Planning"> Strategic Planning</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Availability (Days & Times) <span>*</span></label>
+                        <input type="text" name="availability" required placeholder="e.g., Weekdays Evening, Weekends Full-time">
+                    </div>
+
+                    <div class="input-group">
+                        <label>References / CV Upload (PDF/DOCX)<span>*</span></label>
+                        <input type="file" name="reference_files[]" accept=".pdf,.doc,.docx" multiple required>
+                    </div>
+                    <div class="input-group">
+                        <label class="checkbox-item" style="align-items: flex-start;">
+                            <input type="checkbox" name="declaration" required style="margin-top: 4px;"> 
+                            I declare that the information provided above is true and accurate to the best of my knowledge. <span>*</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+
+            </div>
+        </section>
     </main>
 
-    <!-- EXACT FOOTER FROM YOUR FILE -->
+    <!-- FOOTER (Kept exactly as requested) -->
     <footer id="footer">
         <section>
             <div>
                 <img src="media/logo-footer.png" alt="DRC" />
-                <p>
-                    Dharmaraja College, founded in 1887 by sir Henry Steel Olcott, is a premier Buddhist boys'
-                    school in Kandy, Sri Lanka with around 300+ teaching staff and over 5,000 students.
-                </p>
+                <p>Dharmaraja College, founded in 1887 by sir Henry Steel Olcott, is a premier Buddhist boys' school in Kandy, Sri Lanka with around 300+ teaching staff and over 5,000 students.</p>
             </div>
             <div>
                 <h3></h3>
                 <ul>
                     <li><img src="media/call.png" />0812 234 495</li>
-                    <li><img src="media/location.png" />Dharmaraja College,Louis Peiris Mawatha, Kandy.</li>
+                    <li><img src="media/location.png" />Dharmaraja College, Louis Peiris Mawatha, Kandy.</li>
                     <li><img src="media/mail.png" />info@dharmaraja.lk</li>
                 </ul>
             </div>
@@ -182,7 +178,6 @@
                     <h3>FOLLOW US</h3>
                     <h4>GET IN TOUCH WITH US</h4>
                 </div>
-
                 <section>
                     <a href="" target="_blank"><img src="media/facebook.png" alt="Facebook" /></a>
                     <a href="" target="_blank"><img src="media/instagram.png" alt="Instagram" /></a>
@@ -191,14 +186,27 @@
             </div>
         </section>
         <hr />
-        <h5>All Rights Reserved © 2025 Dharmaraja College<br>PROJECT BY ICT SOCIETY OF THE DHARMARAJA COLLEGE</h5>
+        <h5>All Rights Reserved © 2026 Dharmaraja College</h5>
     </footer>
 
-    <!-- RETAINED NAV MENU SCRIPT -->
+    <!-- Loading Wheel Overlay -->
+    <div class="loader-overlay" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Success Popup Overlay -->
+    <div class="popup-overlay" id="successPopup">
+        <div class="popup-box">
+            <h2>Application Submitted!</h2>
+            <p>Thank you for applying to join the Dharmaraja College Sports Department. Your details and CV have been successfully uploaded. We will contact you soon.</p>
+            <a href="index.html" class="popup-btn">Return to Home</a>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
     <script>
+        // 1. Mobile Menu Logic
         const header = document.querySelector("#header");
-        
-        // Mobile Menu Logic
         var menuOpen = 0;
         function menu() {
             if (menuOpen) {
@@ -209,18 +217,115 @@
                 header.classList.add("open");
             }
         }
-        
-        // Close menu when clicking main area
         document.querySelector("#main").addEventListener("click", () => {
             if (menuOpen) {
                 menuOpen = 0;
                 header.classList.remove("open");
             }
         });
+
+        // 2. Dynamic Dropdown Logic for Sports & Age Groups based on PDF
+        const sportsData = {
+            "Air Rifle Shooting": ["All"],
+            "Athletics": ["10", "12", "14", "16", "18", "19"],
+            "Base ball": ["All"],
+            "Basket Ball": ["All"],
+            "Badminton": ["All"],
+            "Body Building": ["All"],
+            "Boxing": ["All"],
+            "Cadetting": ["All"],
+            "Cadet Eastern Band": ["All"],
+            "Cadet Western Band": ["All"],
+            "Chess Junior": ["08", "09", "10", "12"],
+            "Chess Senior": ["14", "16", "18", "19"],
+            "Cricket": ["13", "15", "17", "19"],
+            "Gymnastics": ["All"],
+            "Hockey": ["14", "16", "18", "19", "20"],
+            "Karate": ["Junior", "Senior"],
+            "Rugby": ["10", "12", "14", "16", "18", "19"],
+            "Soccer": ["12", "14", "16", "18", "19", "20"],
+            "Swimming": ["All"],
+            "Table Tennis": ["All"],
+            "Trainer (All Sports)": ["All Sports"],
+            "Volleyball": ["All"],
+            "Weight Lifting": ["All"],
+            "Wrestling": ["All"],
+            "Taekwondo": ["All"]
+        };
+
+        const sportSelect = document.getElementById("sportSelect");
+        const ageGroupSelect = document.getElementById("ageGroupSelect");
+
+        // Populate the Sports Dropdown
+        for (let sport in sportsData) {
+            let option = document.createElement("option");
+            option.value = sport;
+            option.textContent = sport;
+            sportSelect.appendChild(option);
+        }
+
+        // Listen for changes on the Sports Dropdown
+        sportSelect.addEventListener("change", function() {
+            // Clear existing age options
+            ageGroupSelect.innerHTML = '<option value="" disabled selected>-- Select Age Group --</option>';
+            
+            const selectedSport = this.value;
+            const ageGroups = sportsData[selectedSport];
+
+            if (ageGroups) {
+                ageGroups.forEach(function(age) {
+                    let option = document.createElement("option");
+                    // Format strings nicely
+                    if(age === "All" || age === "All Sports" || age === "Junior" || age === "Senior"){
+                        option.value = age;
+                        option.textContent = age;
+                    } else {
+                        option.value = "Under " + age;
+                        option.textContent = "Under " + age;
+                    }
+                    ageGroupSelect.appendChild(option);
+                });
+            }
+        });
+
+        // 3. AJAX Form Submission with Loader and Popup
+        document.getElementById('coachForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop the page from reloading
+
+            // Show the loading wheel
+            document.getElementById('loader').style.display = 'flex';
+
+            // Gather all form data (including the file)
+            let formData = new FormData(this);
+
+            // Send data to PHP script
+            fetch('upload_coach.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Hide the loading wheel
+                document.getElementById('loader').style.display = 'none';
+
+                if(data.status === 'success') {
+                    // Show success popup and clear the form
+                    document.getElementById('successPopup').style.display = 'flex';
+                    document.getElementById('coachForm').reset();
+                    // Reset dropdown manually
+                    document.getElementById('ageGroupSelect').innerHTML = '<option value="" disabled selected>-- Select Sport First --</option>';
+                } else {
+                    // Show error from PHP
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                // Hide loader and show error if internet disconnects
+                document.getElementById('loader').style.display = 'none';
+                alert('A network error occurred. Please try again.');
+                console.error('Error:', error);
+            });
+        });
     </script>
-    
-    <!-- NOTE: I removed home_updates.js, home.js, and homenew.js here 
-         because those scripts will throw errors on this page since the home-page videos and sliders are gone. -->
-         
 </body>
 </html>
