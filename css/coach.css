@@ -1,0 +1,314 @@
+/* =========================================
+   HERO SECTION (Professional Sports Look)
+   ========================================= */
+.sports-hero {
+    margin-top: 100px; /* Pushes below the fixed header */
+    background-color: #0d0d0d;
+    color: white;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 5px solid #FFD700;
+}
+
+.hero-text {
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.hero-images {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.hero-images img {
+    width: 30%;
+    min-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border: 3px solid #800000;
+    transition: transform 0.3s ease;
+}
+
+.hero-images img:hover {
+    transform: scale(1.05);
+    border-color: #FFD700;
+}
+
+/* =========================================
+   APPLICATION FORM (Dark Theme UI)
+   ========================================= */
+.form-section-wrapper {
+    background-color: #f4f4f4; /* Contrast background behind the dark form */
+    padding: 60px 20px;
+}
+
+.form-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #232222;
+    border-radius: 12px;
+    padding: 40px 50px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 215, 0, 0.2); /* Subtle gold border */
+}
+
+.form-container h2 {
+    color: #FFD700;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.form-container > p.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+}
+
+.form-container label span {
+    color: red;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #e0e0e0;
+}
+
+.input-group input[type="text"], 
+.input-group input[type="number"], 
+.input-group input[type="email"], 
+.input-group input[type="tel"], 
+.input-group input[type="file"],
+.input-group textarea, 
+.input-group select {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 0 5px 0;
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus, 
+.input-group select:focus {
+    border-bottom: 2px solid #FFD700;
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.input-group select {
+    background-color: #232222;
+    cursor: pointer;
+}
+
+.input-group select option {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* File Upload styling */
+.input-group input[type="file"] {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+.input-group input[type="file"]::file-selector-button {
+    background-color: #800000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+.input-group input[type="file"]::file-selector-button:hover {
+    background-color: #FFD700;
+    color: #800000;
+}
+
+/* Checkboxes */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ccc;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.checkbox-item input[type="checkbox"] {
+    accent-color: #FFD700;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    background-color: #800000;
+    color: #FFD700;
+    border: 2px solid #800000;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background-color: #FFD700;
+    color: #800000;
+    border-color: #FFD700;
+    box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .sports-hero {
+        padding: 40px 15px;
+    }
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    .hero-images img {
+        width: 100%;
+    }
+    .form-container {
+        padding: 30px 20px;
+    }
+}
+
+/* =========================================
+   LOADER & SUCCESS POPUP STYLES
+   ========================================= */
+
+/* Dark Overlay for Loader and Popup */
+.loader-overlay, .popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+/* The Spinning Wheel */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255, 215, 0, 0.3); /* Faded Gold */
+    border-top-color: #FFD700; /* Solid Gold */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Success Popup Box */
+.popup-box {
+    background-color: #232222;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 450px;
+    border: 2px solid #FFD700;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: popIn 0.4s ease;
+}
+
+.popup-box h2 {
+    color: #FFD700;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.popup-box p {
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.popup-btn {
+    background-color: #800000;
+    color: #FFD700;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.popup-btn:hover {
+    background-color: #FFD700;
+    color: #800000;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
