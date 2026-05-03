@@ -69,7 +69,7 @@ body {
 .hero-images img {
     width: 280px;
     height: 200px;
-    object-fit: cover;
+    object-fit: cover; /* Ensures image fills the specified dimensions */
     border-radius: 10px;
     border: 2px solid #333;
     transition: 0.3s;
