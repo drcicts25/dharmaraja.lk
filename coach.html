@@ -6,15 +6,12 @@
     <title>Coaches Vacancies | DRCK</title>
     <link rel="icon" type="image/x-icon" href="media/Crest - Colored.png">
     
-    <!-- Existing Global CSS -->
     <link rel="stylesheet" href="css/common-3.css" />
     
-    <!-- New CSS specifically for this page -->
     <link rel="stylesheet" href="css/coach.css" /> 
 </head>
 <body>
     
-    <!-- HEADER (Kept exactly as requested) -->
     <header id="header">
         <div class="navbar-wrapper">
             <div class="logo-box">
@@ -46,142 +43,133 @@
 
     <main id="main">
         
-        <!-- HERO SECTION -->
         <section class="sports-hero">
             <div class="hero-text">
                 <h1>Join Our Legacy</h1>
-                <p>Dharmaraja College has a rich history of producing outstanding sportsmen. We are looking for talented, passionate, and experienced individuals to join our sports department as Senior or Junior Instructors. Shape the future of Rajan sports today.</p>
+                <p>Dharmaraja College has a rich history of producing outstanding sportsmen. We are looking for talented, passionate, and experienced individuals to join our sports department. Shape the future of Rajan sports today.</p>
             </div>
             <div class="hero-images">
-                <!-- Replace src with actual high-quality sports images from your media folder -->
                 <img src="media/dc-s&g-1.jpg" alt="Rugby Team">
                 <img src="media/dc-s&g-3.jpg" alt="Cricket Match">
                 <img src="media/logo_swimming.jpg" alt="Athletics">
             </div>
         </section>
 
-        <!-- FORM SECTION -->
         <section class="form-section-wrapper">
             <div class="form-container">
                 <h2>Coach Application Form</h2>
-                <p class="subtitle">Please fill out all the necessary details accurately. Fields marked with <span>*</span> are compulsory.</p>
+                <p class="subtitle" style="text-align: center; color: #aaa; margin-bottom: 20px;">Please fill out all the necessary details accurately. Fields marked with <span>*</span> are compulsory.</p>
                 
-                <!-- Notice enctype for file uploads -->
                <form id="coachForm" enctype="multipart/form-data">
-                    
-                    <div class="input-group">
-                        <label>Full Name <span>*</span></label>
-                        <input type="text" name="full_name" required placeholder="Enter your full name">
-                    </div>
+                    <div class="form-grid">
+                        
+                        <div class="input-group full-width">
+                            <label>Full Name <span>*</span></label>
+                            <input type="text" name="full_name" required placeholder="Enter your full name">
+                        </div>
 
-                    <div class="input-group">
-                        <label>Age <span>*</span></label>
-                        <input type="number" name="age" required placeholder="e.g., 35" min="18" max="60">
-                    </div>
+                        <div class="input-group">
+                            <label>Age <span>*</span></label>
+                            <input type="number" name="age" required placeholder="e.g., 35" min="18" max="60">
+                        </div>
 
-                    <div class="input-group">
-                        <label>Address <span>*</span></label>
-                        <textarea name="address" required placeholder="Enter your residential address"></textarea>
-                    </div>
+                        <div class="input-group">
+                            <label>Sport Applied For <span>*</span></label>
+                            <select name="sport_applied" id="sportSelect" required>
+                                <option value="" disabled selected>-- Select a Sport --</option>
+                            </select>
+                        </div>
 
-                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                        <div class="input-group" style="flex: 1; min-width: 250px;">
+                        <div class="input-group">
                             <label>Contact Number <span>*</span></label>
                             <input type="tel" name="contact_number" required placeholder="Mobile or Landline">
                         </div>
-                        <div class="input-group" style="flex: 1; min-width: 250px;">
+
+                        <div class="input-group">
                             <label>Email Address <span>*</span></label>
                             <input type="email" name="email" required placeholder="example@email.com">
                         </div>
-                    </div>
 
-                    <div class="input-group">
-                        <label>Sport Applied For <span>*</span></label>
-                        <select name="sport_applied" id="sportSelect" required>
-                            <option value="" disabled selected>-- Select a Sport --</option>
-                            <!-- Options generated via JS below -->
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Age Group Applied For <span>*</span></label>
-                        <select name="age_group_applied" id="ageGroupSelect" required>
-                            <option value="" disabled selected>-- Select Sport First --</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Coaching Experience (Years & Details) <span>*</span></label>
-                        <textarea name="experience" required placeholder="Detail your past coaching experience (Minimum 5 years required)"></textarea>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Coaching Certifications <span>*</span></label>
-                        <textarea name="certifications" required placeholder="List your Level 1 certificates and above"></textarea>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Educational Qualifications <span>*</span></label>
-                        <textarea name="education" required placeholder="O/L, A/L, Degrees, or Diplomas"></textarea>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Key Skills</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-item"><input type="checkbox" name="key_skills[]" value="Leadership"> Leadership</label>
-                            <label class="checkbox-item"><input type="checkbox" name="key_skills[]" value="Communication"> Communication</label>
-                            <label class="checkbox-item"><input type="checkbox" name="key_skills[]" value="Team Management"> Team Management</label>
-                            <label class="checkbox-item"><input type="checkbox" name="key_skills[]" value="Strategic Planning"> Strategic Planning</label>
+                        <div class="input-group full-width">
+                            <label>Address <span>*</span></label>
+                            <textarea name="address" required placeholder="Enter your residential address" style="min-height: 80px;"></textarea>
                         </div>
-                    </div>
 
-                    <div class="input-group">
-                        <label>Availability (Days & Times) <span>*</span></label>
-                        <input type="text" name="availability" required placeholder="e.g., Weekdays Evening, Weekends Full-time">
-                    </div>
+                        <div class="input-group">
+                            <label>Age Group Applied For <span>*</span></label>
+                            <select name="age_group_applied" id="ageGroupSelect" required>
+                                <option value="" disabled selected>-- Select Sport First --</option>
+                            </select>
+                        </div>
 
-                    <div class="input-group">
-                        <label>References / CV Upload (PDF/DOCX)<span>*</span></label>
-                        <input type="file" name="reference_files[]" accept=".pdf,.doc,.docx" multiple required>
-                    </div>
-                    <div class="input-group">
-                        <label class="checkbox-item" style="align-items: flex-start;">
-                            <input type="checkbox" name="declaration" required style="margin-top: 4px;"> 
-                            I declare that the information provided above is true and accurate to the best of my knowledge. <span>*</span>
-                        </label>
-                    </div>
+                        <div class="input-group">
+                            <label>Availability <span>*</span></label>
+                            <input type="text" name="availability" required placeholder="e.g., Weekdays Evening">
+                        </div>
 
-                    <button type="submit" class="submit-btn">Submit Application</button>
+                        <div class="input-group full-width">
+                            <label>Coaching Experience (Years & Details) <span>*</span></label>
+                            <textarea name="experience" required placeholder="Minimum 5 years required"></textarea>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>Coaching Certifications <span>*</span></label>
+                            <textarea name="certifications" required placeholder="List Level 1 certificates and above"></textarea>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>Educational Qualifications <span>*</span></label>
+                            <textarea name="education" required placeholder="O/L, A/L, Degrees, or Diplomas"></textarea>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>Key Skills</label>
+                            <div class="checkbox-group" style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 5px; color: #ccc; font-size: 0.9rem;">
+                                <label><input type="checkbox" name="key_skills[]" value="Leadership"> Leadership</label>
+                                <label><input type="checkbox" name="key_skills[]" value="Communication"> Communication</label>
+                                <label><input type="checkbox" name="key_skills[]" value="Team Management"> Team Management</label>
+                                <label><input type="checkbox" name="key_skills[]" value="Strategic Planning"> Strategic Planning</label>
+                            </div>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>References / CV Upload (PDF/DOCX)<span>*</span></label>
+                            <input type="file" name="reference_files[]" accept=".pdf,.doc,.docx" multiple required>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label style="text-transform: none; font-family: 'Inter', sans-serif; letter-spacing: 0;">
+                                <input type="checkbox" name="declaration" required style="width: auto; margin-right: 10px;"> 
+                                I declare that the information provided is true and accurate. <span>*</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn full-width">Submit Application</button>
+                    </div>
                 </form>
 
             </div>
         </section>
     </main>
 
-    <!-- FOOTER (Kept exactly as requested) -->
     <footer id="footer">
         <section>
             <div>
                 <img src="media/logo-footer.png" alt="DRC" />
-                <p>Dharmaraja College, founded in 1887 by sir Henry Steel Olcott, is a premier Buddhist boys' school in Kandy, Sri Lanka with around 300+ teaching staff and over 5,000 students.</p>
+                <p>Dharmaraja College, founded in 1887, is a premier Buddhist boys' school in Kandy, Sri Lanka.</p>
             </div>
             <div>
-                <h3></h3>
                 <ul>
                     <li><img src="media/call.png" />0812 234 495</li>
-                    <li><img src="media/location.png" />Dharmaraja College, Louis Peiris Mawatha, Kandy.</li>
+                    <li><img src="media/location.png" />Kandy, Sri Lanka.</li>
                     <li><img src="media/mail.png" />info@dharmaraja.lk</li>
                 </ul>
             </div>
             <div>
-                <div>
-                    <h3>FOLLOW US</h3>
-                    <h4>GET IN TOUCH WITH US</h4>
-                </div>
                 <section>
-                    <a href="" target="_blank"><img src="media/facebook.png" alt="Facebook" /></a>
-                    <a href="" target="_blank"><img src="media/instagram.png" alt="Instagram" /></a>
-                    <a href="" target="_blank"><img src="media/whatsapp.png" alt="whatsapp" /></a>
+                    <a href="#"><img src="media/facebook.png" alt="Facebook" /></a>
+                    <a href="#"><img src="media/instagram.png" alt="Instagram" /></a>
+                    <a href="#"><img src="media/whatsapp.png" alt="whatsapp" /></a>
                 </section>
             </div>
         </section>
@@ -189,23 +177,20 @@
         <h5>All Rights Reserved © 2026 Dharmaraja College</h5>
     </footer>
 
-    <!-- Loading Wheel Overlay -->
-    <div class="loader-overlay" id="loader">
-        <div class="spinner"></div>
+    <div class="loader-overlay" id="loader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 9999;">
+        <div class="spinner" style="width: 50px; height: 50px; border: 5px solid #333; border-top-color: #FFD700; border-radius: 50%; animation: spin 1s linear infinite;"></div>
     </div>
+    <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
 
-    <!-- Success Popup Overlay -->
-    <div class="popup-overlay" id="successPopup">
-        <div class="popup-box">
-            <h2>Application Submitted!</h2>
-            <p>Thank you for applying to join the Dharmaraja College Sports Department. Your details and CV have been successfully uploaded. We will contact you soon.</p>
-            <a href="index.html" class="popup-btn">Return to Home</a>
+    <div class="popup-overlay" id="successPopup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 10000;">
+        <div class="popup-box" style="background: #161616; padding: 40px; border-radius: 20px; border: 2px solid #FFD700; text-align: center; max-width: 400px;">
+            <h2 style="color: #FFD700; font-family: 'Oswald';">Application Submitted!</h2>
+            <p style="color: #ccc; margin: 20px 0;">Thank you for applying. We will contact you soon.</p>
+            <a href="index.html" class="submit-btn" style="display: block; text-decoration: none; line-height: 60px;">Return to Home</a>
         </div>
     </div>
 
-    <!-- SCRIPTS -->
     <script>
-        // 1. Mobile Menu Logic
         const header = document.querySelector("#header");
         var menuOpen = 0;
         function menu() {
@@ -217,14 +202,7 @@
                 header.classList.add("open");
             }
         }
-        document.querySelector("#main").addEventListener("click", () => {
-            if (menuOpen) {
-                menuOpen = 0;
-                header.classList.remove("open");
-            }
-        });
 
-        // 2. Dynamic Dropdown Logic for Sports & Age Groups based on PDF
         const sportsData = {
             "Air Rifle Shooting": ["All"],
             "Athletics": ["10", "12", "14", "16", "18", "19"],
@@ -256,7 +234,6 @@
         const sportSelect = document.getElementById("sportSelect");
         const ageGroupSelect = document.getElementById("ageGroupSelect");
 
-        // Populate the Sports Dropdown
         for (let sport in sportsData) {
             let option = document.createElement("option");
             option.value = sport;
@@ -264,66 +241,38 @@
             sportSelect.appendChild(option);
         }
 
-        // Listen for changes on the Sports Dropdown
         sportSelect.addEventListener("change", function() {
-            // Clear existing age options
             ageGroupSelect.innerHTML = '<option value="" disabled selected>-- Select Age Group --</option>';
-            
             const selectedSport = this.value;
             const ageGroups = sportsData[selectedSport];
-
             if (ageGroups) {
                 ageGroups.forEach(function(age) {
                     let option = document.createElement("option");
-                    // Format strings nicely
-                    if(age === "All" || age === "All Sports" || age === "Junior" || age === "Senior"){
-                        option.value = age;
-                        option.textContent = age;
-                    } else {
-                        option.value = "Under " + age;
-                        option.textContent = "Under " + age;
-                    }
+                    option.value = (age.includes("All") || age.includes("Junior")) ? age : "Under " + age;
+                    option.textContent = option.value;
                     ageGroupSelect.appendChild(option);
                 });
             }
         });
 
-        // 3. AJAX Form Submission with Loader and Popup
         document.getElementById('coachForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Stop the page from reloading
-
-            // Show the loading wheel
+            e.preventDefault();
             document.getElementById('loader').style.display = 'flex';
-
-            // Gather all form data (including the file)
             let formData = new FormData(this);
-
-            // Send data to PHP script
-            fetch('upload_coach.php', {
-                method: 'POST',
-                body: formData
-            })
+            fetch('upload_coach.php', { method: 'POST', body: formData })
             .then(response => response.json())
             .then(data => {
-                // Hide the loading wheel
                 document.getElementById('loader').style.display = 'none';
-
                 if(data.status === 'success') {
-                    // Show success popup and clear the form
                     document.getElementById('successPopup').style.display = 'flex';
                     document.getElementById('coachForm').reset();
-                    // Reset dropdown manually
-                    document.getElementById('ageGroupSelect').innerHTML = '<option value="" disabled selected>-- Select Sport First --</option>';
                 } else {
-                    // Show error from PHP
                     alert('Error: ' + data.message);
                 }
             })
             .catch(error => {
-                // Hide loader and show error if internet disconnects
                 document.getElementById('loader').style.display = 'none';
-                alert('A network error occurred. Please try again.');
-                console.error('Error:', error);
+                alert('A network error occurred.');
             });
         });
     </script>
