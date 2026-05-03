@@ -331,12 +331,28 @@ footer {
 
 @media screen and (max-width: 1250px) {
     /* --- NEW NAVBAR FOR 1250 BREAKPOINT --- */
-    #header {margin-top: 15px; padding-top: 15px; }
-    .logo-box { display: none; } 
-    .nav-box { background: transparent; padding: 0;
-    margin-left: auto; }
-    .nav-box::before { display: none; }
+    #header { margin-top: 10px; padding-top: 10px; }
+    
+    /* FIX: Keep the logo visible and scale it for mobile */
+    .navbar-wrapper {
+        align-items: center;
+    }
+    .logo-box { 
+        display: flex; 
+        padding: 5px 25px 10px 15px;
+        border-bottom-right-radius: 30px;
+    }
+    .main-logo { height: 50px; }
+    .college-name { font-size: 1.2rem; }
+    .college-sub { font-size: 1rem; }
 
+    /* Keep the hamburger menu on the right */
+    .nav-box { 
+        background: transparent; 
+        padding: 0 20px 0 0; 
+        margin-left: auto; 
+    }
+    .nav-box::before { display: none; }
     #menu-btn {
         display: flex; flex-direction: column; justify-content: center; align-items: center;
         width: 45px; height: 45px; background: #000; border-radius: 50%;
