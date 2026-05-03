@@ -1,314 +1,198 @@
 /* =========================================
-   HERO SECTION (Professional Sports Look)
+   GLOBAL ENHANCEMENTS 
+   ========================================= */
+:root {
+    --gold: #FFD700;
+    --gold-glow: rgba(255, 215, 0, 0.4);
+    --maroon: #800000;
+    --dark-bg: #0d0d0d;
+    --card-bg: #1a1a1a; /* Slightly lighter than background for depth */
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif; /* Modern, clean font */
+    background-color: var(--dark-bg);
+}
+
+/* =========================================
+   HERO SECTION (Cinematic Look)
    ========================================= */
 .sports-hero {
-    margin-top: 100px; /* Pushes below the fixed header */
-    background-color: #0d0d0d;
+    margin-top: 80px; 
+    background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
     color: white;
-    padding: 60px 20px;
+    padding: 100px 20px; /* Increased breathing room */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border-bottom: 5px solid #FFD700;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle texture overlay for a "jersey" or "turf" feel */
+.sports-hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(circle, #ffffff05 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: 0;
 }
 
 .hero-text {
-    max-width: 800px;
-    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
 }
 
 .hero-text h1 {
-    font-size: 3rem;
-    color: #FFD700;
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Responsive typography */
+    color: var(--gold);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    font-family: 'Arial Black', sans-serif;
+    font-style: italic; /* Sports aggression */
+    letter-spacing: -1px; /* Tighter, more modern look */
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0px var(--maroon);
 }
 
 .hero-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #cccccc;
+    font-size: 1.2rem;
+    color: #bcbcbc;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 .hero-images {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+    margin-top: 50px;
+    display: grid; /* Grid is cleaner for layouts */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 90%;
     max-width: 1200px;
-    width: 100%;
-    flex-wrap: wrap;
+    z-index: 1;
 }
 
 .hero-images img {
-    width: 30%;
-    min-width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 350px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    border: 3px solid #800000;
-    transition: transform 0.3s ease;
+    border-radius: 15px; /* Softer, modern edges */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .hero-images img:hover {
-    transform: scale(1.05);
-    border-color: #FFD700;
+    transform: translateY(-15px) scale(1.02);
+    border-color: var(--gold);
+    box-shadow: 0 0 30px var(--gold-glow);
 }
 
 /* =========================================
-   APPLICATION FORM (Dark Theme UI)
+   APPLICATION FORM (Premium Glassmorphism)
    ========================================= */
 .form-section-wrapper {
-    background-color: #f4f4f4; /* Contrast background behind the dark form */
-    padding: 60px 20px;
+    background: #0a0a0a; /* Darker to make the form pop */
+    padding: 100px 20px;
 }
 
 .form-container {
-    max-width: 850px;
-    margin: 0 auto;
-    background-color: #232222;
-    border-radius: 12px;
-    padding: 40px 50px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-    border: 1px solid rgba(255, 215, 0, 0.2); /* Subtle gold border */
+    max-width: 700px; /* Slimmer looks more "executive" */
+    background: #161616;
+    border-radius: 24px;
+    padding: 60px;
+    position: relative;
+    border: 1px solid #333;
+}
+
+/* Accent top bar */
+.form-container::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 150px; height: 4px;
+    background: var(--gold);
+    border-radius: 0 0 10px 10px;
 }
 
 .form-container h2 {
-    color: #FFD700;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.form-container > p.subtitle {
-    text-align: center;
-    color: #aaa;
-    margin-bottom: 40px;
-    font-size: 0.95rem;
-}
-
-.form-container label span {
-    color: red;
-    font-weight: bold;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
 }
 
 .input-group {
-    margin-bottom: 25px;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 30px;
 }
 
 .input-group label {
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 0.95em;
-    color: #e0e0e0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold);
+    opacity: 0.8;
 }
 
-.input-group input[type="text"], 
-.input-group input[type="number"], 
-.input-group input[type="email"], 
-.input-group input[type="tel"], 
-.input-group input[type="file"],
+.input-group input, 
 .input-group textarea, 
 .input-group select {
-    width: 100%;
-    background-color: transparent;
-    color: white;
-    font-size: 1rem;
-    padding: 10px 0 5px 0;
-    border: none;
-    border-bottom: 1px solid #777;
-    outline: none;
-    transition: border-color 0.3s;
-    font-family: inherit;
+    background-color: #222 !important;
+    border: 1px solid #333 !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    box-sizing: border-box;
+    transition: all 0.3s;
 }
 
-.input-group input:focus, 
-.input-group textarea:focus, 
-.input-group select:focus {
-    border-bottom: 2px solid #FFD700;
+.input-group input:focus {
+    border-color: var(--gold) !important;
+    background-color: #2a2a2a !important;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
 }
 
-.input-group textarea {
-    resize: vertical;
-    min-height: 60px;
-}
-
-.input-group select {
-    background-color: #232222;
-    cursor: pointer;
-}
-
-.input-group select option {
-    background-color: #1a1a1a;
-    color: white;
-}
-
-/* File Upload styling */
-.input-group input[type="file"] {
-    font-size: 0.9rem;
-    color: #aaa;
-}
-.input-group input[type="file"]::file-selector-button {
-    background-color: #800000;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 15px;
+/* Custom Checkbox Refresh */
+.checkbox-item {
+    background: #222;
+    padding: 10px 15px;
+    border-radius: 50px; /* Pill shape */
+    border: 1px solid #333;
     transition: 0.3s;
 }
-.input-group input[type="file"]::file-selector-button:hover {
-    background-color: #FFD700;
-    color: #800000;
+
+.checkbox-item:hover {
+    border-color: var(--gold);
 }
 
-/* Checkboxes */
-.checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 5px;
-}
-
-.checkbox-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #ccc;
-    font-size: 0.9rem;
-    cursor: pointer;
-}
-
-.checkbox-item input[type="checkbox"] {
-    accent-color: #FFD700;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-}
-
-/* Submit Button */
+/* Submit Button with "Power" feel */
 .submit-btn {
-    width: 100%;
-    background-color: #800000;
-    color: #FFD700;
-    border: 2px solid #800000;
-    padding: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-    letter-spacing: 1px;
+    background: linear-gradient(135deg, var(--maroon) 0%, #a00000 100%);
+    border: none;
+    height: 60px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    box-shadow: 0 10px 20px rgba(128, 0, 0, 0.3);
 }
 
 .submit-btn:hover {
-    background-color: #FFD700;
-    color: #800000;
-    border-color: #FFD700;
-    box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.3);
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .sports-hero {
-        padding: 40px 15px;
-    }
-    .hero-text h1 {
-        font-size: 2.2rem;
-    }
-    .hero-images img {
-        width: 100%;
-    }
-    .form-container {
-        padding: 30px 20px;
-    }
+    transform: scale(1.02);
+    filter: brightness(1.2);
 }
 
 /* =========================================
-   LOADER & SUCCESS POPUP STYLES
+   SUCCESS POPUP (Champion Style)
    ========================================= */
-
-/* Dark Overlay for Loader and Popup */
-.loader-overlay, .popup-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-    backdrop-filter: blur(5px);
-}
-
-/* The Spinning Wheel */
-.spinner {
-    width: 60px;
-    height: 60px;
-    border: 6px solid rgba(255, 215, 0, 0.3); /* Faded Gold */
-    border-top-color: #FFD700; /* Solid Gold */
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-/* Success Popup Box */
 .popup-box {
-    background-color: #232222;
-    padding: 40px;
-    border-radius: 12px;
-    text-align: center;
-    max-width: 450px;
-    border: 2px solid #FFD700;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    animation: popIn 0.4s ease;
+    background: #1a1a1a;
+    border-radius: 30px;
+    border: 2px solid var(--gold);
+    padding: 50px;
 }
 
-.popup-box h2 {
-    color: #FFD700;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-}
-
-.popup-box p {
-    color: #ccc;
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-.popup-btn {
-    background-color: #800000;
-    color: #FFD700;
-    border: none;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.3s;
-}
-
-.popup-btn:hover {
-    background-color: #FFD700;
-    color: #800000;
-}
-
-@keyframes popIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+.spinner {
+    border: 4px solid rgba(255, 215, 0, 0.1);
+    border-left-color: var(--gold); /* Cleaner spinner */
+    width: 50px;
+    height: 50px;
 }
