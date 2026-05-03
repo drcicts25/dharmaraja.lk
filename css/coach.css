@@ -69,7 +69,7 @@ body {
 .hero-images img {
     width: 280px;
     height: 200px;
-    object-fit: cover; /* Ensures image fills the specified dimensions */
+    object-fit: cover;
     border-radius: 10px;
     border: 2px solid #333;
     transition: 0.3s;
@@ -169,6 +169,26 @@ body {
     resize: vertical;
 }
 
+.checkbox-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.checkbox-group label {
+    font-family: 'Inter', sans-serif !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    color: #ccc !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .submit-btn {
     font-family: 'Oswald', sans-serif;
     background: linear-gradient(135deg, var(--maroon) 0%, #a00000 100%);
@@ -191,6 +211,9 @@ body {
     box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
 }
 
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
 @media (max-width: 768px) {
     .form-grid {
         grid-template-columns: 1fr;
@@ -199,6 +222,10 @@ body {
         grid-column: span 1;
     }
     .form-container {
-        padding: 30px 20px;
+        padding: 30px 15px;
+    }
+    .checkbox-group {
+        flex-direction: column; /* This aligns checkboxes vertically on mobile */
+        gap: 12px;
     }
 }
