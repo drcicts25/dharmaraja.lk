@@ -179,6 +179,7 @@ a {
     justify-content: space-evenly;
     align-items: center;
     height: 90dvh;
+    background-color: #0d0d0d;
 
     /* Two fold */
     & > div {
