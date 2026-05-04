@@ -174,7 +174,6 @@ a {
 #menu-btn, .mobile-crest { display: none; }
 
 #features > section {
-    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
