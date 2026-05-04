@@ -198,13 +198,14 @@ a {
             text-transform: capitalize;
             font-size: 3.5em;
             font-family: "Old-English";
+            color: #f7f7f7;
         }
 
         & > p {
             font-size: 1.3em;
             font-weight: 400;
             max-width: 500px;
-            color: #292929;
+            color: #d1d1d1;
         }
     }
 
