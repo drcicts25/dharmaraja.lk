@@ -229,3 +229,85 @@ body {
         gap: 12px;
     }
 }
+
+/* =========================================
+   DOWNLOAD PDF BLOCK
+   ========================================= */
+.download-pdf-container {
+    max-width: 850px;
+    margin: 0 auto 40px auto; /* Centers it and adds space below */
+    background-color: #800000; /* Dharmaraja Maroon */
+    color: white;
+    padding: 25px 35px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border-left: 6px solid #FFD700; /* Gold Accent */
+}
+
+.pdf-info {
+    max-width: 70%;
+}
+
+.pdf-info h3 {
+    color: #FFD700;
+    margin: 0 0 8px 0;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pdf-info p {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.pdf-action {
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #FFD700;
+    color: #800000;
+    text-decoration: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.download-btn:hover {
+    background-color: #ffffff;
+    color: #800000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Mobile Adjustments for the PDF Block */
+@media (max-width: 768px) {
+    .download-pdf-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        border-left: none;
+        border-top: 6px solid #FFD700;
+    }
+    
+    .pdf-info {
+        max-width: 100%;
+    }
+
+    .pdf-action {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
