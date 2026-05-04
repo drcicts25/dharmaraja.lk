@@ -411,7 +411,6 @@ footer {
             text-align: center;
             &:nth-child(3) {
                 margin: auto;
-                display: flex;
                 padding: 0 1.5em;
                 width: 100%;
                 max-width: 400px;
