@@ -211,28 +211,34 @@ body {
     box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
 }
 
-/* =========================================
-   MOBILE RESPONSIVENESS
-   ========================================= */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-    .form-grid {
-        grid-template-columns: 1fr;
+    .sports-hero {
+        padding: 40px 15px;
     }
-    .full-width {
-        grid-column: span 1;
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    .hero-images img {
+        width: 100%;
     }
     .form-container {
-        padding: 30px 15px;
+        padding: 30px 20px;
     }
+
+
     .checkbox-group {
-        flex-direction: column; /* This aligns checkboxes vertically on mobile */
+        flex-direction: column;
+        align-items: flex-start;
         gap: 12px;
     }
+    
+    .checkbox-item {
+        width: 100%;
+    }
+    /* ------------------------------------- */
 }
 
-/* =========================================
-   DOWNLOAD PDF BLOCK
-   ========================================= */
 .download-pdf-container {
     max-width: 850px;
     margin: 0 auto 40px auto; /* Centers it and adds space below */
