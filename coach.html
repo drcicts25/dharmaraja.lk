@@ -54,112 +54,31 @@
         </section>
 
         <section class="form-section-wrapper">
-
-            <div class="download-pdf-container">
-                <div class="pdf-info">
-                    <h3>Prefer an Offline Application?</h3>
-                    <p>Download the soft copy of the application form, fill it out manually, and hand it over directly to the school office along with your CV.</p>
-                </div>
-                <div class="pdf-action">
-                    <!-- Replace the href link with the actual path to your PDF file -->
-                    <a href="media/Coach_Application_Form.pdf" download="Dharmaraja_Coach_Application.pdf" class="download-btn">
-                        ↓ Download PDF
-                    </a>
-                </div>
-            </div>
            
             <div class="form-container">
                 <h2>Coach Application Form</h2>
-                <p class="subtitle" style="text-align: center; color: #aaa; margin-bottom: 20px;">Please fill out all the necessary details accurately. Fields marked with <span>*</span> are compulsory.</p>
-                
-               <form id="coachForm" enctype="multipart/form-data">
-                    <div class="form-grid">
-                        
-                        <div class="input-group full-width">
-                            <label>Full Name <span>*</span></label>
-                            <input type="text" name="full_name" required placeholder="Enter your full name">
-                        </div>
+                <p class="subtitle" style="text-align: center; color: #aaa; margin-bottom: 20px;"><label>Applicants are informed herewith that this application process is based on the Circular No. 2009/20 of the Ministry of Education.<br>
+All the conditions pertaining to this temporary appointment will be informed to you at an interview to be held in due course, and is mandatory to sign an agreement with the school authorities, please notice that by submitting your application, you agree to abide by the following conditions.<br>
+<span>*</span> All Sports Instructors must agree to serve the college as full-time employees.<br>
+<span>*</span> Once appointed as a sports Instructor at this college, you must not serve at any school or other institution as a full-time or a part-time instructor.<br>
+<span>*</span> You must not work at any private academy as a full-time or a part-time instructor.<br>
+<span>*</span> You must accept that if you are found guilty of any disciplinary offense, the Principal of Dharmaraja College has the authority to dismiss you at any time without further notice.<br>
+<span>*</span> If you decide to discontinue your service for personal reasons, you must submit a written letter of resignation to the principal at least one month prior to your intended date of resignation. Failure to provide the notice as intended upon a sudden resignation will result in a deduction of one month’s salary, along with additional penalty fees as determined by the college management.<br>   
+<br>
+Please prepare your application in accordance with the following specimen and submit it to the Principal of Dharmaraja College, Kandy, on or before 10th May 2026, Applicants are welcome to submit a separate CV together with the application.</label></p>
+            </div>
 
-                        <div class="input-group">
-                            <label>Age <span>*</span></label>
-                            <input type="number" name="age" required placeholder="e.g., 35" min="18" max="60">
-                        </div>
-
-                        <div class="input-group">
-                            <label>Sport Applied For <span>*</span></label>
-                            <select name="sport_applied" id="sportSelect" required>
-                                <option value="" disabled selected>-- Select a Sport --</option>
-                            </select>
-                        </div>
-
-                        <div class="input-group">
-                            <label>Contact Number <span>*</span></label>
-                            <input type="tel" name="contact_number" required placeholder="Mobile or Landline">
-                        </div>
-
-                        <div class="input-group">
-                            <label>Email Address <span>*</span></label>
-                            <input type="email" name="email" required placeholder="example@email.com">
-                        </div>
-
-                        <div class="input-group full-width">
-                            <label>Address <span>*</span></label>
-                            <textarea name="address" required placeholder="Enter your residential address" style="min-height: 80px;"></textarea>
-                        </div>
-
-                        <div class="input-group">
-                            <label>Age Group Applied For <span>*</span></label>
-                            <select name="age_group_applied" id="ageGroupSelect" required>
-                                <option value="" disabled selected>-- Select Sport First --</option>
-                            </select>
-                        </div>
-
-                        <div class="input-group">
-                            <label>Availability <span>*</span></label>
-                            <input type="text" name="availability" required placeholder="e.g., Weekdays Evening">
-                        </div>
-
-                        <div class="input-group full-width">
-                            <label>Coaching Experience (Years & Details) <span>*</span></label>
-                            <textarea name="experience" required placeholder="Minimum 5 years required"></textarea>
-                        </div>
-
-                        <div class="input-group full-width">
-                            <label>Coaching Certifications <span>*</span></label>
-                            <textarea name="certifications" required placeholder="List Level 1 certificates and above"></textarea>
-                        </div>
-
-                        <div class="input-group full-width">
-                            <label>Educational Qualifications <span>*</span></label>
-                            <textarea name="education" required placeholder="O/L, A/L, Degrees, or Diplomas"></textarea>
-                        </div>
-
-                        <div class="input-group full-width">
-                            <label>Key Skills</label>
-                            <div class="checkbox-group">
-                                <label><input type="checkbox" name="key_skills[]" value="Leadership"> Leadership</label>
-                                <label><input type="checkbox" name="key_skills[]" value="Communication"> Communication</label>
-                                <label><input type="checkbox" name="key_skills[]" value="Team Management"> Team Management</label>
-                                <label><input type="checkbox" name="key_skills[]" value="Strategic Planning"> Strategic Planning</label>
-                            </div>
-                        </div>
-
-                        <div class="input-group full-width">
-                            <label>References / CV Upload (PDF/DOCX)<span>*</span></label>
-                            <input type="file" name="reference_files[]" accept=".pdf,.doc,.docx" multiple required>
-                        </div>
-
-                        <div class="input-group full-width">
-                            <label style="text-transform: none; font-family: 'Inter', sans-serif; letter-spacing: 0;">
-                                <input type="checkbox" name="declaration" required style="width: auto; margin-right: 10px;"> 
-                                I declare that the information provided is true and accurate. <span>*</span>
-                            </label>
-                        </div>
-
-                        <button type="submit" class="submit-btn full-width">Submit Application</button>
-                    </div>
-                </form>
-
+            <div class="download-pdf-container">
+                <div class="pdf-info">
+                    <h3>Download your Application here.</h3>
+                    <p>Download the soft copy of the application form, fill it out manually, and hand it over directly to the school office along with your CV and other references.</p>
+                </div>
+                <div class="pdf-action">
+                    <!-- Replace the href link with the actual path to your PDF file -->
+                    <a href="media/COACH.pdf" download="Dharmaraja_Coach_Application.pdf" class="download-btn">
+                        ↓ Download PDF
+                    </a>
+                </div>
             </div>
         </section>
     </main>
