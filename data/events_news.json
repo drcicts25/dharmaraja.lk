@@ -1,5 +1,12 @@
 {
     "events": [
+         {
+            "title": "Annual Sportsmeet",
+            "logo": "./media/events_news/space.png",
+            "reference": "",
+            "description": "ICT Day of the ICT Society of Dharmaraja College",
+            "image": "506943282_1179023224236731_7842668854135316776_n.jpg"
+        },
         {
             "title": "The 24th Principal’s Ceremonial Welcome",
             "logo": "./media/events_news/space.png",
@@ -49,14 +56,8 @@
             "reference": "",
             "description": "ICT Day of the ICT Society of Dharmaraja College",
             "image": "506943282_1179023224236731_7842668854135316776_n.jpg"
-        },
-        {
-            "title": "Annual Sportsmeet",
-            "logo": "./media/events_news/space.png",
-            "reference": "",
-            "description": "ICT Day of the ICT Society of Dharmaraja College",
-            "image": "506943282_1179023224236731_7842668854135316776_n.jpg"
         }
+       
       
     ],
     "news": [
