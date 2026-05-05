@@ -1,1 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inter-House Sports Meet 2026 | Dharmaraja College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maroon: #660000;
+            --maroon-light: #8b0000;
+            --gold: #D4AF37;
+            --gold-gradient: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            --dark: #0f0f0f;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-sub: #cccccc;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--dark);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(102, 0, 0, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(15, 15, 15, 0.4), var(--dark)),
+                        url('https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+        }
+
+        header p {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-sub);
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -100px auto 0;
+            padding: 0 20px 80px;
+        }
+
+        /* Section Headings */
+        h2 {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 15px auto 0;
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* House Grid Styles */
+        .houses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .house-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .house-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--gold);
+        }
+
+        .house-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .house-card p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* House Specific Glows */
+        .mahanayaka { border-bottom: 4px solid #ff3131; box-shadow: 0 0 15px rgba(255, 49, 49, 0.1); }
+        .dharmaraja { border-bottom: 4px solid #3186ff; box-shadow: 0 0 15px rgba(49, 134, 255, 0.1); }
+        .ananda { border-bottom: 4px solid #ffd131; box-shadow: 0 0 15px rgba(255, 209, 49, 0.1); }
+        .nalanda { border-bottom: 4px solid #31ff5d; box-shadow: 0 0 15px rgba(49, 255, 93, 0.1); }
+
+        /* Professional Scoreboard */
+        .scoreboard-container { margin-top: 40px; }
+
+        .scoreboard {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+
+        .scoreboard th {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            color: var(--gold);
+            padding: 20px;
+            text-align: left;
+        }
+
+        .scoreboard tr {
+            transition: transform 0.3s ease;
+        }
+
+        .scoreboard td {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            font-size: 1.1rem;
+        }
+
+        .scoreboard td:first-child { border-radius: 10px 0 0 10px; font-weight: 700; border-left: 1px solid var(--glass-border); }
+        .scoreboard td:last-child { border-radius: 0 10px 10px 0; border-right: 1px solid var(--glass-border); text-align: right; color: var(--gold); }
+
+        .scoreboard tr:hover td {
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        /* Schedule Timeline */
+        .schedule-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .event-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(102, 0, 0, 0.2);
+            padding: 25px 35px;
+            border-radius: 12px;
+            border-left: 5px solid var(--gold);
+        }
+
+        .event-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .event-time {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            background: rgba(0,0,0,0.3);
+            padding: 5px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        footer {
+            padding: 60px 20px;
+            background: #080808;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { margin-top: -50px; }
+            .event-item { flex-direction: column; gap: 10px; text-align: center; }
+            .scoreboard td { padding: 15px 10px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dharmaraja College</h1>
+        <p>Annual Inter-House Sports Meet — 2026</p>
+    </header>
+
+    <div class="container">
+        
+        <h2>The Royal Houses</h2>
+        <div class="houses-grid">
+            <div class="house-card mahanayaka">
+                <h3>Mahanayaka</h3>
+                <p>Crimson Red</p>
+            </div>
+            <div class="house-card dharmaraja">
+                <h3>Dharmaraja</h3>
+                <p>Ocean Blue</p>
+            </div>
+            <div class="house-card ananda">
+                <h3>Ananda</h3>
+                <p>Golden Yellow</p>
+            </div>
+            <div class="house-card nalanda">
+                <h3>Nalanda</h3>
+                <p>Emerald Green</p>
+            </div>
+        </div>
+
+        <h2>Championship Standings</h2>
+        <div class="glass-card scoreboard-container">
+            <table class="scoreboard">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>House</th>
+                        <th style="text-align: right;">Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Dharmaraja House</td>
+                        <td>145.0</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Mahanayaka House</td>
+                        <td>132.5</td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>Nalanda House</td>
+                        <td>128.0</td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>Ananda House</td>
+                        <td>110.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Event Schedule</h2>
+        <div class="glass-card">
+            <div class="schedule-list">
+                <div class="event-item">
+                    <span class="event-name">Opening Ceremony & March Past</span>
+                    <span class="event-time">08:00 AM</span>
+                </div>
+                <div class="event-item">
+                    <span class="event-name">100m Junior Finals (U-12/14)</span>
+                    <span class="event-time">09:30 AM</span>
+                </div>
+                <div class="event-item">
+                    <span class="event-name">High Jump Senior Championship</span>
+                    <span class="event-time">11:00 AM</span>
+                </div>
+                <div class="event-item">
+                    <span class="event-name">Inter-House Invitational Relay</span>
+                    <span class="event-time">02:30 PM</span>
+                </div>
+                <div class="event-item">
+                    <span class="event-name">Awards Ceremony</span>
+                    <span class="event-time">04:00 PM</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+      <footer id="footer">
+        <section>
+            <div>
+                <img src="media/logo-footer.png" alt="DRC" />
+                <p>
+                    Dharmaraja College, founded in 1887 by Sir Henry Steel Olcott, is a premier Buddhist boys'
+                    school in Kandy, Sri Lanka with around 300+ teaching staff and over 5,000 students.
+                </p>
+            </div>
+            <div>
+                <h3></h3>
+                <ul>
+                    <li><img src="media/call.png" />0812 234 495</li>
+                    <li><img src="media/location.png" />Louis Peiris Mawatha, Kandy.</li>
+                    <li><img src="media/mail.png" />info@dharmaraja.lk</li>
+                </ul>
+            </div>
+            <div>
+                <div>
+                    <h3>FOLLOW US</h3>
+                    <h4>GET IN TOUCH WITH US</h4>
+                </div>
+
+                <section>
+                    <a href="" target="_blank"><img src="media/facebook.png" alt="Facebook" /></a>
+                    <a href="" target="_blank"><img src="media/instagram.png" alt="Instagram" /></a>
+                    <a href="" target="_blank"><img src="media/whatsapp.png" alt="whatsapp" /></a>
+                </section>
+            </div>
+        </section>
+        <hr />
+        <h5>All Rights Reserved © 2025 Dharmaraja College<br>PROJECT BY ICT SOCIETY OF THE DHARMARAJA COLLEGE</h5>
+    </footer>
+
+</body>
+</html>
