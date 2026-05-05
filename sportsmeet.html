@@ -3,12 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>37th Winston Hooles Trophy 2026 | Dharmaraja vs Kingswood ODI</title>
-    <meta name="description"
-        content="The 37th Winston Hooles Memorial Trophy One Day encounter between Dharmaraja College and Kingswood College, held at Pallekele International Cricket Stadium on April 5, 2026.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inter-House Athletic Championship 2026 | Dharmaraja College</title>
+    <meta name="description" content="Annual Inter-House Sports Meet of Dharmaraja College, Kandy.">
     <link rel="icon" type="image/x-icon" href="media/Crest - Colored.png">
     <link rel="stylesheet" href="css/odi_match.css">
+    <style>
+        /* Specific overrides for Sportsmeet aesthetic */
+        :root {
+            --mahanayaka: #ff3131;
+            --dharmaraja: #3186ff;
+            --ananda: #ffd131;
+            --nalanda: #31ff5d;
+        }
+        .house-dot { height: 12px; width: 12px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+        .bg-maha { background-color: var(--mahanayaka); }
+        .bg-raja { background-color: var(--dharmaraja); }
+        .bg-ananda { background-color: var(--ananda); }
+        .bg-nalanda { background-color: var(--nalanda); }
+    </style>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -16,47 +29,43 @@
 
 <body>
 
-    <!-- NAV -->
     <nav class="site-nav" id="siteNav">
         <a href="#" class="nav-brand">
             <img src="media/Crest - Colored.png" alt="Crest">
             Dharmaraja
         </a>
         <div class="nav-links">
-            <a href="#details">Details</a>
-            <a href="#legacy">Legacy</a>
-            <a href="#score">Score</a>
-            <a href="#history">History</a>
+            <a href="#details">Schedule</a>
+            <a href="#legacy">Houses</a>
+            <a href="#score">Points Table</a>
+            <a href="#history">Records</a>
         </div>
     </nav>
 
-    <!-- HERO -->
     <header class="hero">
         <div class="hero-image-right" id="heroRightImg">
-            <img src="media/Bigmatch_media/odi_hero1.webp" alt="Winston Hooles Trophy" class="hero-slide active">
-            <img src="media/Bigmatch_media/odi_hero2.webp" alt="Winston Hooles Trophy" class="hero-slide">
-            <img src="media/Bigmatch_media/odi_hero3.webp" alt="Winston Hooles Trophy" class="hero-slide">
+            <img src="media/Bigmatch_media/track1.webp" alt="Track and Field" class="hero-slide active">
+            <img src="media/Bigmatch_media/track2.webp" alt="Athletes" class="hero-slide">
+            <img src="media/Bigmatch_media/track3.webp" alt="March Past" class="hero-slide">
         </div>
         <div class="hero-gradient-overlay"></div>
         <div class="hero-inner">
-            <span class="hero-label">Winston Hooles Memorial Trophy · 2026</span>
-            <h1>37th One Day<br>Encounter</h1>
-            <p class="hero-desc">Dharmaraja College vs Kingswood College — the 37th Winston Hooles Memorial Trophy one
-                day
-                cricket encounter at Pallekele International Cricket Stadium.</p>
+            <span class="hero-label">Annual Athletic Championship · 2026</span>
+            <h1>Inter-House<br>Sports Meet</h1>
+            <p class="hero-desc">The ultimate test of speed, strength, and house pride at the Bogambara Stadium. Four houses, one championship trophy.</p>
             <div class="hero-actions">
-                <a href="#score" class="btn-primary">View Score <span>↗</span></a>
-                <a href="#details" class="btn-outline">Match Details <span>↗</span></a>
+                <a href="#score" class="btn-primary">House Standings <span>↗</span></a>
+                <a href="#details" class="btn-outline">Event Schedule <span>↗</span></a>
             </div>
             <div class="hero-stats-row">
                 <div class="hero-stat-text">
-                    <strong>37th</strong>
-                    <span>Encounter</span>
+                    <strong>100+</strong>
+                    <span>Events</span>
                 </div>
                 <div class="hero-stat-divider"></div>
                 <div class="hero-stat-text">
-                    <strong>50 Overs</strong>
-                    <span>Format</span>
+                    <strong>4 Houses</strong>
+                    <span>Competing</span>
                 </div>
                 <div class="hero-stat-divider"></div>
                 <div class="hero-stat-text">
@@ -68,117 +77,85 @@
         </div>
     </header>
 
-    <!-- MATCH DETAILS -->
     <section id="details" class="details">
-        <h2>Match Details</h2>
-        <p class="section-sub-dark">Everything you need to know about the 37th Winston Hooles Memorial Trophy.</p>
+        <h2>Championship Schedule</h2>
+        <p class="section-sub-dark">Key timeline for the final day of the Athletic Championship.</p>
         <div class="details-grid">
             <div class="detail-card">
-                <strong>Date</strong>
-                <p>April 5, 2026</p>
-                <span class="detail-note">One Day Match</span>
+                <strong>Opening</strong>
+                <p>08:30 AM</p>
+                <span class="detail-note">March Past & Opening Ceremony</span>
             </div>
             <div class="detail-card">
-                <strong>Venue</strong>
-                <p>Pallekele International Cricket Stadium</p>
-                <span class="detail-note">Kandy, Sri Lanka</span>
+                <strong>Track Finals</strong>
+                <p>10:00 AM - 12:30 PM</p>
+                <span class="detail-note">100m, 200m, 400m Finals</span>
             </div>
             <div class="detail-card">
-                <strong>Start Time</strong>
-                <p>10:00 AM</p>
-                <span class="detail-note">50-over format</span>
+                <strong>Relays</strong>
+                <p>02:00 PM</p>
+                <span class="detail-note">Inter-House Invitational Relays</span>
             </div>
             <div class="detail-card">
-                <strong>Trophy</strong>
-                <p>Winston Hooles Memorial</p>
-                <span class="detail-note">37th Edition</span>
+                <strong>Closing</strong>
+                <p>04:30 PM</p>
+                <span class="detail-note">Awards Ceremony</span>
             </div>
         </div>
     </section>
 
-    <!-- LEGACY & HERITAGE -->
     <section id="legacy" class="legacy">
         <div class="legacy-grid">
             <div class="legacy-text">
-                <h2>The Winston Hooles<br>Trophy</h2>
-                <p>The Winston Hooles Memorial Trophy is one of the most prestigious limited-overs cricket
-                    encounters in Sri Lankan school cricket. Contested between Dharmaraja College and
-                    Kingswood College, this one-day fixture has been a showcase of cricketing talent from
-                    the hill capital since its inception.</p>
-                <p>Named in honour of Winston Hooles, this annual encounter has grown into a celebrated
-                    tradition, bringing together generations of old boys, students, and cricket
-                    enthusiasts from both schools.</p>
-                <div class="legacy-numbers">
-                    <div>
-                        <strong>37</strong>
-                        <span>Encounters Played</span>
-                    </div>
-                    <div>
-                        <strong>50 over</strong>
-                        <span>Match Format</span>
-                    </div>
-                </div>
+                <h2>The Royal<br>Houses</h2>
+                <p>The spirit of Dharmaraja is divided into four legendary houses. Every year, students compete fiercely to bring honor to their respective colors.</p>
+                <ul style="list-style: none; margin-top: 20px;">
+                    <li><span class="house-dot bg-maha"></span> <strong>Mahanayaka</strong> - The Pride in Red</li>
+                    <li><span class="house-dot bg-raja"></span> <strong>Dharmaraja</strong> - The Power in Blue</li>
+                    <li><span class="house-dot bg-ananda"></span> <strong>Ananda</strong> - The Glory in Yellow</li>
+                    <li><span class="house-dot bg-nalanda"></span> <strong>Nalanda</strong> - The Strength in Green</li>
+                </ul>
             </div>
             <div class="carousel-container" id="odiCarousel">
-                <button class="carousel-btn carousel-btn-left" aria-label="Previous"
-                    onclick="shiftCarousel('odiCarousel', -1)">&#8249;</button>
+                <button class="carousel-btn carousel-btn-left" onclick="shiftCarousel('odiCarousel', -1)">&#8249;</button>
                 <div class="carousel-track">
-                    <div class="carousel-slide" data-index="0"><img src="media/Bigmatch_media/odi_1.webp"
-                            alt="ODI moment 1"></div>
-                    <div class="carousel-slide" data-index="1"><img src="media/Bigmatch_media/odi_2.webp"
-                            alt="ODI moment 2"></div>
-                    <div class="carousel-slide" data-index="2"><img src="media/Bigmatch_media/odi_3.webp"
-                            alt="ODI moment 3"></div>
-                    <div class="carousel-slide" data-index="3"><img src="media/Bigmatch_media/odi_5.webp"
-                            alt="ODI moment 4"></div>
+                    <div class="carousel-slide" data-index="0"><img src="media/Bigmatch_media/maha.webp" alt="Mahanayaka House"></div>
+                    <div class="carousel-slide" data-index="1"><img src="media/Bigmatch_media/raja.webp" alt="Dharmaraja House"></div>
+                    <div class="carousel-slide" data-index="2"><img src="media/Bigmatch_media/ananda.webp" alt="Ananda House"></div>
+                    <div class="carousel-slide" data-index="3"><img src="media/Bigmatch_media/nalanda.webp" alt="Nalanda House"></div>
                 </div>
-                <button class="carousel-btn carousel-btn-right" aria-label="Next"
-                    onclick="shiftCarousel('odiCarousel', 1)">&#8250;</button>
+                <button class="carousel-btn carousel-btn-right" onclick="shiftCarousel('odiCarousel', 1)">&#8250;</button>
                 <div class="carousel-dots" id="odiCarouselDots"></div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- SCOREBOARD -->
     <section id="score" class="score-section">
-        <h2>Score of the Day</h2>
+        <h2>House Points Table</h2>
         <div id="scoreboard-root"></div>
     </section>
 
-    <!-- MATCH HISTORY -->
     <section id="history" class="history-section">
-        <h2>Recent History</h2>
-        <p class="section-sub-dark" style="color: rgba(255,255,255,0.5);">Past results of the Winston Hooles Memorial
-            Trophy.</p>
+        <h2>Defending Champions</h2>
+        <p class="section-sub-dark" style="color: rgba(255,255,255,0.5);">Who dominated the field last year?</p>
         <div class="history-timeline">
             <div class="history-entry">
-                <div class="history-year">
-                    2025
-                    <span class="match-number">36th Match</span>
-                </div>
+                <div class="history-year">2025 <span class="match-number">Champions</span></div>
                 <p class="history-result">
-                    <strong>Dharmaraja College</strong> defeated Kingswood College by <strong>85 runs</strong> to clinch
-                    the 36th Winston Hooles Memorial Trophy on April 21, 2025.
+                    <strong>Dharmaraja House</strong> secured the overall championship with 450 points, dominating the track events.
                 </p>
-                <span class="history-badge win">Dharmaraja Win</span>
+                <span class="history-badge win">Dharmaraja House</span>
             </div>
             <div class="history-entry">
-                <div class="history-year">
-                    2024
-                    <span class="match-number">35th Match</span>
-                </div>
+                <div class="history-year">2024 <span class="match-number">Champions</span></div>
                 <p class="history-result">
-                    <strong>Kingswood College</strong> beat Dharmaraja by <strong>10 runs</strong> to win the 35th
-                    encounter.
+                    <strong>Mahanayaka House</strong> narrowly defeated Ananda House to take home the trophy.
                 </p>
-                <span class="history-badge loss">Kingswood Win</span>
+                <span class="history-badge loss">Mahanayaka House</span>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-top">
             <div class="footer-col">
@@ -188,15 +165,13 @@
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <a href="#details">Match Details</a>
-                <a href="#legacy">Trophy Legacy</a>
-                <a href="#score">Scoreboard</a>
-                <a href="#history">History</a>
+                <a href="#details">Schedule</a>
+                <a href="#legacy">House History</a>
+                <a href="#score">Standings</a>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
                 <p>info@dharmaraja.lk</p>
-                <p>0812 234 495</p>
                 <p>Kandy, Sri Lanka</p>
             </div>
         </div>
@@ -205,10 +180,9 @@
         </div>
     </footer>
 
-    <!-- REACT -->
     <script type="text/babel">
         function Countdown() {
-            const target = new Date('2026-04-05T10:00:00+05:30');
+            const target = new Date('2026-05-15T08:30:00+05:30'); // Update to Sports Meet Date
             const [diff, setDiff] = React.useState(target - new Date());
 
             React.useEffect(() => {
@@ -216,7 +190,7 @@
                 return () => clearInterval(t);
             }, []);
 
-            if (diff <= 0) return <p className="countdown-done">Match is complete!</p>;
+            if (diff <= 0) return <p className="countdown-done">Meet is underway!</p>;
 
             const d = Math.floor(diff / 86400000);
             const h = Math.floor((diff / 3600000) % 24);
@@ -233,59 +207,44 @@
             );
         }
 
-        function Scoreboard() {
+        function HouseStandings() {
+            const houses = [
+                { name: 'Dharmaraja', points: 342, color: '#3186ff', logo: 'media/logo_dharmaraja.png' },
+                { name: 'Mahanayaka', points: 310, color: '#ff3131', logo: 'media/logo_maha.png' },
+                { name: 'Ananda', points: 285, color: '#ffd131', logo: 'media/logo_ananda.png' },
+                { name: 'Nalanda', points: 250, color: '#31ff5d', logo: 'media/logo_nalanda.png' }
+            ];
+
             return (
                 <div className="scoreboard-container">
                     <div className="innings-table">
                         <div className="innings-header-row">
-                            <div className="innings-col-label"></div>
-                            <div className="innings-col-label">Score</div>
-                            <div className="innings-col-label">Overs</div>
+                            <div className="innings-col-label">House</div>
+                            <div className="innings-col-label">Current Points</div>
                         </div>
-                        <div className="innings-row">
-                            <div className="innings-team-cell">
-                                <img src="media/logo_dharmaraja.png" alt="DRCK" className="sb-logo-sm" />
-                                <span className="innings-team-name" style={{ color: '#8a1528' }}>Dharmaraja</span>
+                        {houses.map((house, index) => (
+                            <div className="innings-row" key={index}>
+                                <div className="innings-team-cell">
+                                    <div className="house-dot" style={{backgroundColor: house.color}}></div>
+                                    <span className="innings-team-name" style={{ color: house.color }}>{house.name}</span>
+                                </div>
+                                <div className="innings-score-cell">
+                                    <p className="sb-runs-sm" style={{color: '#fff'}}>{house.points}</p>
+                                </div>
                             </div>
-                            <div className="innings-score-cell">
-                                <p className="sb-runs-sm maroon">195/10</p>
-                            </div>
-                            <div className="innings-score-cell">
-                                <span className="sb-overs" style={{ fontSize: '1rem' }}>49.3 ov</span>
-                            </div>
-                        </div>
-                        <div className="innings-row">
-                            <div className="innings-team-cell">
-                                <img src="media/logo_kingswood.png" alt="KCK" className="sb-logo-sm" />
-                                <span className="innings-team-name" style={{ color: '#1a3d7c' }}>Kingswood</span>
-                            </div>
-                            <div className="innings-score-cell">
-                                <p className="sb-runs-sm blue">112/10</p>
-                            </div>
-                            <div className="innings-score-cell">
-                                <span className="sb-overs" style={{ fontSize: '1rem' }}>33.1 ov</span>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                     <div className="sb-result maroon-result">
-                        Dharmaraja College won by 83 runs
-                    </div>
-                    <div className="sb-status">
-                        <div className="sb-status-item"><span>Format</span><strong>50 Overs</strong></div>
-                        <div className="sb-status-divider"></div>
-                        <div className="sb-status-item"><span>Match</span><strong>Completed</strong></div>
-                        <div className="sb-status-divider"></div>
-                        <div className="sb-status-item"><span>Winner</span><strong style={{ color: '#8a1528' }}>Dharmaraja</strong></div>
+                        Current Leader: Dharmaraja House
                     </div>
                 </div>
             );
         }
 
         ReactDOM.createRoot(document.getElementById('countdown-root')).render(<Countdown />);
-        ReactDOM.createRoot(document.getElementById('scoreboard-root')).render(<Scoreboard />);
+        ReactDOM.createRoot(document.getElementById('scoreboard-root')).render(<HouseStandings />);
     </script>
 
-    <!-- VANILLA JS -->
     <script>
         // Hero slideshow
         (function () {
@@ -312,82 +271,27 @@
             prev = y;
         });
 
-        // Fade-in on scroll
-        const obs = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
-        }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('section').forEach(s => obs.observe(s));
-
-        // Active nav link highlighting
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(s => {
-                if (window.scrollY >= s.offsetTop - 120) {
-                    current = s.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // ── 3D Image Carousel ──
+        // 3D Image Carousel initialization
         const carouselState = {};
-
         function initCarousel(containerId) {
             const container = document.getElementById(containerId);
             if (!container) return;
             const slides = container.querySelectorAll('.carousel-slide');
             const total = slides.length;
             carouselState[containerId] = { current: 0, total: total, autoTimer: null };
-
-            // Create dots
-            const dotsContainer = container.querySelector('.carousel-dots');
-            if (dotsContainer) {
-                dotsContainer.innerHTML = '';
-                for (let i = 0; i < total; i++) {
-                    const dot = document.createElement('button');
-                    dot.className = 'carousel-dot';
-                    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-                    dot.addEventListener('click', () => goToSlide(containerId, i));
-                    dotsContainer.appendChild(dot);
-                }
-            }
-
             updateCarousel(containerId);
-            startAutoPlay(containerId);
-
-            // Pause auto-play on hover
-            container.addEventListener('mouseenter', () => stopAutoPlay(containerId));
-            container.addEventListener('mouseleave', () => startAutoPlay(containerId));
         }
 
         function updateCarousel(containerId) {
             const container = document.getElementById(containerId);
             const state = carouselState[containerId];
             const slides = container.querySelectorAll('.carousel-slide');
-            const total = state.total;
-            const current = state.current;
-
             slides.forEach((slide, i) => {
-                slide.classList.remove('active', 'prev', 'next', 'far-prev', 'far-next');
-                const offset = (i - current + total) % total;
+                slide.classList.remove('active', 'prev', 'next');
+                const offset = (i - state.current + state.total) % state.total;
                 if (offset === 0) slide.classList.add('active');
-                else if (offset === 1 || (offset === 1 - total)) slide.classList.add('next');
-                else if (offset === total - 1 || (offset === -1)) slide.classList.add('prev');
-                else if (offset === 2 || offset === 2 - total) slide.classList.add('far-next');
-                else if (offset === total - 2 || offset === -2) slide.classList.add('far-prev');
-            });
-
-            // Update dots
-            const dots = container.querySelectorAll('.carousel-dot');
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === current);
+                else if (offset === 1) slide.classList.add('next');
+                else if (offset === state.total - 1) slide.classList.add('prev');
             });
         }
 
@@ -397,26 +301,6 @@
             updateCarousel(containerId);
         }
 
-        function goToSlide(containerId, index) {
-            carouselState[containerId].current = index;
-            updateCarousel(containerId);
-        }
-
-        function startAutoPlay(containerId) {
-            stopAutoPlay(containerId);
-            carouselState[containerId].autoTimer = setInterval(() => {
-                shiftCarousel(containerId, 1);
-            }, 4000);
-        }
-
-        function stopAutoPlay(containerId) {
-            if (carouselState[containerId] && carouselState[containerId].autoTimer) {
-                clearInterval(carouselState[containerId].autoTimer);
-                carouselState[containerId].autoTimer = null;
-            }
-        }
-
-        // Initialize the carousel
         initCarousel('odiCarousel');
     </script>
 </body>
