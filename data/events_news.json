@@ -1,5 +1,14 @@
 {
     "events": [
+        
+         {
+            "title": "Annual Sports Meet 2026",
+            "logo": "./media/events_news/space.png",
+            "reference": "./sportsmeet.html",
+            "description": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
+            "image": "rugby1.jpeg"
+        }, 
+        
         {
             "title": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
             "logo": "./media/events_news/space.png",
