@@ -18,18 +18,7 @@
     <link rel="stylesheet" href="css/Loading SCR.css" />
 </head>
 
-<body onload="myFunction()">
-    
-    <!-- START OF LOADING SCREEN -->
-    <div id="loader">
-        <!-- Using the exact white crest outline PNG -->
-        <img src="media/Crest - White.png" alt="Dharmaraja Crest" class="loader-crest">
-        
-        <!-- Using the exact Sinhala text PNG -->
-        <img src="media/sinhala-text.png" alt="Sinhala Text" class="loader-text">
-    </div>
-    <!-- END OF LOADING SCREEN -->
-
+<body>
     <main id="main">
 
         <div class="hero">
@@ -39,7 +28,18 @@
             </div>
 
             <div class="video-container">
-               
+                <video autoplay muted playsinline class="background-video active">
+                    <source src="Timeline 1.mov" type="video/mp4">
+                </video>
+                <video muted playsinline class="background-video">
+                    <source src="Timeline 2.mov" type="video/mp4">
+                </video>
+                <video muted playsinline class="background-video">
+                    <source src="media/vidbann.mp4" type="video/mp4">
+                </video>
+                <video muted playsinline class="background-video">
+                    <source src="media/vidbann1.mp4" type="video/mp4">
+                </video>
                 <video muted playsinline class="background-video">
                     <source src="media/Timeline4 (1) (1).mp4" type="video/mp4">
                 </video>
@@ -73,12 +73,12 @@
             <section>
                 <h2>About Us</h2>
                 <p>
-                 Established in 1887 by Sir Henry Steel Olcott, Dharmaraja College is a premier Buddhist
-                 school in Kandy with a 137-year legacy. Founded through the determination of Kandyan nobles who 
-                 defied British opposition legendarily clearing the site in a single night—the college has evolved
-                 from its humble beginnings into a modern educational powerhouse. Today, it serves over 4,100 students
-                 and features world-class facilities.
-                    
+                    The Kandy Buddhist High School, founded in 1887 by Sir Henry Steel Olcott, faced challenges
+                    securing a plot near the Tooth Relic Temple due to a sacred Bo tree. Despite British opposition,
+                    Wadugodapitiya Punchirala Korale removed the tree overnight to build the school, facing severe
+                    consequences from the British rulers for the perceived sacrilege. Today, with 4100 students and
+                    192 staff, the school thrives. Recent infrastructural additions, including a Swimming Pool
+                    Complex and an International Cricket Ground, mark its growth despite historical obstacles.
                 </p>
                 <a href="about.html" class="explore">Explore</a>
             </section>
@@ -207,7 +207,7 @@
                     </ul>
                 </nav>
                 <!-- Hamburger Button -->
-                <div id="menu-btn" style=" margin-top: 0px;" onclick="menu();"><i></i><i></i><i></i></div>
+                <div id="menu-btn" onclick="menu();"><i></i><i></i><i></i></div>
             </div>
         </div>
     </header>
@@ -245,17 +245,14 @@
         <hr />
         <h5>All Rights Reserved © 2025 Dharmaraja College<br>PROJECT BY ICT SOCIETY OF THE DHARMARAJA COLLEGE</h5>
     </footer>
-   <script>
-         const header = document.querySelector("#header");
-        
+    <script>
+        const header = document.querySelector("#header");
+        var myVar;
         function myFunction() {
-            // Wait 3.5 seconds (duration of our CSS animation) before removing loader
-            setTimeout(showPage, 3500);
+            myVar = setTimeout(showPage, 3000);
         }
-        
         function showPage() {
-            const loader = document.getElementById("loader");
-            loader.style.display = "none";
+            document.getElementById("loader").style.display = "none";
         }
         var menuOpen = 0;
         function menu() {

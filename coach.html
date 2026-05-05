@@ -58,6 +58,7 @@
 
         <section class="form-section-wrapper">
            
+<<<<<<< Updated upstream
 <style>
     /* Base Styles */
     body {
@@ -243,6 +244,20 @@
     </div>
 
 </div>
+=======
+            <div class="form-container">
+                <h2>Coach Application Form</h2>
+                <p class="subtitle" style="text-align: left; color: #aaa; margin-bottom: 20px;"><label>Applicants are informed herewith that this application process is based on the Circular No. 2009/20 of the Ministry of Education.<br><br>
+All the conditions pertaining to this temporary appointment will be informed to you at an interview to be held in due course, and is mandatory to sign an agreement with the school authorities, please notice that by submitting your application, you agree to abide by the following conditions.<br><br>
+<span>*</span> All Sports Instructors must agree to serve the college as full-time employees.<br><br>
+<span>*</span> Once appointed as a sports Instructor at this college, you must not serve at any school or other institution as a full-time or a part-time instructor.<br><br>
+<span>*</span> You must not work at any private academy as a full-time or a part-time instructor.<br><br>
+<span>*</span> You must accept that if you are found guilty of any disciplinary offense, the Principal of Dharmaraja College has the authority to dismiss you at any time without further notice.<br><br>
+<span>*</span> If you decide to discontinue your service for personal reasons, you must submit a written letter of resignation to the principal at least one month prior to your intended date of resignation. Failure to provide the notice as intended upon a sudden resignation will result in a deduction of one month’s salary, along with additional penalty fees as determined by the college management.<br><br>   
+<br>
+Please prepare your application in accordance with the following specimen and submit it to the Principal of Dharmaraja College, Kandy, on or before 10th May 2026, Applicants are welcome to submit a separate CV together with the application.</label></p>
+            </div>
+>>>>>>> Stashed changes
 
             <div class="download-pdf-container">
                 <div class="pdf-info">
@@ -250,6 +265,7 @@
                     <p>Download the soft copy of the application form, fill it out manually, and hand it over directly to the school office along with your CV and other references.</p>
                 </div>
                 <div class="pdf-action">
+                    <!-- Replace the href link with the actual path to your PDF file -->
                     <a href="media/COACH.pdf" download="Dharmaraja_Coach_Application.pdf" class="download-btn">
                         ↓ Download PDF
                     </a>
@@ -340,53 +356,48 @@
         const sportSelect = document.getElementById("sportSelect");
         const ageGroupSelect = document.getElementById("ageGroupSelect");
 
-        if(sportSelect) {
-            for (let sport in sportsData) {
-                let option = document.createElement("option");
-                option.value = sport;
-                option.textContent = sport;
-                sportSelect.appendChild(option);
-            }
-
-            sportSelect.addEventListener("change", function() {
-                ageGroupSelect.innerHTML = '<option value="" disabled selected>-- Select Age Group --</option>';
-                const selectedSport = this.value;
-                const ageGroups = sportsData[selectedSport];
-                if (ageGroups) {
-                    ageGroups.forEach(function(age) {
-                        let option = document.createElement("option");
-                        option.value = (age.includes("All") || age.includes("Junior")) ? age : "Under " + age;
-                        option.textContent = option.value;
-                        ageGroupSelect.appendChild(option);
-                    });
-                }
-            });
+        for (let sport in sportsData) {
+            let option = document.createElement("option");
+            option.value = sport;
+            option.textContent = sport;
+            sportSelect.appendChild(option);
         }
 
-        const coachForm = document.getElementById('coachForm');
-        if(coachForm) {
-            coachForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                document.getElementById('loader').style.display = 'flex';
-                let formData = new FormData(this);
-                fetch('upload_coach.php', { method: 'POST', body: formData })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('loader').style.display = 'none';
-                    if(data.status === 'success') {
-                        document.getElementById('successPopup').style.display = 'flex';
-                        document.getElementById('coachForm').reset();
-                    } else {
-                        alert('Error: ' + data.message);
-                    }
-                })
-                .catch(error => {
-                    document.getElementById('loader').style.display = 'none';
-                    alert('A network error occurred.');
+        sportSelect.addEventListener("change", function() {
+            ageGroupSelect.innerHTML = '<option value="" disabled selected>-- Select Age Group --</option>';
+            const selectedSport = this.value;
+            const ageGroups = sportsData[selectedSport];
+            if (ageGroups) {
+                ageGroups.forEach(function(age) {
+                    let option = document.createElement("option");
+                    option.value = (age.includes("All") || age.includes("Junior")) ? age : "Under " + age;
+                    option.textContent = option.value;
+                    ageGroupSelect.appendChild(option);
                 });
+            }
+        });
+
+        document.getElementById('coachForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('loader').style.display = 'flex';
+            let formData = new FormData(this);
+            fetch('upload_coach.php', { method: 'POST', body: formData })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loader').style.display = 'none';
+                if(data.status === 'success') {
+                    document.getElementById('successPopup').style.display = 'flex';
+                    document.getElementById('coachForm').reset();
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                document.getElementById('loader').style.display = 'none';
+                alert('A network error occurred.');
             });
-        }
+        });
     </script>
-    <script src="js/home.js" type="module"></script>
+        <script src="js/home.js" type="module"></script>
 </body>
 </html>
