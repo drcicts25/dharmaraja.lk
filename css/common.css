@@ -338,6 +338,10 @@ footer {
     .nav-box::before { display: none; }
 
     #menu-btn {
+ 
+    position: fixed;
+    margin-right: 10px;
+    margin-top: 60px;
         display: flex; flex-direction: column; justify-content: center; align-items: center;
         width: 45px; height: 45px; background: #000; border-radius: 50%;
         cursor: pointer; z-index: 2000; position: relative; right: 0;
