@@ -246,24 +246,17 @@
         <h5>All Rights Reserved © 2025 Dharmaraja College<br>PROJECT BY ICT SOCIETY OF THE DHARMARAJA COLLEGE</h5>
     </footer>
    <script>
-        const header = document.querySelector("#header");
-        var myVar;
+         const header = document.querySelector("#header");
         
         function myFunction() {
-            // Displays the loader for 2.5 seconds before fading out
-            myVar = setTimeout(showPage, 2500);
+            // Wait 3.5 seconds (duration of our CSS animation) before removing loader
+            setTimeout(showPage, 3500);
         }
         
         function showPage() {
             const loader = document.getElementById("loader");
-            loader.style.opacity = "0";
-            loader.style.visibility = "hidden";
-            // Wait for the fade-out transition to finish before hiding completely
-            setTimeout(() => {
-                loader.style.display = "none";
-            }, 800); 
+            loader.style.display = "none";
         }
-        
         var menuOpen = 0;
         function menu() {
             if (menuOpen) {
