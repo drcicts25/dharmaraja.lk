@@ -1,10 +1,91 @@
-.loader {
-    position: absolute;
-    z-index: 5;
-    width: 100%;
+/* 
+ * @ Author: ICT SOCIETY OF DHARMARAJA COLLEGE
+ * Loading Screen Styles
+ */
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
-    background-color: rgb(0, 0, 0);
+    background-color: #000000; /* Deep black background */
+    z-index: 99999; /* Ensure it stays above everything, including navbars */
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    /* Smooth fade out when JS triggers */
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out; 
+}
+
+/* --- Glowing Crest Animation --- */
+.glowing-crest {
+    width: 200px;
+    height: auto;
+    /* Uses drop-shadow instead of box-shadow to perfectly wrap the transparent PNG edges */
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+    animation: crest-pulse 2s infinite ease-in-out;
+}
+
+@keyframes crest-pulse {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+        transform: scale(0.98);
+    }
+    50% {
+        /* Peak of the enhanced glow */
+        filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.5));
+        transform: scale(1.05); /* Slight pop effect */
+    }
+    100% {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+        transform: scale(0.98);
+    }
+}
+
+/* --- Glowing Text Animation (Bottom Middle) --- */
+.glowing-text {
+    position: absolute;
+    bottom: 12%; /* Places it at the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Ensures perfect centering */
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Old-English", serif; /* Matches your existing font */
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    animation: text-glow 2s infinite ease-in-out;
+}
+
+@keyframes text-glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        opacity: 0.7;
+    }
+    50% {
+        /* Enhanced white glow */
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.8);
+        opacity: 1;
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        opacity: 0.7;
+    }
+}
+
+/* --- Mobile Responsiveness --- */
+@media screen and (max-width: 768px) {
+    .glowing-crest {
+        width: 140px;
+    }
+    
+    .glowing-text {
+        font-size: 1.4rem;
+        bottom: 10%;
+        letter-spacing: 0.1em;
+    }
 }
