@@ -9,62 +9,106 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #000000; /* Deep black background */
+    background-color: #000000;
     z-index: 99999;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Smooth transition when the webpage finishes loading */
-    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out; 
 }
 
-/* --- Crest Styles & Animation --- */
+/* --- Crest Styles --- */
 .loader-crest {
-    width: 280px; /* Adjust size as needed */
+    width: 280px;
     height: auto;
-    /* Apply the animation loop */
-    animation: sideways-glow-fade 3s infinite linear;
+    /* Runs for 3.5s, linear pacing, runs ONLY ONCE, stops at the final frame (forwards) */
+    animation: crest-sequence 3.5s linear 1 forwards;
+    opacity: 0; /* Starts hidden */
 }
 
-/* --- Sinhala Text PNG Styles & Animation --- */
+/* --- Text Styles --- */
 .loader-text {
     position: absolute;
     bottom: 12%; 
     left: 50%;
-    transform: translateX(-50%); /* Perfect horizontal centering */
-    width: 350px; /* Adjust size as needed to match the crest */
+    transform: translateX(-50%);
+    width: 400px; /* Adjust size based on your PNG */
     height: auto;
-    /* Apply the same animation loop */
-    animation: sideways-glow-fade 3s infinite linear;
+    /* Runs for 3.5s, runs ONLY ONCE, stops at the final frame (forwards) */
+    animation: text-sequence 3.5s linear 1 forwards;
+    opacity: 0; /* Starts hidden */
 }
 
-/* --- The Fade In -> Static -> Fade Out + Sideways Glow Animation --- */
-@keyframes sideways-glow-fade {
+/* --- Crest Animation Sequence --- */
+@keyframes crest-sequence {
     0% {
-        opacity: 0; /* Fade In Start */
-        /* Glow starts slightly on the left (-20px) */
-        filter: drop-shadow(-20px 0px 10px rgba(255, 255, 255, 0));
+        opacity: 0;
+        filter: drop-shadow(-30px 0px 0px rgba(255, 255, 255, 0));
     }
-    25% {
-        opacity: 1; /* Reaches full visibility */
-        /* Glow moves inwards */
-        filter: drop-shadow(-10px 0px 20px rgba(255, 255, 255, 0.8));
+    15% {
+        opacity: 1; /* Fade in complete */
+        filter: drop-shadow(-30px 0px 0px rgba(255, 255, 255, 0));
     }
-    50% {
-        opacity: 1; /* Remains Static (No size changes) */
-        /* Glow is perfectly centered and brightest */
-        filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 1));
+    40% {
+        opacity: 1;
+        filter: drop-shadow(-20px 0px 15px rgba(255, 255, 255, 0.8)); /* Glow starts left */
     }
-    75% {
-        opacity: 1; /* Remains Static */
-        /* Glow moves to the right */
-        filter: drop-shadow(10px 0px 20px rgba(255, 255, 255, 0.8));
+    55% {
+        opacity: 1;
+        filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 1)); /* Glow centered & brightest */
+    }
+    70% {
+        opacity: 1;
+        filter: drop-shadow(20px 0px 15px rgba(255, 255, 255, 0.8)); /* Glow moves right */
+    }
+    85% {
+        opacity: 1; /* Holds static before final fade out */
+        filter: drop-shadow(30px 0px 0px rgba(255, 255, 255, 0)); /* Glow disappears */
     }
     100% {
-        opacity: 0; /* Fades out completely */
-        /* Glow finishes on the right (+20px) */
-        filter: drop-shadow(20px 0px 10px rgba(255, 255, 255, 0));
+        opacity: 0; /* Final Fade out */
+        filter: drop-shadow(30px 0px 0px rgba(255, 255, 255, 0));
+    }
+}
+
+/* --- Text Animation Sequence (Left-to-Right Reveal) --- */
+@keyframes text-sequence {
+    0% {
+        opacity: 1;
+        /* clip-path masks the image. inset(top right bottom left). 100% right means completely hidden */
+        clip-path: inset(0 100% 0 0); 
+        filter: drop-shadow(-30px 0px 0px rgba(255, 255, 255, 0));
+    }
+    25% {
+        opacity: 1;
+        /* 0% on all sides means fully revealed left-to-right */
+        clip-path: inset(0 0 0 0); 
+        filter: drop-shadow(-30px 0px 0px rgba(255, 255, 255, 0));
+    }
+    40% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        filter: drop-shadow(-20px 0px 15px rgba(255, 255, 255, 0.8)); /* Glow starts left */
+    }
+    55% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 1)); /* Glow centered */
+    }
+    70% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        filter: drop-shadow(20px 0px 15px rgba(255, 255, 255, 0.8)); /* Glow moves right */
+    }
+    85% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        filter: drop-shadow(30px 0px 0px rgba(255, 255, 255, 0)); /* Holds static */
+    }
+    100% {
+        opacity: 0; /* Final Fade out */
+        clip-path: inset(0 0 0 0);
+        filter: drop-shadow(30px 0px 0px rgba(255, 255, 255, 0));
     }
 }
 
