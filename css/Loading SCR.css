@@ -39,36 +39,19 @@
     opacity: 0; /* Starts hidden */
 }
 
-/* --- Crest Animation Sequence (Fade in -> Slight Center Glow -> Fade Out) --- */
+/* --- Crest Animation Sequence (Fade in -> Static -> Fade Out) --- */
 @keyframes crest-sequence {
     0% {
         opacity: 0; /* Starts invisible */
-        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
     }
     15% {
         opacity: 1; /* Fade in complete */
-        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
-    }
-    40% {
-        opacity: 1; /* Static phase before glow */
-        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0)); 
-    }
-    55% {
-        opacity: 1;
-        /* Slight, fair glow coming directly from the center of the logo lines (0px offset) */
-        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6)); 
-    }
-    70% {
-        opacity: 1;
-        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0)); /* Glow disappears */
     }
     85% {
-        opacity: 1; /* Holds static before final fade out */
-        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0)); 
+        opacity: 1; /* Holds static */
     }
     100% {
         opacity: 0; /* Final Fade out */
-        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
     }
 }
 
@@ -85,7 +68,7 @@
         clip-path: inset(0 0 0 0); 
     }
     85% {
-        opacity: 1; /* Holds static the entire time, NO GLOW */
+        opacity: 1; /* Holds static the entire time */
         clip-path: inset(0 0 0 0);
     }
     100% {
