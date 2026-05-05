@@ -15,18 +15,62 @@
     <link rel="stylesheet" href="css/common.css" />
     <!-- <link rel="stylesheet" href="css/common-2.css" /> -->
     <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/Loading SCR.css" />
+    <link rel="stylesheet" href="css/Loading SCR2.css" />
 </head>
 
-<body>
+ <body onload="myFunction()">
+    
+    <!-- START OF LOADING SCREEN -->
+    <div id="loader">
+        <img src="media/crest-outline.png" alt="Dharmaraja Crest" class="loader-crest">
+    </div>
+  
+<header>
+        <div class="container navbar">
+            <div class="logo-area">
+                <a href="index.html"><img src="media/Crest - Colored.png" alt="College Logo" class="main-logo" height="70px"></a></div>
+                <div class="brand">
+                    <h1 style="font-family: poppins;">Dharmaraja</h1>
+                    <span>College</span>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="societies.html">Societies</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger-btn">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="societies.html">Societies</a></li>
+                    <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
     <main id="main">
 
         <div class="hero">
 
-            <div id="hero">
-                <a href="index.html" class="logo"><img src="media/logo-top-white.png" alt="Logo" /></a>
-            </div>
-
+        
             <div class="video-container">
                 <video autoplay muted playsinline class="background-video active">
                     <source src="Timeline 1.mov" type="video/mp4">
@@ -51,7 +95,7 @@
             <!-- Text and button overlay -->
             <div class="overlay">
                 <h2>WELCOME TO </h2>
-                <h1>Dharmaraja College Kandy</h1>
+                <h1>Dharmaraja College</h1>
                 <h3>Aththāhi Aththano Natho</h3>
                 <a href="#about" class="explore-hero">Explore</a>
             </div>
@@ -178,72 +222,32 @@
         </div>
     </main>
 
-    <header id="header">
-        <div class="navbar-wrapper">
-            <!-- Desktop Logo (Hidden on mobile) -->
-            <div class="logo-box">
-                <a href="./" class="logo-wrap">
-                    <img src="media/Crest - Colored.png" alt="Logo" class="main-logo" />
-                    <div class="logo-text">
-                        <span class="college-name">Dharmaraja</span>
-                        <span class="college-sub">College</span>
-                    </div>
-                </a>
+     <footer>
+        <div class="container footer-grid">
+            <div class="footer-section contact-info">
+                <p><img src="media/call.png" height="20px" /></i> 0812 234 495</p>
+                <p style="padding-bottom: 10px;"><img src="media/location.png" height="25px" /></i> Louis Peiris Mawatha, Kandy.</p>
+                <p><img src="media/mail.png"  height="15px"/></i> info@dharmaraja.lk</p>
             </div>
 
-            <!-- Navigation Section -->
-            <div class="nav-box">
-                <nav class="nav-container">
-                    <!-- Mobile Crest (Visible on overlay) -->
-                    <img src="media/Crest - Colored.png" class="mobile-crest" alt="Crest">
-                    <ul id="nav-list">
-                        <li><a href="./">Home</a></li>
-                        <li><a href="about.html">Who Are We</a></li>
-                        <li><a href="events_news.html">News & Events</a></li>
-                        <li><a href="academics.html">Academics</a></li>
-                        <li><a href="societies.html">Clubs & Societies</a></li>
-                        <li><a href="sports.html">Sports & Games</a></li>
-                        <li><a href="#footer">Contact</a></li>
-                    </ul>
-                </nav>
-                <!-- Hamburger Button -->
-                <div id="menu-btn" onclick="menu();"><i></i><i></i><i></i></div>
+            <div class="footer-section brand-center">
+                <img src="media/logo-footer.png" alt="Shield Emblem" class="footer-shield" height="70px">
+            </div>
+
+            <div class="footer-section social-links">
+                <h3>FOLLOW US</h3>
+                <p class="subtitle">GET IN TOUCH WITH US</p>
+                <div class="icons">
+                    <a href="" target="_blank"><img src="media/facebook.png" alt="Facebook" height="40px"/></a>
+                        <a href="" target="_blank"><img src="media/instagram.png" alt="Instagram" height="40px"/></a>
+                        <a href="" target="_blank"><img src="media/whatsapp.png" alt="whatsapp" height="40px"/></a>
+                </div>
             </div>
         </div>
-    </header>
 
-    <footer id="footer">
-        <section>
-            <div>
-                <img src="media/logo-footer.png" alt="DRC" />
-                <p>
-                    Dharmaraja College, founded in 1887 by Sir Henry Steel Olcott, is a premier Buddhist boys'
-                    school in Kandy, Sri Lanka with around 300+ teaching staff and over 5,000 students.
-                </p>
-            </div>
-            <div>
-                <h3></h3>
-                <ul>
-                    <li><img src="media/call.png" />0812 234 495</li>
-                    <li><img src="media/location.png" />Louis Peiris Mawatha, Kandy.</li>
-                    <li><img src="media/mail.png" />info@dharmaraja.lk</li>
-                </ul>
-            </div>
-            <div>
-                <div>
-                    <h3>FOLLOW US</h3>
-                    <h4>GET IN TOUCH WITH US</h4>
-                </div>
-
-                <section>
-                    <a href="" target="_blank"><img src="media/facebook.png" alt="Facebook" /></a>
-                    <a href="" target="_blank"><img src="media/instagram.png" alt="Instagram" /></a>
-                    <a href="" target="_blank"><img src="media/whatsapp.png" alt="whatsapp" /></a>
-                </section>
-            </div>
-        </section>
-        <hr />
-        <h5>All Rights Reserved © 2025 Dharmaraja College<br>PROJECT BY ICT SOCIETY OF THE DHARMARAJA COLLEGE</h5>
+        <div class="footer-bottom">
+            <p>All Rights Reserved &copy; 2025 Dharmaraja College | PROJECT BY ICT SOCIETY OF THE DHARMARAJA COLLEGE</p>
+        </div>
     </footer>
     <script>
         const header = document.querySelector("#header");

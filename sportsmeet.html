@@ -7,24 +7,281 @@
     <title>Inter-House Athletic Championship 2026 | Dharmaraja College</title>
     <meta name="description" content="Annual Inter-House Sports Meet of Dharmaraja College, Kandy.">
     <link rel="icon" type="image/x-icon" href="media/Crest - Colored.png">
-    <link rel="stylesheet" href="css/odi_match.css">
-    <style>
-        /* Specific overrides for Sportsmeet aesthetic */
-        :root {
-            --mahanayaka: #ff3131;
-            --dharmaraja: #3186ff;
-            --ananda: #ffd131;
-            --nalanda: #31ff5d;
-        }
-        .house-dot { height: 12px; width: 12px; border-radius: 50%; display: inline-block; margin-right: 8px; }
-        .bg-maha { background-color: var(--mahanayaka); }
-        .bg-raja { background-color: var(--dharmaraja); }
-        .bg-ananda { background-color: var(--ananda); }
-        .bg-nalanda { background-color: var(--nalanda); }
-    </style>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        /* ── Tokens & Variables ── */
+        :root {
+            --maroon: #8a1528;
+            --blue: #1a3d7c;
+            --cream: #f5f0e8;
+            --off-white: #fafafa;
+            --gray-50: #f5f5f5;
+            --gray-100: #e8e8e8;
+            --gray-400: #999;
+            --gray-700: #444;
+            --gray-900: #1a1a1a;
+            
+            /* Updated House Specific Colors */
+            --ananda: #add8e6;    /* Light Blue */
+            --parakrama: #800080; /* Purple */
+            --gemunu: #ff3131;    /* Red */
+            --mahinda: #ffd131;   /* Yellow */
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-900);
+            background: var(--off-white);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ── Nav ── */
+        .site-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.7rem 2.5rem;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-100);
+            transition: transform 0.3s ease;
+        }
+
+        .site-nav.hide { transform: translateY(-100%); }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--gray-900);
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+        }
+
+        .nav-brand img { height: 36px; }
+        .nav-links { display: flex; gap: 1.8rem; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--maroon); }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            background: linear-gradient(135deg, rgb(60, 8, 15) 0%, rgb(10, 20, 55) 100%);
+            overflow: hidden;
+        }
+
+        .hero-image-right {
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 65%;
+            z-index: 1;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
+            mask-image: linear-gradient(to right, transparent 0%, black 40%);
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transform: translateX(8%);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+        }
+
+        .hero-slide.active { opacity: 1; transform: translateX(0); }
+        .hero-slide.exit { opacity: 0; transform: translateX(-8%); }
+
+        .hero-inner {
+            position: relative;
+            z-index: 3;
+            max-width: 700px;
+            padding: 6rem 4rem;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 5rem;
+            color: var(--cream);
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.7;
+            max-width: 420px;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary, .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-primary { background: var(--cream); color: var(--gray-900); }
+        .btn-outline { border: 1px solid rgba(255, 255, 255, 0.25); color: #fff; }
+
+        .hero-stats-row { display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; }
+        .hero-stat-divider { width: 1px; height: 40px; background: rgba(255, 255, 255, 0.2); }
+        .hero-stat-text strong { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--cream); display: block; }
+        .hero-stat-text span { font-size: 0.65rem; color: rgba(255, 255, 255, 0.45); text-transform: uppercase; }
+
+        .countdown { display: flex; gap: 0.8rem; }
+        .countdown > div {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 70px;
+        }
+        .countdown strong { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #fff; display: block; }
+        .countdown span { font-size: 0.6rem; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); }
+
+        /* ── Sections ── */
+        section { padding: 5rem 2rem; max-width: 1300px; margin: 0 auto; }
+        h2 { font-family: 'DM Serif Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 2rem; }
+        .section-sub-dark { text-align: center; color: var(--gray-400); margin: -1rem auto 3rem; max-width: 500px; }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .detail-card {
+            background: white;
+            padding: 2.5rem 1.5rem;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid var(--gray-100);
+            transition: 0.3s;
+        }
+        .detail-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .detail-card strong { font-size: 0.7rem; text-transform: uppercase; color: var(--blue); letter-spacing: 1px; }
+        .detail-card p { font-size: 1.2rem; font-weight: 700; margin: 0.5rem 0; }
+        .detail-note { font-size: 0.8rem; color: var(--maroon); font-weight: 600; }
+
+        /* ── House Legacy ── */
+        .legacy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .house-dot { height: 12px; width: 12px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+        
+        /* Specific House Backgrounds */
+        .bg-ananda { background-color: var(--ananda); }
+        .bg-parakrama { background-color: var(--parakrama); }
+        .bg-gemunu { background-color: var(--gemunu); }
+        .bg-mahinda { background-color: var(--mahinda); }
+
+        /* ── 3D Carousel ── */
+        .carousel-container {
+            position: relative;
+            height: 400px;
+            perspective: 1000px;
+        }
+        .carousel-track { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; }
+        .carousel-slide {
+            position: absolute;
+            width: 70%; height: 100%;
+            left: 15%; top: 0;
+            opacity: 0;
+            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+        .carousel-slide.active { opacity: 1; transform: translateZ(100px); z-index: 10; }
+        .carousel-slide.prev { opacity: 0.5; transform: translateX(-30%) scale(0.8) rotateY(20deg); z-index: 5; }
+        .carousel-slide.next { opacity: 0.5; transform: translateX(30%) scale(0.8) rotateY(-20deg); z-index: 5; }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%; transform: translateY(-50%);
+            background: rgba(255,255,255,0.8);
+            border: none; width: 40px; height: 40px; border-radius: 50%;
+            cursor: pointer; z-index: 20; font-size: 1.2rem;
+        }
+        .carousel-btn-left { left: 0; }
+        .carousel-btn-right { right: 0; }
+
+        /* ── Scoreboard ── */
+        .scoreboard-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .innings-header-row { display: grid; grid-template-columns: 2fr 1fr; padding: 1rem 2rem; background: var(--gray-50); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-400); }
+        .innings-row { display: grid; grid-template-columns: 2fr 1fr; padding: 1.2rem 2rem; border-bottom: 1px solid var(--gray-100); align-items: center; }
+        .innings-team-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; }
+        .sb-runs-sm { font-family: 'DM Serif Display', serif; font-size: 2rem; text-align: right; }
+        .sb-result { padding: 1rem; text-align: center; font-weight: 600; background: #f9eaec; color: var(--maroon); }
+
+        /* ── History ── */
+        .history-section { background: var(--gray-900); color: white; max-width: 100%; }
+        .history-timeline { max-width: 800px; margin: 0 auto; border-left: 2px solid var(--maroon); padding-left: 2rem; }
+        .history-entry { margin-bottom: 3rem; position: relative; }
+        .history-year { font-family: 'DM Serif Display', serif; font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .match-number { font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px; margin-left: 10px; }
+        .history-badge { display: inline-block; margin-top: 10px; padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .history-badge.win { background: rgba(224, 90, 109, 0.2); color: #e05a6d; }
+
+        footer { background: var(--gray-900); color: white; padding: 4rem 2rem 2rem; }
+        .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; max-width: 1300px; margin: 0 auto; }
+        .footer-school { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin: 10px 0; }
+        .footer-col h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--gray-400); margin-bottom: 1.2rem; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 3rem; padding-top: 2rem; font-size: 0.8rem; color: var(--gray-400); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            .legacy-grid { grid-template-columns: 1fr; }
+            .hero-image-right { width: 100%; opacity: 0.4; }
+            .footer-top { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 
 <body>
@@ -37,121 +294,81 @@
         <div class="nav-links">
             <a href="#details">Schedule</a>
             <a href="#legacy">Houses</a>
-            <a href="#score">Points Table</a>
+            <a href="#score">Points</a>
             <a href="#history">Records</a>
         </div>
     </nav>
 
     <header class="hero">
         <div class="hero-image-right" id="heroRightImg">
-            <img src="media/Bigmatch_media/track1.webp" alt="Track and Field" class="hero-slide active">
+            <img src="media/Bigmatch_media/track1.webp" alt="Track" class="hero-slide active">
             <img src="media/Bigmatch_media/track2.webp" alt="Athletes" class="hero-slide">
             <img src="media/Bigmatch_media/track3.webp" alt="March Past" class="hero-slide">
         </div>
-        <div class="hero-gradient-overlay"></div>
         <div class="hero-inner">
-            <span class="hero-label">Annual Athletic Championship · 2026</span>
+            <span class="hero-label">Dharmaraja College Sports · 2026</span>
             <h1>Inter-House<br>Sports Meet</h1>
-            <p class="hero-desc">The ultimate test of speed, strength, and house pride at the Bogambara Stadium. Four houses, one championship trophy.</p>
+            <p class="hero-desc">Speed, strength, and house pride at the Lake View Park Grounds.</p>
+            
             <div class="hero-actions">
-                <a href="#score" class="btn-primary">House Standings <span>↗</span></a>
-                <a href="#details" class="btn-outline">Event Schedule <span>↗</span></a>
+                <a href="#score" class="btn-primary">Standings</a>
+                <a href="#details" class="btn-outline">Schedule</a>
             </div>
+
             <div class="hero-stats-row">
-                <div class="hero-stat-text">
-                    <strong>100+</strong>
-                    <span>Events</span>
-                </div>
+                <div class="hero-stat-text"><strong>100+</strong><span>Events</span></div>
                 <div class="hero-stat-divider"></div>
-                <div class="hero-stat-text">
-                    <strong>4 Houses</strong>
-                    <span>Competing</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat-text">
-                    <strong>2026</strong>
-                    <span>Edition</span>
-                </div>
+                <div class="hero-stat-text"><strong>4</strong><span>Houses</span></div>
             </div>
-            <div id="countdown-root"></div>
+
+          
         </div>
     </header>
 
-    <section id="details" class="details">
-        <h2>Championship Schedule</h2>
-        <p class="section-sub-dark">Key timeline for the final day of the Athletic Championship.</p>
-        <div class="details-grid">
-            <div class="detail-card">
-                <strong>Opening</strong>
-                <p>08:30 AM</p>
-                <span class="detail-note">March Past & Opening Ceremony</span>
-            </div>
-            <div class="detail-card">
-                <strong>Track Finals</strong>
-                <p>10:00 AM - 12:30 PM</p>
-                <span class="detail-note">100m, 200m, 400m Finals</span>
-            </div>
-            <div class="detail-card">
-                <strong>Relays</strong>
-                <p>02:00 PM</p>
-                <span class="detail-note">Inter-House Invitational Relays</span>
-            </div>
-            <div class="detail-card">
-                <strong>Closing</strong>
-                <p>04:30 PM</p>
-                <span class="detail-note">Awards Ceremony</span>
-            </div>
-        </div>
-    </section>
+  
 
     <section id="legacy" class="legacy">
         <div class="legacy-grid">
             <div class="legacy-text">
-                <h2>The Royal<br>Houses</h2>
-                <p>The spirit of Dharmaraja is divided into four legendary houses. Every year, students compete fiercely to bring honor to their respective colors.</p>
+                <h2>The Four Houses</h2>
+                <p>The spirit of Dharmaraja is divided into four legendary houses, each competing for the prestigious Champions Trophy.</p>
                 <ul style="list-style: none; margin-top: 20px;">
-                    <li><span class="house-dot bg-maha"></span> <strong>Mahanayaka</strong> - The Pride in Red</li>
-                    <li><span class="house-dot bg-raja"></span> <strong>Dharmaraja</strong> - The Power in Blue</li>
-                    <li><span class="house-dot bg-ananda"></span> <strong>Ananda</strong> - The Glory in Yellow</li>
-                    <li><span class="house-dot bg-nalanda"></span> <strong>Nalanda</strong> - The Strength in Green</li>
+                    <li><span class="house-dot bg-ananda"></span> <strong>Ananda</strong> - Light Blue</li>
+                    <li><span class="house-dot bg-parakrama"></span> <strong>Parakrama</strong> - Purple</li>
+                    <li><span class="house-dot bg-gemunu"></span> <strong>Gemunu</strong> - Red</li>
+                    <li><span class="house-dot bg-mahinda"></span> <strong>Mahinda</strong> - Yellow</li>
                 </ul>
             </div>
-            <div class="carousel-container" id="odiCarousel">
-                <button class="carousel-btn carousel-btn-left" onclick="shiftCarousel('odiCarousel', -1)">&#8249;</button>
+            <div class="carousel-container" id="houseCarousel">
+                <button class="carousel-btn carousel-btn-left" onclick="shiftCarousel('houseCarousel', -1)">&#8249;</button>
                 <div class="carousel-track">
-                    <div class="carousel-slide" data-index="0"><img src="media/Bigmatch_media/maha.webp" alt="Mahanayaka House"></div>
-                    <div class="carousel-slide" data-index="1"><img src="media/Bigmatch_media/raja.webp" alt="Dharmaraja House"></div>
-                    <div class="carousel-slide" data-index="2"><img src="media/Bigmatch_media/ananda.webp" alt="Ananda House"></div>
-                    <div class="carousel-slide" data-index="3"><img src="media/Bigmatch_media/nalanda.webp" alt="Nalanda House"></div>
+                    <div class="carousel-slide"><img src="media/Bigmatch_media/ananda.webp" alt="Ananda"></div>
+                    <div class="carousel-slide"><img src="media/Bigmatch_media/parakrama.webp" alt="Parakrama"></div>
+                    <div class="carousel-slide"><img src="media/Bigmatch_media/gemunu.webp" alt="Gemunu"></div>
+                    <div class="carousel-slide"><img src="media/Bigmatch_media/mahinda.webp" alt="Mahinda"></div>
                 </div>
-                <button class="carousel-btn carousel-btn-right" onclick="shiftCarousel('odiCarousel', 1)">&#8250;</button>
-                <div class="carousel-dots" id="odiCarouselDots"></div>
+                <button class="carousel-btn carousel-btn-right" onclick="shiftCarousel('houseCarousel', 1)">&#8250;</button>
             </div>
         </div>
     </section>
 
-    <section id="score" class="score-section">
-        <h2>House Points Table</h2>
+    <section id="score">
+        <h2>House Standings</h2>
         <div id="scoreboard-root"></div>
     </section>
 
     <section id="history" class="history-section">
         <h2>Defending Champions</h2>
-        <p class="section-sub-dark" style="color: rgba(255,255,255,0.5);">Who dominated the field last year?</p>
         <div class="history-timeline">
             <div class="history-entry">
                 <div class="history-year">2025 <span class="match-number">Champions</span></div>
-                <p class="history-result">
-                    <strong>Dharmaraja House</strong> secured the overall championship with 450 points, dominating the track events.
-                </p>
-                <span class="history-badge win">Dharmaraja House</span>
+                <p>Ananda House secured the overall championship with 450 points, dominating the track events.</p>
+                <span class="history-badge win">Ananda House</span>
             </div>
             <div class="history-entry">
                 <div class="history-year">2024 <span class="match-number">Champions</span></div>
-                <p class="history-result">
-                    <strong>Mahanayaka House</strong> narrowly defeated Ananda House to take home the trophy.
-                </p>
-                <span class="history-badge loss">Mahanayaka House</span>
+                <p>Gemunu House narrowly defeated Mahinda House to take home the trophy.</p>
+                <span class="history-badge win">Gemunu House</span>
             </div>
         </div>
     </section>
@@ -159,14 +376,14 @@
     <footer>
         <div class="footer-top">
             <div class="footer-col">
-                <img src="media/Crest - Colored.png" alt="Crest" class="footer-crest">
+                <img src="media/Crest - Colored.png" alt="Crest" style="height: 50px; width: fit-content;">
                 <p class="footer-school">Dharmaraja College</p>
-                <p class="footer-tagline">Excellence · Discipline · Tradition</p>
+                <p>Excellence · Discipline · Tradition</p>
             </div>
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h4>Links</h4>
                 <a href="#details">Schedule</a>
-                <a href="#legacy">House History</a>
+                <a href="#legacy">Houses</a>
                 <a href="#score">Standings</a>
             </div>
             <div class="footer-col">
@@ -176,13 +393,13 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 ICT Society of Dharmaraja College. All rights reserved.</p>
+            <p>&copy; 2026 ICT Society of Dharmaraja College.</p>
         </div>
     </footer>
 
     <script type="text/babel">
         function Countdown() {
-            const target = new Date('2026-05-15T08:30:00+05:30'); // Update to Sports Meet Date
+            const target = new Date('2026-05-15T08:30:00');
             const [diff, setDiff] = React.useState(target - new Date());
 
             React.useEffect(() => {
@@ -207,102 +424,78 @@
             );
         }
 
-        function HouseStandings() {
+        function Standings() {
             const houses = [
-                { name: 'Dharmaraja', points: 342, color: '#3186ff', logo: 'media/logo_dharmaraja.png' },
-                { name: 'Mahanayaka', points: 310, color: '#ff3131', logo: 'media/logo_maha.png' },
-                { name: 'Ananda', points: 285, color: '#ffd131', logo: 'media/logo_ananda.png' },
-                { name: 'Nalanda', points: 250, color: '#31ff5d', logo: 'media/logo_nalanda.png' }
+                { name: 'Ananda', points: 342, color: '#add8e6' },
+                { name: 'Parakrama', points: 310, color: '#800080' },
+                { name: 'Gemunu', points: 285, color: '#ff3131' },
+                { name: 'Mahinda', points: 250, color: '#ffd131' }
             ];
 
             return (
                 <div className="scoreboard-container">
-                    <div className="innings-table">
-                        <div className="innings-header-row">
-                            <div className="innings-col-label">House</div>
-                            <div className="innings-col-label">Current Points</div>
-                        </div>
-                        {houses.map((house, index) => (
-                            <div className="innings-row" key={index}>
-                                <div className="innings-team-cell">
-                                    <div className="house-dot" style={{backgroundColor: house.color}}></div>
-                                    <span className="innings-team-name" style={{ color: house.color }}>{house.name}</span>
-                                </div>
-                                <div className="innings-score-cell">
-                                    <p className="sb-runs-sm" style={{color: '#fff'}}>{house.points}</p>
-                                </div>
+                    <div className="innings-header-row">
+                        <div>House</div>
+                        <div style={{textAlign:'right'}}>Points</div>
+                    </div>
+                    {houses.map((h, i) => (
+                        <div className="innings-row" key={i}>
+                            <div style={{display:'flex', alignItems:'center'}}>
+                                <span className="house-dot" style={{backgroundColor: h.color}}></span>
+                                <span className="innings-team-name" style={{color: h.color}}>{h.name}</span>
                             </div>
-                        ))}
-                    </div>
-                    <div className="sb-result maroon-result">
-                        Current Leader: Dharmaraja House
-                    </div>
+                            <div className="sb-runs-sm">{h.points}</div>
+                        </div>
+                    ))}
+                    <div className="sb-result">Current Leader: Ananda House</div>
                 </div>
             );
         }
 
         ReactDOM.createRoot(document.getElementById('countdown-root')).render(<Countdown />);
-        ReactDOM.createRoot(document.getElementById('scoreboard-root')).render(<HouseStandings />);
+        ReactDOM.createRoot(document.getElementById('scoreboard-root')).render(<Standings />);
     </script>
 
     <script>
-        // Hero slideshow
-        (function () {
-            const slides = document.querySelectorAll('.hero-slide');
-            let current = 0;
-            setInterval(() => {
-                const prev = current;
-                current = (current + 1) % slides.length;
-                slides[prev].classList.add('exit');
-                slides[prev].classList.remove('active');
-                slides[current].classList.add('active');
-                setTimeout(() => slides[prev].classList.remove('exit'), 1200);
-            }, 5000);
-        })();
+        // Hero Slideshow
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            slides[currentSlide].classList.add('exit');
+            const prev = currentSlide;
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+            setTimeout(() => slides[prev].classList.remove('exit'), 1200);
+        }, 5000);
 
-        // Nav show on scroll
-        const nav = document.getElementById('siteNav');
-        let prev = 0;
-        window.addEventListener('scroll', () => {
-            const y = window.scrollY;
-            nav.classList.toggle('show', y > 400 && y < prev);
-            nav.classList.toggle('hide', y > 400 && y >= prev);
-            if (y <= 400) { nav.classList.remove('show'); nav.classList.remove('hide'); }
-            prev = y;
-        });
-
-        // 3D Image Carousel initialization
-        const carouselState = {};
-        function initCarousel(containerId) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            const slides = container.querySelectorAll('.carousel-slide');
-            const total = slides.length;
-            carouselState[containerId] = { current: 0, total: total, autoTimer: null };
-            updateCarousel(containerId);
-        }
-
-        function updateCarousel(containerId) {
-            const container = document.getElementById(containerId);
-            const state = carouselState[containerId];
-            const slides = container.querySelectorAll('.carousel-slide');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active', 'prev', 'next');
-                const offset = (i - state.current + state.total) % state.total;
-                if (offset === 0) slide.classList.add('active');
-                else if (offset === 1) slide.classList.add('next');
-                else if (offset === state.total - 1) slide.classList.add('prev');
+        // 3D Carousel
+        const carouselState = { current: 0 };
+        function updateCarousel() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            slides.forEach((s, i) => {
+                s.classList.remove('active', 'prev', 'next');
+                if (i === carouselState.current) s.classList.add('active');
+                else if (i === (carouselState.current - 1 + slides.length) % slides.length) s.classList.add('prev');
+                else if (i === (carouselState.current + 1) % slides.length) s.classList.add('next');
             });
         }
-
-        function shiftCarousel(containerId, direction) {
-            const state = carouselState[containerId];
-            state.current = (state.current + direction + state.total) % state.total;
-            updateCarousel(containerId);
+        function shiftCarousel(id, dir) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            carouselState.current = (carouselState.current + dir + slides.length) % slides.length;
+            updateCarousel();
         }
+        updateCarousel();
 
-        initCarousel('odiCarousel');
+        // Nav Scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const nav = document.getElementById('siteNav');
+            if (currentScroll > lastScroll && currentScroll > 100) nav.classList.add('hide');
+            else nav.classList.remove('hide');
+            lastScroll = currentScroll;
+        });
     </script>
 </body>
-
 </html>
