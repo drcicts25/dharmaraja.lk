@@ -129,49 +129,77 @@ a {
     overflow: hidden;
 }
 
-/* --- THE HEADER (Desktop View) --- */
+/* --- THE HEADER (Single White Strip) --- */
 #header {
-    position: absolute;
+    position: fixed; /* Changed to fixed so it stays at the top while scrolling */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    background-color: #fff; /* The single white strip */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    transition: 0.3s ease;
 }
-.navbar-wrapper { display: flex; justify-content: space-between; align-items: flex-start; width: 100%; }
+
+.navbar-wrapper { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    max-width: 1400px; /* Optional: keeps content from stretching too far on ultrawide */
+    margin: 0 auto;
+    padding: 0 40px; /* Horizontal padding for the strip */
+}
 
 .logo-box {
-    background-color: #fff;
-    padding: 10px 45px 15px 30px;
-    border-bottom-right-radius: 45px;
+    background-color: transparent; /* Removed white block */
+    padding: 10px 0;
+    border-bottom-right-radius: 0; /* Removed radius */
     display: flex;
     align-items: center;
 }
+
 .logo-wrap { display: flex; align-items: center; gap: 15px; }
-.main-logo { height: 75px; }
+.main-logo { height: 60px; } /* Slightly smaller for a cleaner strip */
+
 .logo-text { display: flex; flex-direction: column; line-height: 1.1; color: #222; }
-.college-name { font-size: 1.6rem; font-weight: 700; }
-.college-sub { font-size: 1.3rem; font-weight: 400; opacity: 0.8; }
+.college-name { font-size: 1.4rem; font-weight: 700; color: #800000; } /* Added maroon touch */
+.college-sub { font-size: 1.1rem; font-weight: 400; opacity: 0.8; color: #1a3d7c; } /* Added blue touch */
 
 .nav-box {
-    background-color: #000;
-    padding: 25px 60px;
-    border-bottom-left-radius: 45px;
+    background-color: transparent; /* Removed black block */
+    padding: 0;
+    border-bottom-left-radius: 0; /* Removed radius */
     position: relative;
     display: flex;
     align-items: center;
 }
-.nav-box::before {
-    position: absolute;
-    height: 51px; width: 51px; top: 0;;
-    display: block; content: "";
-    background-image: radial-gradient(at 0% 100%, transparent 48px, #000 50px);
-    pointer-events: none;
-}
-#nav-list { display: flex; list-style: none; gap: 30px; }
-#nav-list li a { color: #fff; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
-#nav-list li a:hover { color: #ffcc00; }
 
-#menu-btn, .mobile-crest { display: none; }
+/* Removed the curve effect ::before element */
+.nav-box::before {
+    display: none;
+}
+
+#nav-list { display: flex; list-style: none; gap: 30px; }
+
+/* Changed link colors to black/dark gray for the white background */
+#nav-list li a { 
+    color: #333; 
+    font-size: 0.95rem; 
+    font-weight: 600; 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: 0.3s; 
+}
+
+#nav-list li a:hover { 
+    color: #800000; /* Dharmaraja Maroon on hover */
+}
+
+/* Adjust the Hamburger for the white background */
+#menu-btn {
+    background: #800000 !important; /* Maroon button on mobile */
+}
 
 #features > section {
     display: flex;
