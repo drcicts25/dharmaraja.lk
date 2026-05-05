@@ -29,11 +29,11 @@
             --gray-700: #444;
             --gray-900: #1a1a1a;
             
-            /* House Specific Colors */
-            --mahanayaka: #ff3131;
-            --dharmaraja: #3186ff;
-            --ananda: #ffd131;
-            --nalanda: #31ff5d;
+            /* Updated House Specific Colors */
+            --ananda: #add8e6;    /* Light Blue */
+            --parakrama: #800080; /* Purple */
+            --gemunu: #ff3131;    /* Red */
+            --mahinda: #ffd131;   /* Yellow */
         }
 
         *, *::before, *::after {
@@ -55,9 +55,7 @@
         /* ── Nav ── */
         .site-nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 100;
             display: flex;
             justify-content: space-between;
@@ -66,7 +64,6 @@
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--gray-100);
-            transform: translateY(0);
             transition: transform 0.3s ease;
         }
 
@@ -83,9 +80,7 @@
         }
 
         .nav-brand img { height: 36px; }
-
         .nav-links { display: flex; gap: 1.8rem; }
-
         .nav-links a {
             text-decoration: none;
             color: var(--gray-700);
@@ -94,7 +89,6 @@
             letter-spacing: 0.5px;
             transition: color 0.2s;
         }
-
         .nav-links a:hover { color: var(--maroon); }
 
         /* ── Hero ── */
@@ -162,9 +156,6 @@
             margin-bottom: 2rem;
         }
 
-        /* ── Buttons ── */
-        .hero-actions { display: flex; gap: 0.8rem; margin-bottom: 2.5rem; }
-        
         .btn-primary, .btn-outline {
             display: inline-flex;
             align-items: center;
@@ -180,7 +171,6 @@
         .btn-primary { background: var(--cream); color: var(--gray-900); }
         .btn-outline { border: 1px solid rgba(255, 255, 255, 0.25); color: #fff; }
 
-        /* ── Stats & Countdown ── */
         .hero-stats-row { display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; }
         .hero-stat-divider { width: 1px; height: 40px; background: rgba(255, 255, 255, 0.2); }
         .hero-stat-text strong { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--cream); display: block; }
@@ -202,7 +192,6 @@
         h2 { font-family: 'DM Serif Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 2rem; }
         .section-sub-dark { text-align: center; color: var(--gray-400); margin: -1rem auto 3rem; max-width: 500px; }
 
-        /* ── Schedule Grid ── */
         .details-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -224,10 +213,12 @@
         /* ── House Legacy ── */
         .legacy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         .house-dot { height: 12px; width: 12px; border-radius: 50%; display: inline-block; margin-right: 8px; }
-        .bg-maha { background-color: var(--mahanayaka); }
-        .bg-raja { background-color: var(--dharmaraja); }
+        
+        /* Specific House Backgrounds */
         .bg-ananda { background-color: var(--ananda); }
-        .bg-nalanda { background-color: var(--nalanda); }
+        .bg-parakrama { background-color: var(--parakrama); }
+        .bg-gemunu { background-color: var(--gemunu); }
+        .bg-mahinda { background-color: var(--mahinda); }
 
         /* ── 3D Carousel ── */
         .carousel-container {
@@ -239,8 +230,7 @@
         .carousel-slide {
             position: absolute;
             width: 70%; height: 100%;
-            left: 15%;
-            top: 0;
+            left: 15%; top: 0;
             opacity: 0;
             transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             border-radius: 15px;
@@ -261,7 +251,7 @@
         .carousel-btn-left { left: 0; }
         .carousel-btn-right { right: 0; }
 
-        /* ── Standings Table ── */
+        /* ── Scoreboard ── */
         .scoreboard-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .innings-header-row { display: grid; grid-template-columns: 2fr 1fr; padding: 1rem 2rem; background: var(--gray-50); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-400); }
         .innings-row { display: grid; grid-template-columns: 2fr 1fr; padding: 1.2rem 2rem; border-bottom: 1px solid var(--gray-100); align-items: center; }
@@ -278,7 +268,6 @@
         .history-badge { display: inline-block; margin-top: 10px; padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
         .history-badge.win { background: rgba(224, 90, 109, 0.2); color: #e05a6d; }
 
-        /* ── Footer ── */
         footer { background: var(--gray-900); color: white; padding: 4rem 2rem 2rem; }
         .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; max-width: 1300px; margin: 0 auto; }
         .footer-school { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin: 10px 0; }
@@ -319,7 +308,7 @@
         <div class="hero-inner">
             <span class="hero-label">Annual Athletic Championship · 2026</span>
             <h1>Inter-House<br>Sports Meet</h1>
-            <p class="hero-desc">The ultimate test of speed, strength, and house pride at the Bogambara Stadium.</p>
+            <p class="hero-desc">Speed, strength, and house pride at the Bogambara Stadium.</p>
             
             <div class="hero-actions">
                 <a href="#score" class="btn-primary">Standings</a>
@@ -350,22 +339,22 @@
     <section id="legacy" class="legacy">
         <div class="legacy-grid">
             <div class="legacy-text">
-                <h2>The Royal Houses</h2>
+                <h2>The Four Houses</h2>
                 <p>The spirit of Dharmaraja is divided into four legendary houses, each competing for the prestigious Champions Trophy.</p>
                 <ul style="list-style: none; margin-top: 20px;">
-                    <li><span class="house-dot bg-maha"></span> <strong>Mahanayaka</strong> - Red</li>
-                    <li><span class="house-dot bg-raja"></span> <strong>Dharmaraja</strong> - Blue</li>
-                    <li><span class="house-dot bg-ananda"></span> <strong>Ananda</strong> - Yellow</li>
-                    <li><span class="house-dot bg-nalanda"></span> <strong>Nalanda</strong> - Green</li>
+                    <li><span class="house-dot bg-ananda"></span> <strong>Ananda</strong> - Light Blue</li>
+                    <li><span class="house-dot bg-parakrama"></span> <strong>Parakrama</strong> - Purple</li>
+                    <li><span class="house-dot bg-gemunu"></span> <strong>Gemunu</strong> - Red</li>
+                    <li><span class="house-dot bg-mahinda"></span> <strong>Mahinda</strong> - Yellow</li>
                 </ul>
             </div>
             <div class="carousel-container" id="houseCarousel">
                 <button class="carousel-btn carousel-btn-left" onclick="shiftCarousel('houseCarousel', -1)">&#8249;</button>
                 <div class="carousel-track">
-                    <div class="carousel-slide"><img src="media/Bigmatch_media/maha.webp" alt="Mahanayaka"></div>
-                    <div class="carousel-slide"><img src="media/Bigmatch_media/raja.webp" alt="Dharmaraja"></div>
                     <div class="carousel-slide"><img src="media/Bigmatch_media/ananda.webp" alt="Ananda"></div>
-                    <div class="carousel-slide"><img src="media/Bigmatch_media/nalanda.webp" alt="Nalanda"></div>
+                    <div class="carousel-slide"><img src="media/Bigmatch_media/parakrama.webp" alt="Parakrama"></div>
+                    <div class="carousel-slide"><img src="media/Bigmatch_media/gemunu.webp" alt="Gemunu"></div>
+                    <div class="carousel-slide"><img src="media/Bigmatch_media/mahinda.webp" alt="Mahinda"></div>
                 </div>
                 <button class="carousel-btn carousel-btn-right" onclick="shiftCarousel('houseCarousel', 1)">&#8250;</button>
             </div>
@@ -382,13 +371,13 @@
         <div class="history-timeline">
             <div class="history-entry">
                 <div class="history-year">2025 <span class="match-number">Champions</span></div>
-                <p>Dharmaraja House secured the overall championship with 450 points, dominating the track events.</p>
-                <span class="history-badge win">Dharmaraja House</span>
+                <p>Ananda House secured the overall championship with 450 points, dominating the track events.</p>
+                <span class="history-badge win">Ananda House</span>
             </div>
             <div class="history-entry">
                 <div class="history-year">2024 <span class="match-number">Champions</span></div>
-                <p>Mahanayaka House narrowly defeated Ananda House to take home the trophy.</p>
-                <span class="history-badge win">Mahanayaka House</span>
+                <p>Gemunu House narrowly defeated Mahinda House to take home the trophy.</p>
+                <span class="history-badge win">Gemunu House</span>
             </div>
         </div>
     </section>
@@ -446,10 +435,10 @@
 
         function Standings() {
             const houses = [
-                { name: 'Dharmaraja', points: 342, color: '#3186ff' },
-                { name: 'Mahanayaka', points: 310, color: '#ff3131' },
-                { name: 'Ananda', points: 285, color: '#ffd131' },
-                { name: 'Nalanda', points: 250, color: '#31ff5d' }
+                { name: 'Ananda', points: 342, color: '#add8e6' },
+                { name: 'Parakrama', points: 310, color: '#800080' },
+                { name: 'Gemunu', points: 285, color: '#ff3131' },
+                { name: 'Mahinda', points: 250, color: '#ffd131' }
             ];
 
             return (
@@ -467,7 +456,7 @@
                             <div className="sb-runs-sm">{h.points}</div>
                         </div>
                     ))}
-                    <div className="sb-result">Current Leader: Dharmaraja House</div>
+                    <div className="sb-result">Current Leader: Ananda House</div>
                 </div>
             );
         }
@@ -489,7 +478,7 @@
             setTimeout(() => slides[prev].classList.remove('exit'), 1200);
         }, 5000);
 
-        // 3D Carousel Logic
+        // 3D Carousel
         const carouselState = { current: 0 };
         function updateCarousel() {
             const slides = document.querySelectorAll('.carousel-slide');
