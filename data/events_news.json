@@ -1,6 +1,13 @@
 {
     "events": [
         {
+            "title": "46th Installation Ceremony of ICDRC",
+            "logo": "./media/events_news/space.png",
+            "reference": "https://web.facebook.com/media/set/?set=a.1135817715223949&type=3",
+            "description": "46th Installation Ceremony of ICDRC",
+            "image": "1777953591408~2.jpg.jpeg"
+        },
+        {
             "title": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
             "logo": "./media/events_news/space.png",
             "reference": "https://www.facebook.com/media/set/?vanity=rajansphotography.dharmaraja&set=a.1435084371963947",
@@ -21,13 +28,7 @@
             "description": "Witness the outstanding achievements of our students in their academic performances" ,
             "reference": "./prize_giving_details.html"
         },
-        {
-            "title": "46th Installation Ceremony of ICDRC",
-            "logo": "./media/events_news/space.png",
-            "reference": "https://web.facebook.com/media/set/?set=a.1135817715223949&type=3",
-            "description": "46th Installation Ceremony of ICDRC",
-            "image": "1777953591408~2.jpg.jpeg"
-        },
+        
         {
             "title": "English Day 2025",
             "logo": "./media/events_news/space.png",
