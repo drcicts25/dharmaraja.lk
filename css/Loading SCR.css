@@ -19,7 +19,7 @@
 
 /* --- Crest Styles --- */
 .loader-crest {
-    width: 280px;
+    width: 100px;
     height: auto;
     /* Runs for 3.5s, linear pacing, runs ONLY ONCE, stops at the final frame (forwards) */
     animation: crest-sequence 3.5s linear 1 forwards;
@@ -28,6 +28,7 @@
 
 /* --- Text Styles --- */
 .loader-text {
+    margin-top: 35px;
     position: absolute;
     bottom: 12%; 
     left: 50%;
