@@ -1,0 +1,337 @@
+@font-face {
+    font-family: 'MyOldEnglish';
+    src: url('../fonts/oldenglish.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* style.css */
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 8%;
+    transition: all 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    
+    /* --- Liquid Glass Effect එක වැඩි දියුණු කිරීම --- */
+    background: rgba(255, 255, 255, 0.15); /* පසුබිම තවත් පාරදෘශ්‍ය කළා */
+    backdrop-filter: blur(20px); /* බොඳ ගතිය (Blur) වැඩි කළා */
+    -webkit-backdrop-filter: blur(20px);
+    
+    border-radius: 50px;
+    /* Border එක සුදු පාටින් ඉතා සිහින්ව ලබා දීමෙන් වීදුරු පෙනුම වැඩි වේ */
+    border: 1px solid rgba(255, 255, 255, 0.25); 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); 
+    position: relative; 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* පාසල් වෙබ් අඩවියට ගැළපෙන custom font එක පාවිච්චි කරමු */
+    font-family: 'MyOldEnglish', serif; 
+    font-size: 24px;
+    color: #5d2e17;
+    text-decoration: none;
+}
+
+.nav-logo {
+    width: 40px;
+    height: auto;
+    /* ලාංඡනය වීදුරුව උඩින් ලස්සනට ඉස්සිලා පේන්න drop shadow එකක් */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black; 
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Hover කළාම යටින් ඉරක් යන animation එකක් */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #f1c40f; /* රන්වන් පැහැය */
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #f1c40f; 
+}
+/* Mobile Menu Icon (Hamburger) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: #5d2e17;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* --- MOBILE RESPONSIVE SETTINGS  --- */
+@media (max-width: 992px) {
+    
+   
+    .menu-icon {
+        display: flex !important; /* Hamburger icon  */
+    }
+
+    nav ul {
+        position: absolute;
+        top: 75px;
+        right: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98); 
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+        gap: 20px;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        display: none; 
+        z-index: 1000;
+    }
+
+    nav ul.active {
+        display: flex; 
+    }
+
+    
+    .hero-section h1 {
+        font-size: 28px !important; 
+        line-height: 1.2 !important;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .hero-section h3 {
+        font-size: 18px !important;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .hero-content {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 22px !important;
+    }
+    
+    .nav-logo {
+        width: 35px !important;
+    }
+}
+
+
+.menu-icon.toggle span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-icon.toggle span:nth-child(2) {
+    opacity: 0;
+}
+.menu-icon.toggle span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Hero Section Settings */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 125vh; 
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+    filter: brightness(0.6);
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 8%;
+    color: white;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1.1;
+}
+
+.highlight {
+    color: #f1c40f;
+}
+
+.hero-content p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+/* Floating Image
+.hero-image-box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.floating {
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    animation: upDown 3s ease-in-out infinite;
+} */
+
+@keyframes upDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+}
+
+/* content Section Styles */
+.about-section {
+    padding: 80px 8%;
+    background-color: #fff;
+}
+
+.about-container {
+    display: flex;
+    align-items: center; 
+    gap: 50px; 
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    font-weight: 400;
+    text-align: justify;
+}
+
+/* Mobile එකේදී එක යට එක පේන්න */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.about-section-reverse {
+    padding: 80px 8%;
+    background-color: #fdfaf7;
+}
+
+.about-container.reverse {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+@media (max-width: 768px) {
+    .about-container.reverse {
+        flex-direction: column-reverse; 
+        text-align: center;
+    }
+}
+
+/* image Hover Effect */
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.about-image img:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
