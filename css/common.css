@@ -130,49 +130,105 @@ a {
 }
 
 /* --- THE HEADER (Desktop View) --- */
-#header {
+header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     z-index: 1000;
+    padding: 20px 8%;
+    transition: all 0.3s ease;
 }
-.navbar-wrapper { display: flex; justify-content: space-between; align-items: flex-start; width: 100%; }
 
-.logo-box {
-    background-color: #fff;
-    padding: 10px 45px 15px 30px;
-    border-bottom-right-radius: 45px;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    
+    /* --- Liquid Glass Effect එක වැඩි දියුණු කිරීම --- */
+    background: rgba(255, 255, 255, 0.15); /* පසුබිම තවත් පාරදෘශ්‍ය කළා */
+    backdrop-filter: blur(20px); /* බොඳ ගතිය (Blur) වැඩි කළා */
+    -webkit-backdrop-filter: blur(20px);
+    
+    border-radius: 50px;
+    /* Border එක සුදු පාටින් ඉතා සිහින්ව ලබා දීමෙන් වීදුරු පෙනුම වැඩි වේ */
+    border: 1px solid rgba(255, 255, 255, 0.25); 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); 
+    position: relative; 
+}
+
+.logo {
     display: flex;
     align-items: center;
+    gap: 12px;
+    /* පාසල් වෙබ් අඩවියට ගැළපෙන custom font එක පාවිච්චි කරමු */
+    font-family: 'MyOldEnglish', serif; 
+    font-size: 24px;
+    color: #5d2e17;
+    text-decoration: none;
 }
-.logo-wrap { display: flex; align-items: center; gap: 15px; }
-.main-logo { height: 75px; }
-.logo-text { display: flex; flex-direction: column; line-height: 1.1; color: #222; }
-.college-name { font-size: 1.6rem; font-weight: 700; }
-.college-sub { font-size: 1.3rem; font-weight: 400; opacity: 0.8; }
 
-.nav-box {
-    background-color: #000;
-    padding: 25px 60px;
-    border-bottom-left-radius: 45px;
+.nav-logo {
+    width: 40px;
+    height: auto;
+    /* ලාංඡනය වීදුරුව උඩින් ලස්සනට ඉස්සිලා පේන්න drop shadow එකක් */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black; 
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
     position: relative;
-    display: flex;
-    align-items: center;
 }
-.nav-box::before {
-    position: fixed;
-    height: 51px; width: 51px; top: 0;;
-    display: block; content: "";
-    background-image: radial-gradient(at 0% 100%, transparent 48px, #000 50px);
-    pointer-events: none;
+
+/* Hover කළාම යටින් ඉරක් යන animation එකක් */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #f1c40f; /* රන්වන් පැහැය */
+    transition: 0.3s;
 }
-#nav-list { display: flex; list-style: none; gap: 30px; }
-#nav-list li a { color: #fff; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
-#nav-list li a:hover { color: #ffcc00; }
 
-#menu-btn, .mobile-crest { display: none; }
+nav ul li a:hover::after {
+    width: 100%;
+}
 
+nav ul li a:hover {
+    color: #f1c40f; 
+}
+/* Mobile Menu Icon (Hamburger) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: #5d2e17;
+    transition: 0.3s;
+    border-radius: 2px;
+}
 #features > section {
     display: flex;
     flex-direction: row;
@@ -331,54 +387,39 @@ footer {
 
 @media screen and (max-width: 1250px) {
     /* --- NEW NAVBAR FOR 1250 BREAKPOINT --- */
-    #header { margin-top: 10px; padding-top: 10px; }
-    
-    /* FIX: Keep the logo visible and scale it for mobile */
-    .navbar-wrapper {
+     .menu-icon {
+        display: flex !important; /* Hamburger icon  */
+    }
+
+    nav ul {
+        position: absolute;
+        top: 75px;
+        right: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98); 
+        backdrop-filter: blur(10px);
+        flex-direction: column;
         align-items: center;
+        padding: 30px 0;
+        gap: 20px;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        display: none; 
+        z-index: 1000;
     }
-    .logo-box { 
+
+    nav ul.active {
         display: flex; 
-        padding: 5px 25px 10px 15px;
-        border-bottom-right-radius: 30px;
     }
-    .main-logo { height: 50px; }
-    .college-name { font-size: 1.2rem; }
-    .college-sub { font-size: 1rem; }
-
-    /* Keep the hamburger menu on the right */
-    .nav-box {
-        background: transparent; 
-        padding: 0 20px 0 0; 
-        margin-left: auto; 
-    }
-    .nav-box::before { display: none; }
-    #menu-btn {
-        position: fixed;
-        display: flex; flex-direction: column; justify-content: center; align-items: center;
-        width: 45px; height: 45px; background: #000; border-radius: 50%;
-        cursor: pointer; z-index: 2000; position: relative; right: 0;
-    }
-    #menu-btn i { background: #fff; height: 2px; width: 22px; margin: 2.5px 0; transition: 0.4s; }
-
-    .nav-container {
-        ; position: fixed; top: 0; right: 100%; width: 100%; height: 100vh; display: flex; flex-direction: column;
-        padding: 40px 25px; transition: 0.5s ease; z-index: 1500;
-    }
-    #header.open .nav-container { right: 0; }
-
-    #nav-list {
-        align-content: center; align-items: center; display: flex; flex-direction: column; background-color: #f0f0f0; 
-        width: 230px; max-width: 230px; padding: 40px 30px; border-radius: 30px; gap: 25px;
-    }
-    #nav-list li a { color: #111; font-size: 1.4rem; font-weight: 600; }
-
-    #header.open #menu-btn i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    #header.open #menu-btn i:nth-child(2) { opacity: 0; }
-    #header.open #menu-btn i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    /* --- END NAVBAR CODE --- */
-
-    /* KEEP YOUR EXISTING 1250 FOOTER/BANNER CODE BELOW THIS LINE */
+    .menu-icon.toggle span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-icon.toggle span:nth-child(2) {
+    opacity: 0;
+}
+.menu-icon.toggle span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
 
     div#features > section {
         flex-direction: column-reverse;
