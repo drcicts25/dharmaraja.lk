@@ -133,14 +133,13 @@ a {
 
 /* --- THE HEADER (Desktop View) --- */
 header {
-    padding-left: 0px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     margin-top: 15px;
     right: 30px;
-    left: 30px;
+    left: 0px;
     transition: all 0.3s ease;
 }
 
