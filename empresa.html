@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viyathsara 2025 - Dharmaraja College</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/Crest - Colored.png" alt="Logo" class="nav-logo">
+                Dharmaraja College
+            </div>
+
+            <div class="menu-icon" id="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul id="nav-menu">
+                <li><a href="./">Home</a></li>
+                        <li><a href="about.html">Who We Are</a></li>
+                        <li><a href="events_news.html">Events</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="societies.html">Societies</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                        <li><a href="#footer">Contact</a></li>
+                    </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="media/empresa/banner.jpg" class="hero-bg-img" alt="Empresa Banner">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2>A Grand Commerce Event</h2>
+                <h1>EMPRESA <span class="highlight">2026</span></h1>
+                <p>The Annual Commerce Day and Inter-School Competitions organized by the Commerce Society of Dharmaraja College.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Introduction -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="media/empresa/inter.jpg" alt="Commerce Competitions">
+            </div>
+            <div class="about-text">
+                <h3>Nurturing Future Leaders</h3>
+                <p>
+                    The Commerce Society of Dharmaraja College successfully concluded EMPRESA'26, its flagship Annual Commerce Day. Aimed at nurturing future corporate leaders, the Inter-school Competitions attracted over 580 students from 47 schools across the island. The program featured eight distinct competition categories, including Quiz, Business Idea Presentations, and Strategic Case Studies, providing a platform for finalists to showcase their analytical talents.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Awarding Ceremony -->
+    <section class="about-section-reverse">
+        <div class="about-container reverse">
+            <div class="about-image">
+                <img src="media/empresa/speaker1.jpg" alt="Chief Guest">
+            </div>
+            <div class="about-text">
+                <h3>The Grand Finale</h3>
+                <p>
+                    The Awarding Ceremony held on March 26, 2026, featured distinguished guests including Chief Guest Dr. Srinath Dissanayake, a Senior Lecturer at the University of Kelaniya and a proud alumnus. Joining him as the Guest of Honour was Mr. Upul Bandara. Their insights provided invaluable inspiration, effectively bridging the gap between academic theory and professional practice for the young aspirants.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Champions -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="media/empresa/champ.jpg" alt="Champions">
+            </div>
+            <div class="about-text">
+                <h3>Celebrating Excellence</h3>
+                <p>
+                    The competitive spirit reached its peak as Mahamaya Girls' College, Kandy, claimed the prestigious title of Overall Champions. They were followed by Ananda College, Colombo 10, as the Overall 1st Runner-up, and Swarnamali Girls' College, Kandy, as the 2nd Runner-up. EMPRESA'26 has once again solidified its reputation as one of the most significant student commerce festivals in the country.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Dharmaraja College &bull; Kandy &bull; Commerce Society
+    </footer>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navMenu = document.getElementById('nav-menu');
+
+        if(menuIcon && navMenu) {
+            menuIcon.onclick = function() {
+                navMenu.classList.toggle('active');
+                menuIcon.classList.toggle('toggle');
+            }
+        }
+    </script>
+
+</body>
+</html>
