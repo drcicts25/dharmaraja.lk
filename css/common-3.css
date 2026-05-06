@@ -131,7 +131,7 @@ a {
 
 /* --- THE HEADER (Desktop View) --- */
 #header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -356,6 +356,7 @@ footer {
     }
     .nav-box::before { display: none; }
     #menu-btn {
+        position: fixed;
         display: flex; flex-direction: column; justify-content: center; align-items: center;
         width: 45px; height: 45px; background: #000; border-radius: 50%;
         cursor: pointer; z-index: 2000; position: relative; right: 0;
