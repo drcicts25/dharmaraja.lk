@@ -230,23 +230,15 @@
             const loader = document.getElementById("loader");
             loader.style.display = "none";
         }
-        var myVar;
-        var menuOpen = 0;
-        function menu() {
-            if (menuOpen) {
-                menuOpen = 0;
-                header.classList.remove("open");
-            } else {
-                menuOpen = 1;
-                header.classList.add("open");
-            }
+        const menuIcon = document.getElementById('menu-icon');
+    const navMenu = document.getElementById('nav-menu');
+
+    if(menuIcon && navMenu) {
+        menuIcon.onclick = function() {
+            navMenu.classList.toggle('active');
+            menuIcon.classList.toggle('toggle');
         }
-        document.querySelector("#main").addEventListener("click", () => {
-            if (menuOpen) {
-                menuOpen = 0;
-                header.classList.remove("open");
-            }
-        });
+    }
     </script>
     <script src="js/home_updates.js" type="module"></script>
     <script src="js/home.js" type="module"></script>
