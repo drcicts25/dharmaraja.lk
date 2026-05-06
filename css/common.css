@@ -131,7 +131,7 @@ a {
 
 /* --- THE HEADER (Desktop View) --- */
 #header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -161,7 +161,7 @@ a {
     align-items: center;
 }
 .nav-box::before {
-    position: absolute;
+    position: fixed;
     height: 51px; width: 51px; top: 0;;
     display: block; content: "";
     background-image: radial-gradient(at 0% 100%, transparent 48px, #000 50px);
@@ -347,13 +347,14 @@ footer {
     .college-sub { font-size: 1rem; }
 
     /* Keep the hamburger menu on the right */
-    .nav-box { 
+    .nav-box {
         background: transparent; 
         padding: 0 20px 0 0; 
         margin-left: auto; 
     }
     .nav-box::before { display: none; }
     #menu-btn {
+        position: fixed;
         display: flex; flex-direction: column; justify-content: center; align-items: center;
         width: 45px; height: 45px; background: #000; border-radius: 50%;
         cursor: pointer; z-index: 2000; position: relative; right: 0;
