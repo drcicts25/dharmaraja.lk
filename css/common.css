@@ -18,7 +18,9 @@
 html {
     scroll-behavior: smooth;
 }
-
+body {
+     overflow-x: hidden;
+}
 a {
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -131,6 +133,7 @@ a {
 
 /* --- THE HEADER (Desktop View) --- */
 header {
+    padding-left: 0px;
     position: fixed;
     top: 0;
     width: 100%;
