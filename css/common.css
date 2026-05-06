@@ -148,33 +148,33 @@ nav {
     align-items: center;
     padding: 12px 40px;
     
-    /* --- Liquid Glass Effect එක වැඩි දියුණු කිරීම --- */
-    background: rgba(255, 255, 255, 0.15); /* පසුබිම තවත් පාරදෘශ්‍ය කළා */
-    backdrop-filter: blur(20px); /* බොඳ ගතිය (Blur) වැඩි කළා */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px);
     
     border-radius: 50px;
-    /* Border එක සුදු පාටින් ඉතා සිහින්ව ලබා දීමෙන් වීදුරු පෙනුම වැඩි වේ */
     border: 1px solid rgba(255, 255, 255, 0.25); 
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); 
     position: relative; 
+}
+
+nav a{
+    text-decoration: none;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* පාසල් වෙබ් අඩවියට ගැළපෙන custom font එක පාවිච්චි කරමු */
-    font-family: 'MyOldEnglish', serif; 
+    font-family: 'MyOldEnglish', serif;
     font-size: 24px;
-    color: #5d2e17;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
 .nav-logo {
     width: 40px;
     height: auto;
-    /* ලාංඡනය වීදුරුව උඩින් ලස්සනට ඉස්සිලා පේන්න drop shadow එකක් */
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
@@ -198,7 +198,6 @@ nav ul li a {
     position: relative;
 }
 
-/* Hover කළාම යටින් ඉරක් යන animation එකක් */
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -206,7 +205,7 @@ nav ul li a::after {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #f1c40f; /* රන්වන් පැහැය */
+    background-color: #f1c40f; 
     transition: 0.3s;
 }
 
