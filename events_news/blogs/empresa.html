@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Fullscreen Slideshow Background */
+        .hero-slideshow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            transition: filter 1.2s ease;
+        }
+
+        body.scrolled .hero-slideshow {
+            filter: blur(15px) scale(1.05);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* Gradient only appears once scrolling begins */
+        .transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,1) 95%);
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        body.scrolled .transition-overlay {
+            opacity: 1;
+        }
+
+        .initial-view {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 40px;
+        }
+
+        /* Bouncing Arrow */
+        .scroll-arrow {
+            width: 30px;
+            height: 30px;
+            border-bottom: 3px solid #fff;
+            border-right: 3px solid #fff;
+            transform: rotate(45deg);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 6;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) rotate(45deg);}
+            40% {transform: translateY(-10px) rotate(45deg);}
+            60% {transform: translateY(-5px) rotate(45deg);}
+        }
+
+        .main-content {
+            position: relative;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 10;
+        }
+
+        .reveal {
+            opacity: 0;
+            filter: blur(20px);
+            transform: translateY(50px) scale(1.05);
+            transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0) scale(1);
+        }
+
+        /* Solid Black Heading */
+        .main-heading {
+            color: #000000;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        /* Fixed 4:3 horizontal ratio */
+        .mini-slideshow {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 4px;
+            position: relative;
+            background: #000;
+        }
+
+        .mini-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .mini-slide.active {
+            opacity: 1;
+        }
+
+        /* Ken Burns Zoom Effect */
+        .slide-bg-blur {
+            position: absolute;
+            top: -15%;
+            left: -15%;
+            width: 130%;
+            height: 130%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(25px) brightness(0.5);
+            z-index: 1;
+        }
+
+        .slide-img-main {
+            position: relative;
+            z-index: 2;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transform: scale(1.1); 
+            transition: transform 6s linear, opacity 1.2s ease-in-out; 
+        }
+
+        .mini-slide.active .slide-img-main {
+            transform: scale(1.2); 
+        }
+
+        section {
+            padding: 120px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        sup {
+            font-size: 0.45em;
+            vertical-align: super;
+            font-weight: 800;
+            margin-left: 2px;
+        }
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px; background-color: #1a1a1a; /* Dark background */
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50px; /* Rounded pill shape */
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            z-index: 9999; /* Ensures it stays on top */
+}
+.back-button:hover {
+            background-color: #333;
+            transform: translateY(-3px); /* Slight lift */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* SVG Arrow Styling */
+        .back-button svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="history.back()">
+        <svg viewBox="0 0 24 24">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span>Return</span>
+    </button>
+
+    <!-- Background Slideshow -->
+    <div class="hero-slideshow" id="bg-slideshow">
+        <div class="slide active" style="background-image: url('https://raw.githubusercontent.com/drcicts25/dharmaraja.lk/refs/heads/main/media/empresa/banner.jpg')"></div>
+        <div class="slide" style="background-image: url('https://raw.githubusercontent.com/drcicts25/dharmaraja.lk/refs/heads/main/media/empresa/banner2.jpg')"></div>
+        <div class="slide" style="background-image: url('https://raw.githubusercontent.com/drcicts25/dharmaraja.lk/refs/heads/main/media/empresa/banner3.jpg')"></div>
+        <div class="slide" style="background-image: url('https://raw.githubusercontent.com/drcicts25/dharmaraja.lk/refs/heads/main/media/empresa/banner4.jpg')"></div>
+        <div class="slide" style="background-image: url('https://raw.githubusercontent.com/drcicts25/dharmaraja.lk/refs/heads/main/media/empresa/banner5.jpg')"></div>
+    </div>
+
+    <!-- This overlay is now hidden (opacity 0) at start -->
+    <div class="transition-overlay"></div>
+    
+    <div class="initial-view">
+        <div class="scroll-arrow" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})"></div>
+    </div>
+
+    <div class="main-content">
+        <header class="h-screen flex flex-col items-center justify-center text-center px-4">
+            <h2 class="reveal text-xl md:text-2xl font-light tracking-[0.4em] mb-4 text-gray-500 uppercase">A Grand Event</h2>
+            <h1 class="reveal text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-tight">
+                <span class="main-heading">Empresa 2026</span>
+            </h1>
+            <h2 class="reveal text-xl md:text-3xl font-medium text-gray-800 uppercase tracking-widest">The Annual Commerce Day and Inter-School Competitions</h2>
+        </header>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="space-y-6">
+                <div class="mini-slideshow" data-interval="5000">
+                    <div class="mini-slide active" data-src="https://raw.githubusercontent.com/drcicts25/dharmaraja.lk/refs/heads/main/media/empresa/inter.jpg"></div>
+                </div>
+            </div>
+            
+            <div class="reveal">
+                <p class="text-lg md:text-xl leading-relaxed text-justify text-gray-800 font-medium">
+                    The Commerce Society of Dharmaraja College, Kandy, successfully concluded EMPRESA'26, its flagship Annual Commerce Day and Inter-School Competitions. This prestigious event, aimed at nurturing future corporate leaders, spanned several weeks, with the Inter-school Competitions held from the 2nd to the 22nd of March 2026. The program saw an overwhelming response, attracting over 580 students from 47 invited schools across the island. A total of eight distinct competition categories were featured, including a high-stakes Quiz, Business Idea Presentations, Digital Poster Design, and Case Study & Strategic Competitions in both Sinhala and English, providing a comprehensive platform for over 70 finalists to showcase their analytical and creative talents.
+                </p>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="order-2 lg:order-1 reveal">
+                <p class="text-lg md:text-xl leading-relaxed text-justify text-gray-800 font-medium">
+                    The grand finale and Awarding Ceremony took place on March 26, 2026, featuring a lineup of distinguished guests. The Chief Guest was Dr. Srinath Dissanayake, a proud alumnus of Dharmaraja College and a Senior Lecturer at the University of Kelaniya, whose presence served as a testament to the college's legacy of excellence. Joining him as the Guest of Honour was Mr. Upul Bandara, an expert in the field with a B.Sc. in Accounting (Special) Hons from the University of Sri Jayewardenepura. Their insights provided invaluable inspiration to the young aspirants, bridging the gap between academic theory and professional practice in the ever-evolving world of commerce.
+            </div>
+            <div class="order-1 lg:order-2 space-y-6">
+                <div class="mini-slideshow" data-interval="5000">
+                    <div class="mini-slide active" data-src="https://raw.githubusercontent.com/drcicts25/dharmaraja.lk/refs/heads/main/media/empresa/speaker1.jpg"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center pb-40">
+            <div class="space-y-6">
+                <div class="mini-slideshow" data-interval="5000">
+                    <div class="mini-slide active" data-src="https://raw.githubusercontent.com/drcicts25/dharmaraja.lk/refs/heads/main/media/empresa/champ.jpg"></div>
+                </div>
+            </div>
+            <div class="reveal">
+                <p class="text-lg md:text-xl leading-relaxed text-justify text-gray-800 font-medium">
+                    The competitive spirit reached its peak as the winners were announced, reflecting the high standard of talent present throughout the event. Mahamaya Girls' College, Kandy, claimed the prestigious title of Overall Champions, demonstrating exceptional consistency across all categories. They were followed by Ananda College, Colombo 10, as the Overall 1st Runner-up, and Swarnamali Girls' College, Kandy, as the Overall 2nd Runner-up. By successfully organizing EMPRESA'26, the Dharmaraja College Commerce Society has once again solidified its reputation for hosting one of the most significant and influential student commerce festivals in the country.
+                </p>
+            </div>
+        </section>
+
+        <footer class="text-center py-20 text-gray-500 text-xs tracking-widest uppercase">
+            Dharmaraja College &bull; Kandy
+        </footer>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.hero-slideshow .slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 3000);
+
+        function initMiniSlideshows() {
+            document.querySelectorAll('.mini-slide').forEach(slide => {
+                const src = slide.getAttribute('data-src');
+                if (src) {
+                    const bg = document.createElement('div');
+                    bg.className = 'slide-bg-blur';
+                    bg.style.backgroundImage = `url(${src})`;
+                    
+                    const img = document.createElement('img');
+                    img.className = 'slide-img-main';
+                    img.src = src;
+                    
+                    slide.appendChild(bg);
+                    slide.appendChild(img);
+                }
+            });
+        }
+
+        document.querySelectorAll('.mini-slideshow').forEach(show => {
+            const mSlides = show.querySelectorAll('.mini-slide');
+            let mCurrent = 0;
+            const interval = parseInt(show.getAttribute('data-interval')) || 5000;
+            
+            setInterval(() => {
+                if (mSlides.length > 0) {
+                    mSlides[mCurrent].classList.remove('active');
+                    mCurrent = (mCurrent + 1) % mSlides.length;
+                    mSlides[mCurrent].classList.add('active');
+                }
+            }, interval);
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const handleScroll = () => {
+            const scrollPos = window.scrollY;
+            if (scrollPos > 100) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.9) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        
+        window.onload = () => {
+            initMiniSlideshows();
+            handleScroll();
+        };
+    </script>
+</body>
+</html>
