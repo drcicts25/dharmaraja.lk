@@ -138,8 +138,6 @@ header {
     width: 100%;
     z-index: 1000;
     margin-top: 15px;
-    right: 30px;
-    left: 0px;
     transition: all 0.3s ease;
 }
 
