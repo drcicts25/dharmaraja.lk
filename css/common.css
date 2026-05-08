@@ -132,7 +132,7 @@ a {
     overflow: hidden;
 }
 
-/* --- THE HEADER (Desktop View) --- */
+/* --- HEADER & NAVIGATION (LIQUID GLASS THEME) --- */
 header {
     position: fixed;
     top: 0;
@@ -148,17 +148,17 @@ nav {
     align-items: center;
     padding: 12px 40px;
     
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.15); 
     backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px);
     
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.25); 
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); 
+    border: 1.5px solid rgba(255, 255, 255, 0.4); 
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
     position: relative; 
 }
 
-nav a{
+nav a {
     text-decoration: none;
 }
 
@@ -166,10 +166,12 @@ nav a{
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Old-English', serif;
+    font-family: 'MyOldEnglish', serif; 
     font-size: 24px;
-    color: rgb(0, 0, 0);
+    color: #000000;
     text-decoration: none;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .nav-logo {
@@ -191,11 +193,14 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: black; 
+    color: #000000;
     font-size: 15px;
     font-weight: 600;
     transition: 0.3s;
-    position: relative;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 
+                 0 0 3px rgba(255, 255, 255, 0.4);
+    position: relative; 
+    padding: 5px 0;
 }
 
 nav ul li a::after {
@@ -203,7 +208,7 @@ nav ul li a::after {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -5px;
+    bottom: 0px;
     left: 0;
     background-color: #f1c40f; 
     transition: 0.3s;
@@ -215,7 +220,6 @@ nav ul li a:hover::after {
 
 nav ul li a:hover {
     color: #f1c40f; 
-}
 /* Mobile Menu Icon (Hamburger) */
 .menu-icon {
     display: none;
