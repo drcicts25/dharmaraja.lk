@@ -1,10 +1,10 @@
 {
     "events": [
     {
-        "title": "Annual Sports Meet 2026",
-        "image": "rugby1.jpeg",
+        "title": "The 24th Principal’s Ceremonial Welcome",
+        "image": "media/events_news/1777953591408~2.jpg.jpeg",
         "logo": "./media/events_news/space.png",
-        "description": "Annual Sports Meet 2026",
+        "description": "The Return of a Rajan: Introducing Principal Namal Chandana Kumara",
         "reference": "https://www.facebook.com/media/set/?vanity=rajansphotography.dharmaraja&set=a.1435084371963947"
     },
     {
@@ -13,6 +13,13 @@
         "reference": "https://www.facebook.com/media/set/?vanity=rajansphotography.dharmaraja&set=a.1435084371963947",
         "description": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
         "image": "rugby1.jpeg"
+    },
+        {
+        "title": "Annual Sports Meet 2026",
+        "image": "rugby1.jpeg",
+        "logo": "./media/events_news/space.png",
+        "description": "Annual Sports Meet 2026",
+        "reference": "https://www.facebook.com/media/set/?vanity=rajansphotography.dharmaraja&set=a.1435084371963947"
     },
     {
         "title": "119th Battle of the Maroons",
