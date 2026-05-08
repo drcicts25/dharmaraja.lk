@@ -217,24 +217,28 @@ Here, every click creates art, and every shot tells a story that lasts forever.
             <h5>All Rights Reserved © 2025 Dharmaraja College<br>PROJECT BY ICT SOCIETY OF THE DHARMARAJA COLLEGE</h5>
         </footer>
         <script>
-            const header = document.querySelector("#header");
-            var menuOpen = 0;
-            function menu() {
-                if (menuOpen) {
-                    menuOpen = 0;
-                    header.classList.remove("open");
-                } else {
-                    menuOpen = 1;
-                    header.classList.add("open");
-                }
-            }
-            document.querySelector("#main").addEventListener("click", () => {
-                if (menuOpen) {
-                    menuOpen = 0;
-                    header.classList.remove("open");
-                }
-            });
-        </script>
+        
+        const header = document.querySelector("#header");
+        
+        function myFunction() {
+            // Wait exactly 3.5 seconds before removing loader
+            setTimeout(showPage, 2000);
+        }
+        
+        function showPage() {
+            const loader = document.getElementById("loader");
+            loader.style.display = "none";
+        }
+        const menuIcon = document.getElementById('menu-icon');
+    const navMenu = document.getElementById('nav-menu');
+
+    if(menuIcon && navMenu) {
+        menuIcon.onclick = function() {
+            navMenu.classList.toggle('active');
+            menuIcon.classList.toggle('toggle');
+        }
+    }
+    </script>
         <script src="js/sports.js" defer></script>
     </body>
 </html>
