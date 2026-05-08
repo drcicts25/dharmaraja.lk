@@ -470,7 +470,7 @@ h1 {
     }
 }
 
-/* ── Scoreboard ── */
+/* â”€â”€ Scoreboard â”€â”€ */
 .score-section {
   padding: 4rem 2rem;
   background: #fdfcf9; /* Subtle cream background to distinguish section */
@@ -608,7 +608,7 @@ h1 {
   text-transform: lowercase;
 }
 
-/* ── Innings Table ── */
+/* â”€â”€ Innings Table â”€â”€ */
 .innings-table {
   background: #fff;
   border-radius: 16px;
@@ -681,7 +681,7 @@ h1 {
 .sb-runs-sm.maroon { color: #8a1528; }
 .sb-runs-sm.blue   { color: #1a3d7c; }
 
-/* ── Result Banner ── */
+/* â”€â”€ Result Banner â”€â”€ */
 .sb-result {
   text-align: center;
   font-family: 'DM Serif Display', serif;
