@@ -13,15 +13,12 @@
     margin: 0;
     padding: 0;
     font-family: poppins,sans-serif;
-    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
 }
-body {
-     overflow-x: hidden;
-}
+
 a {
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -132,8 +129,50 @@ a {
     overflow: hidden;
 }
 
-
+/* --- THE HEADER (Desktop View) --- */
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
+.navbar-wrapper { display: flex; justify-content: space-between; align-items: flex-start; width: 100%; }
+
+.logo-box {
+    background-color: #fff;
+    padding: 10px 45px 15px 30px;
+    border-bottom-right-radius: 45px;
+    display: flex;
+    align-items: center;
+}
+.logo-wrap { display: flex; align-items: center; gap: 15px; }
+.main-logo { height: 75px; }
+.logo-text { display: flex; flex-direction: column; line-height: 1.1; color: #222; }
+.college-name { font-size: 1.6rem; font-weight: 700; }
+.college-sub { font-size: 1.3rem; font-weight: 400; opacity: 0.8; }
+
+.nav-box {
+    background-color: #000;
+    padding: 25px 60px;
+    border-bottom-left-radius: 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.nav-box::before {
+    position: absolute;
+    height: 51px; width: 51px; top: 0;;
+    display: block; content: "";
+    background-image: radial-gradient(at 0% 100%, transparent 48px, #000 50px);
+    pointer-events: none;
+}
+#nav-list { display: flex; list-style: none; gap: 30px; }
+#nav-list li a { color: #fff; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
+#nav-list li a:hover { color: #ffcc00; }
+
+#menu-btn, .mobile-crest { display: none; }
+
 #features > section {
     display: flex;
     flex-direction: row;
@@ -291,7 +330,42 @@ footer {
 }
 
 @media screen and (max-width: 1250px) {
-  
+    /* --- NEW NAVBAR FOR 1250 BREAKPOINT --- */
+    #header {margin-top: 15px; padding-top: 15px; }
+    .logo-box { display: none; } 
+    .nav-box { background: transparent; padding: 0;
+    margin-left: auto; }
+    .nav-box::before { display: none; }
+
+    #menu-btn {
+ 
+    position: fixed;
+    margin-right: 10px;
+    margin-top: 60px;
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
+        width: 45px; height: 45px; background: #000; border-radius: 50%;
+        cursor: pointer; z-index: 2000; position: relative; right: 0;
+    }
+    #menu-btn i { background: #fff; height: 2px; width: 22px; margin: 2.5px 0; transition: 0.4s; }
+
+    .nav-container {
+        ; position: fixed; top: 0; right: 100%; width: 100%; height: 100vh; display: flex; flex-direction: column;
+        padding: 40px 25px; transition: 0.5s ease; z-index: 1500;
+    }
+    #header.open .nav-container { right: 0; }
+
+    #nav-list {
+        align-content: center; align-items: center; display: flex; flex-direction: column; background-color: #f0f0f0; 
+        width: 230px; max-width: 230px; padding: 40px 30px; border-radius: 30px; gap: 25px;
+    }
+    #nav-list li a { color: #111; font-size: 1.4rem; font-weight: 600; }
+
+    #header.open #menu-btn i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #header.open #menu-btn i:nth-child(2) { opacity: 0; }
+    #header.open #menu-btn i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    /* --- END NAVBAR CODE --- */
+
+    /* KEEP YOUR EXISTING 1250 FOOTER/BANNER CODE BELOW THIS LINE */
 
     div#features > section {
         flex-direction: column-reverse;
@@ -414,3 +488,18 @@ footer {
         }
     }
 
+    footer {
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 4px;
+            border-radius: 2px;
+            width: 5em;
+            background-color: #a9a9a9;
+            top: 2em;
+            left: calc(50% - 2.5em);
+        }
+    }
+}
