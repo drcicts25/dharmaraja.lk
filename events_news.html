@@ -131,15 +131,20 @@
             }
         });
 
-         function customScroll(sectionId, direction) {
+    function customScroll(sectionId, direction) {
     const container = document.querySelector(`#${sectionId} section`);
-    const scrollAmount = 350; 
-
+    
     if (container) {
-        container.scrollBy({
-            left: direction * scrollAmount,
-            behavior: 'smooth'
-        });
+        const firstCard = container.querySelector('.card-cnt');
+        
+        if (firstCard) {
+            const cardWidth = firstCard.offsetWidth + 25;
+            
+            container.scrollBy({
+                left: direction * cardWidth,
+                behavior: 'smooth'
+            });
+        }
     } else {
         console.error("Scroll container not found!");
     }
