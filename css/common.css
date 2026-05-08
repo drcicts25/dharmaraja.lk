@@ -547,7 +547,82 @@ footer {
             }
         }
     }
+/* --- MOBILE RESPONSIVE SETTINGS (992px වලට අඩු screens සඳහා) --- */
+@media (max-width: 992px) {
+    
+    header {
+        padding: 15px 5%; 
+    }
 
+    /* Hamburger Menu Icon  */
+    .menu-icon {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 10001;
+    }
+
+    .menu-icon span {
+        width: 28px;
+        height: 3px;
+        background: #000000;
+        transition: 0.3s;
+    }
+
+    nav ul {
+        display: none; 
+        position: fixed;
+        top: 85px;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        background: rgba(255, 255, 255, 0.9); 
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        gap: 20px;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        z-index: 10000;
+    }
+
+    nav ul.active {
+        display: flex;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+    }
+
+    .logo {
+        font-size: 20px !important;
+    }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hamburger to 'X' animation */
+.menu-icon.toggle span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+.menu-icon.toggle span:nth-child(2) { opacity: 0; }
+.menu-icon.toggle span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
     footer {
         position: relative;
         &::before {
