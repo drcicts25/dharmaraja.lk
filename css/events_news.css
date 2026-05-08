@@ -47,16 +47,29 @@
         }
     }
     & > section {
-        display: flex;
-        flex-direction: row;
-        gap: 40px;
-        width: 920px;
-        max-width: 80vw;
-        margin: auto;
-        z-index: 3;
-        padding: 30px 20px;
-        overflow-x: hidden;
-    }
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    width: 920px;
+    max-width: 80vw;
+    margin: auto;
+    z-index: 3;
+    padding: 30px 20px;
+    
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+& > section::-webkit-scrollbar {
+    display: none;
+}
+
+/* lock card */
+.card-cnt {
+    scroll-snap-align: start;
+}
 }
 
 #news {
