@@ -1,42 +1,40 @@
 {
     "events": [
-        
-         {
-            "title": "Annual Sports Meet 2026",
-            "logo": "./media/events_news/space.png",
-            "reference": "./sportsmeet.html",
-            "description": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
-            "image": "rugby1.jpeg"
-        }, 
-        
-        {
-            "title": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
-            "logo": "./media/events_news/space.png",
-            "reference": "https://www.facebook.com/media/set/?vanity=rajansphotography.dharmaraja&set=a.1435084371963947",
-            "description": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
-            "image": "rugby1.jpeg"
-        }, 
-        {
-            "title": "119th Battle of the Maroons",
-            "image": "Bigmatch_event.jpg",
-            "logo": "./media/events_news/space.png",
-            "description": "Two legendary schools. Three days of cricket." ,
-            "reference": "./big_match.html"
-        },
-        {
-            "title": "Annual Prize Giving 2024",
-            "image": "prizegiving_card.png", 
-            "logo": "./media/events_news/space.png",
-            "description": "Witness the outstanding achievements of our students in their academic performances" ,
-            "reference": "./prize_giving_details.html"
-        },
-        {
-            "title": "46th Installation Ceremony of ICDRC",
-            "logo": "./media/events_news/space.png",
-            "reference": "https://web.facebook.com/media/set/?set=a.1135817715223949&type=3",
-            "description": "46th Installation Ceremony of ICDRC",
-            "image": "565180337_1281910120614707_9126319093518249491_n.jpg"
-        },
+    {
+        "title": "Annual Sports Meet 2026",
+        "image": "rugby1.jpeg",
+        "logo": "./media/events_news/space.png",
+        "description": "Annual Sports Meet 2026",
+        "reference": "https://www.facebook.com/media/set/?vanity=rajansphotography.dharmaraja&set=a.1435084371963947"
+    },
+    {
+        "title": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
+        "logo": "./media/events_news/space.png",
+        "reference": "https://www.facebook.com/media/set/?vanity=rajansphotography.dharmaraja&set=a.1435084371963947",
+        "description": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
+        "image": "rugby1.jpeg"
+    },
+    {
+        "title": "119th Battle of the Maroons",
+        "image": "Bigmatch_event.jpg",
+        "logo": "./media/events_news/space.png",
+        "description": "Two legendary schools. Three days of cricket.",
+        "reference": "./big_match.html"
+    },
+    {
+        "title": "Annual Prize Giving 2024",
+        "image": "prizegiving_card.png",
+        "logo": "./media/events_news/space.png",
+        "description": "Witness the outstanding achievements of our students.",
+        "reference": "./prize_giving_details.html"
+    },
+    {
+        "title": "46th Installation Ceremony of ICDRC",
+        "logo": "./media/events_news/space.png",
+        "reference": "https://web.facebook.com/media/set/?set=a.1135817715223949&type=3",
+        "description": "46th Installation Ceremony of ICDRC",
+        "image": "565180337_1281910120614707_9126319093518249491_n.jpg"
+    },
         {
             "title": "English Day 2025",
             "logo": "./media/events_news/space.png",
