@@ -1,12 +1,12 @@
 {
     "events": [
-{
-    "title": "The 24th Principal's Ceremonial Welcome",
-    "image": "media/events_news/Pricipal_welcom.jpg",
-    "logo": "media/events_news/space.png",
-    "description": "The 24th Principal's Ceremonial Welcome",
-    "reference": "./principal_welcome.html"
-},
+    {
+        "title": "The 24th Principal's Ceremonial Welcome",
+        "image": "media/events_news/Pricipal_welcom.jpg",
+        "logo": "media/events_news/space.png",
+        "description": "The 24th Principal's Ceremonial Welcome",
+        "reference": "./principal_welcome.html"
+    },
     {
         "title": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
         "logo": "./media/events_news/space.png",
