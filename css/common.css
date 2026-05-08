@@ -129,44 +129,7 @@ a {
     overflow: hidden;
 }
 
-/* --- THE HEADER (Desktop View) --- */
-#header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-.navbar-wrapper { display: flex; justify-content: space-between; align-items: flex-start; width: 100%; }
 
-.logo-box {
-    background-color: #fff;
-    padding: 10px 45px 15px 30px;
-    border-bottom-right-radius: 45px;
-    display: flex;
-    align-items: center;
-}
-.logo-wrap { display: flex; align-items: center; gap: 15px; }
-.main-logo { height: 75px; }
-.logo-text { display: flex; flex-direction: column; line-height: 1.1; color: #222; }
-.college-name { font-size: 1.6rem; font-weight: 700; }
-.college-sub { font-size: 1.3rem; font-weight: 400; opacity: 0.8; }
-
-.nav-box {
-    background-color: #000;
-    padding: 25px 60px;
-    border-bottom-left-radius: 45px;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-.nav-box::before {
-    position: absolute;
-    height: 51px; width: 51px; top: 0;;
-    display: block; content: "";
-    background-image: radial-gradient(at 0% 100%, transparent 48px, #000 50px);
-    pointer-events: none;
-}
 #nav-list { display: flex; list-style: none; gap: 30px; }
 #nav-list li a { color: #fff; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
 #nav-list li a:hover { color: #ffcc00; }
