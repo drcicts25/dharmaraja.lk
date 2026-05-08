@@ -392,40 +392,7 @@ footer {
 }
 
 @media screen and (max-width: 1250px) {
-    /* --- NEW NAVBAR FOR 1250 BREAKPOINT --- */
-     .menu-icon {
-        display: flex !important; /* Hamburger icon  */
-    }
-
-    nav ul {
-        position: absolute;
-        top: 75px;
-        right: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.98); 
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 0;
-        gap: 20px;
-        border-radius: 0 0 20px 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        display: none; 
-        z-index: 1000;
-    }
-
-    nav ul.active {
-        display: flex; 
-    }
-    .menu-icon.toggle span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-.menu-icon.toggle span:nth-child(2) {
-    opacity: 0;
-}
-.menu-icon.toggle span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
+  
 
     div#features > section {
         flex-direction: column-reverse;
@@ -547,65 +514,4 @@ footer {
             }
         }
     }
-/* --- MOBILE RESPONSIVE SETTINGS  --- */
-@media (max-width: 992px) {
-    
-   
-    .menu-icon {
-        display: flex !important; /* Hamburger icon  */
-    }
-
-    nav ul {
-        position: absolute;
-        top: 75px;
-        right: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.98); 
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 0;
-        gap: 20px;
-        border-radius: 0 0 20px 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        display: none; 
-        z-index: 1000;
-    }
-
-    nav ul.active {
-        display: flex; 
-    }
-
-    
-    .hero-section h1 {
-        font-size: 28px !important; 
-        line-height: 1.2 !important;
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .hero-section h3 {
-        font-size: 18px !important;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .hero-content {
-        padding: 0 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-    }
-
-    .logo {
-        font-size: 22px !important;
-    }
-    
-    .nav-logo {
-        width: 35px !important;
-    }
-}
 
