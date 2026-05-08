@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharmaraja</title>
+    <link rel="stylesheet" href="css/nav bar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#"><div class="logo">
+                <img src="img/Crest - Colored.png" alt="Logo" class="nav-logo">
+                    Dharmaraja College
+            </div></a>
+
+        <div class="menu-icon" id="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+            <ul id="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Who we are</a></li>
+                <li><a href="#">Event</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Societies</a></li>
+                <li><a href="#">Sport</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        
+        <!-- Background Image -->
+        <img src="img/Cadet walkin.JPG" class="hero-bg-img" alt="Background">
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>24<sup>th</sup> PRINCIPAL OF DHARMARAJA COLLEGE <br> </h1>
+                <h2><span class="highlight">Mr. Namal Chandanakumara Assumes Duties</span></h2>
+                <p>Since 1985, the Carlos Brothers have been roasting the world's finest beans to create unforgettable coffee experiences.</p>
+            </div>
+            
+            <!-- <div class="hero-image-box"> -->
+                <!-- floating image-->
+                <!-- <img src="img/Welcome pina 2.JPG" alt="Coffee Cup" class="floating"> -->
+            <!-- </div> -->
+        </div>
+
+    </section>
+
+    <!-- content -->
+
+<section class="about-section">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="img/Welcome pina 1.JPG" alt="Our Team">
+        </div>
+
+        <!-- right description -->
+        <div class="about-text">
+            <p>
+                On April 21st, Dharmaraja College held a ceremonial welcome for its 24TH PRINCIPAL, Mr. Namal Chandanakumara. 
+                The event began at the main gate, where deputy principals, assistant principals, staff, and students received him. 
+                The college Eastern Band, led by Sgt. Kaveesha Kumaranayake, headed the initial procession. As the group moved forward, 
+                the Western Band, led by Sgt. Sasiru Munasinghe, took over the lead. Mr. Namal Chandanakumara entered through a 
+                traditional welcome by the Wes dance troupe, passing under flags hoisted by the prefects and receiving a salute from 
+                the cadets. After hoisting the college flag, he officially signed in to assume his duties.
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- 2nd content -->
+<section class="about-section-reverse">
+    <div class="about-container reverse">
+        
+        <!-- left description -->
+        <div class="about-text">
+            <p>
+                This appointment serves as a return to his alma mater. Born in Nawalapitiya on June 21, 1976, Mr. Namal Chandanakumara
+                attended Ginigathhena Primary School before completing his secondary education at Dharmaraja College. As a student,
+                he balanced academics and co-curricular activities, studying in the Physical Science stream for his Advanced Levels.
+                He earned a degree in Physical Science from the University of Peradeniya and later obtained a Postgraduate Diploma in
+                Education, a Postgraduate Diploma in Science, and a Master’s Degree in Education.
+            </p>
+        </div>
+
+        <div class="about-image">
+            <img src="img/wes 3.JPG" alt="Description"> 
+        </div>
+
+    </div>
+</section>
+
+    <!-- 3rd content -->
+
+<section class="about-section">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="img/Office.JPG" alt="Our Team"> 
+        </div>
+
+        <!-- right description -->
+        <div class="about-text">
+            <p>
+                Mr. Namal Chandanakumara began his career as an Advanced Level teacher at Kotmale Gamini Dissanayake College and Sri Pada
+                Central College. In 2009, he passed the Administrative Service Examination and became an Assistant Director of Education in
+                the Hatton Zone, where he eventually served as Deputy and Assistant Director. His leadership background includes tenures as
+                the Principal of Sumangala College and Acting Principal of Kingswood College. In 2025, he was appointed Provincial Director
+                of Education for the Central Province before returning to lead Dharmaraja College.
+            </p>
+        </div>
+    </div>
+</section>
+
+<script>
+    const menuIcon = document.getElementById('menu-icon');
+    const navMenu = document.getElementById('nav-menu');
+
+    if(menuIcon && navMenu) {
+        menuIcon.onclick = function() {
+            navMenu.classList.toggle('active');
+            menuIcon.classList.toggle('toggle');
+        }
+    }
+</script>
+
+</body>
+</html>
