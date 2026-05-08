@@ -111,7 +111,8 @@
          <h5>All Rights Reserved © 2025 Dharmaraja College<br>PROJECT BY ICT SOCIETY OF THE DHARMARAJA COLLEGE</h5>
         </footer>
         <script>
-            const menuIcon = document.getElementById('menu-icon');
+        // Navigation bar එකේ menu එක වැඩ කරන්න
+        const menuIcon = document.getElementById('menu-icon');
         const navMenu = document.getElementById('nav-menu');
 
         if(menuIcon && navMenu) {
@@ -120,29 +121,18 @@
                 menuIcon.classList.toggle('toggle');
             }
         }
-             
-// const eventsData = [
-//     {
-//         name: "Sync'25",
-//         image: "media/events_news/sync.jpg",
-//         description: "ICT Society event..."
-//     },
-//     {
-//         name: "Nature Hike",
-//         image: "media/rp1.jpg",
-//         description: "Annual Nature Hike..."
-//     }
-// ];
-            
-            document.querySelector("#main").addEventListener("click", () => {
-                if (menuOpen) {
-                    menuOpen = 0;
-                    header.classList.remove("open");
-                }
-            });
-        </script>
-        <script src="js/sports.js"></script>
-        <script src="js/events_news.js"></script>
+
+        // පිටුවේ වෙනත් තැනක් click කරොත් menu එක වහන්න
+        document.addEventListener('click', (e) => {
+            if (navMenu && navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuIcon.contains(e.target)) {
+                navMenu.classList.remove('active');
+                menuIcon.classList.remove('toggle');
+            }
+        });
+    </script>
+    
+    <script src="js/sports.js"></script>
+    <script src="js/events_news.js"></script>
     </body>
 </html>
 
