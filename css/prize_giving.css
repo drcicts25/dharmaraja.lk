@@ -808,3 +808,24 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* ── Mobile banner fix ── */
+@media (max-width: 768px) {
+  .hero {
+    align-items: flex-end;
+    min-height: 100svh;
+  }
+
+  .hero-image-right {
+    width: 100%;
+    height: 60%;
+    top: 0;
+    bottom: auto;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 35%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 35%);
+  }
+
+  .hero-gradient-overlay {
+    /* Prize giving uses warm maroon tones */
+    background: linear-gradient(to top, rgba(55, 10, 10, 1) 30%, rgba(55, 10, 10, 0.4) 60%, transparent 100%);
+  }
+}

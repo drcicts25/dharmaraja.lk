@@ -1424,3 +1424,25 @@ footer {
     width: 36px;
   }
 }
+/* ── Mobile banner fix: show image properly on small screens ── */
+@media (max-width: 768px) {
+  .hero {
+    align-items: flex-end;
+    min-height: 100svh;
+  }
+
+  .hero-image-right {
+    width: 100%;
+    height: 60%;
+    top: 0;
+    bottom: auto;
+    /* Fade from top (transparent) down to visible — blends into the dark header */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 35%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 35%);
+  }
+
+  .hero-gradient-overlay {
+    /* Stronger bottom gradient so text stays readable, lighter at top so image shows */
+    background: linear-gradient(to top, rgba(10, 20, 55, 1) 30%, rgba(10, 20, 55, 0.4) 60%, transparent 100%);
+  }
+}
