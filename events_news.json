@@ -1,0 +1,120 @@
+{
+    "events": [
+    {
+        "title": "The 24th Principal's Ceremonial Welcome",
+        "image": "Pricipal_welcom.jpg",
+        "logo": "media/events_news/space.png",
+        "description": "The Return of a Rajan: Introducing Principal Namal Chandana Kumara",
+        "reference": "./principal_welcome.html"
+    },
+    {
+        "title": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
+        "logo": "./media/events_news/space.png",
+        "reference": "https://www.facebook.com/media/set/?vanity=rajansphotography.dharmaraja&set=a.1435084371963947",
+        "description": "Dharmaraja VS St.Sylvester's Rugby Fixtures 2026",
+        "image": "rugby1.jpeg"
+    },
+        {
+        "title": "Annual Sports Meet 2026",
+        "image": "sport_meet.jpg",
+        "logo": "./media/events_news/space.png",
+        "description": "Annual Sports Meet 2026",
+        "reference": "https://www.facebook.com/media/set/?vanity=rajansphotography.dharmaraja&set=a.1435084371963947"
+    },
+    {
+        "title": "119th Battle of the Maroons",
+        "image": "Bigmatch_event.jpg",
+        "logo": "./media/events_news/space.png",
+        "description": "Two legendary schools. Three days of cricket.",
+        "reference": "./big_match.html"
+    },
+    {
+        "title": "36th Winston Hoole ODI",
+        "image": "../Bigmatch_media/odi_hero1.webp",
+        "logo": "./media/events_news/space.png",
+        "description": "The battle continues — Dharmaraja takes on Kingswood in the prestigious ODI fixture.",
+        "reference": "./odi_match.html"
+    },
+    {
+        "title": "Annual Prize Giving 2024",
+        "image": "prizegiving_card.png",
+        "logo": "./media/events_news/space.png",
+        "description": "Witness the outstanding achievements of our students.",
+        "reference": "./prize_giving_details.html"
+    },
+    {
+        "title": "46th Installation Ceremony of ICDRC",
+        "logo": "./media/events_news/space.png",
+        "reference": "https://web.facebook.com/media/set/?set=a.1135817715223949&type=3",
+        "description": "46th Installation Ceremony of ICDRC",
+        "image": "565180337_1281910120614707_9126319093518249491_n.jpg"
+    },
+        {
+            "title": "English Day 2025",
+            "logo": "./media/events_news/space.png",
+            "reference": "",
+            "description": "English Day 2025",
+            "image": "560741429_1281884490617270_3671506877923199922_n.jpg"
+        },
+        {
+            "title": "Susara '25",
+            "logo": "./media/events_news/space.png",
+            "reference": "link",
+            "description": "Susara '25",
+            "image": "537180289_1236945018444551_8235101684436572112_n.jpg"
+        },
+        {
+            "title": "Sync'25",
+            "logo": "./media/events_news/space.png",
+            "reference": "",
+            "description": "ICT Day of the ICT Society of Dharmaraja College",
+            "image": "506943282_1179023224236731_7842668854135316776_n.jpg"
+        }
+      
+    ],
+    "news": [
+        
+        {
+            "title": "National War Heros' Day Commemoration",
+            "logo": "logo/image/path",
+            "reference": "link",
+            "description": "some info about the event or news",
+            "image": "500095734_1158894742916246_9069984927805395870_n.jpg"
+        },
+        {
+            "title": "Best Results of GCE A/L of the Science Section 24' Batch",
+            "logo": "logo/image/path",
+            "reference": "link",
+            "description": "some info about the event or news",
+            "image": "500063872_1158806669591720_8047780863884494201_n.jpg"
+        },
+        {
+            "title": "36th Winston Hoole Memorial Trophy",
+            "logo": "logo/image/path",
+            "reference": "link",
+            "description": "some info about the event or news",
+            "image": "497608894_1154195123386208_3891508107781459486_n.jpg"
+        },
+        {
+            "title": "Primary Section Sil Programme",
+            "logo": "logo/image/path",
+            "reference": "link",
+            "description": "some info about the event or news",
+            "image": "497608894_1154195123386208_3891508107781459486_n.jpg"
+        },
+        {
+            "title": "118th Battle of the Maroons",
+            "logo": "logo/image/path",
+            "reference": "link",
+            "description": "some info about the event or news",
+            "image": "491815288_1135803691892018_8161682233626449055_n.jpg"
+        },
+        {
+            "title": "Kingswood vs Dharmaraja Basketball Encounter 2025",
+            "logo": "logo/image/path",
+            "reference": "link",
+            "description": "some info about the event or news",
+            "image": "492023049_1134310408708013_5133389462529053238_n.jpg"
+        }
+    ]
+}
