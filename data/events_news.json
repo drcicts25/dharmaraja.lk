@@ -1,5 +1,19 @@
 {
     "events": [
+        {
+        "title": "Empresa 2026",
+        "image": "speaker-empresa.jpg",
+        "logo": "media/events_news/space.png",
+        "description": "The Annual Commerce Day organized by the Commerce Society of Dharmaraja College.",
+        "reference": "./empresa.html"
+    },
+        {
+        "title": "Viyathsara 2025",
+        "image": "speaker-viyathsara.jpg",
+        "logo": "media/events_news/space.png",
+        "description": "The Inaugural Library Day by the Library Society of Dharmaraja College.",
+        "reference": "./viyathsara.html"
+    },
     {
         "title": "The 24th Principal's Ceremonial Welcome",
         "image": "Pricipal_welcom.jpg",
