@@ -303,21 +303,21 @@ h1 {
     box-sizing: border-box;
 }
 
-/* Video Column styling (no shadow, rounded corners) */
+/* Video Column styling (Portrait 9:16 layout) */
 .vesak-video-col {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 450px;
+    max-width: 320px; /* Scaled down to prevent the portrait video from being overly tall */
     width: 100%;
 }
 
 .video-wrapper {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 9 / 16; /* Adjusted for 576 x 1024 portrait video aspect ratio */
     background-color: #000000;
-    border-radius: 1.5rem; /* Matches feature card round corners */
+    border-radius: 1.5rem;
     overflow: hidden;
     position: relative;
 }
@@ -421,7 +421,7 @@ h1 {
     }
 
     .video-wrapper {
-        max-width: 380px;
+        max-width: 280px; /* Compact width for mobile screens */
         margin: 0 auto;
     }
 
@@ -436,7 +436,7 @@ h1 {
 
 @media screen and (max-width: 480px) {
     .video-wrapper {
-        max-width: 290px;
+        max-width: 240px;
     }
     
     .vesak-title {
