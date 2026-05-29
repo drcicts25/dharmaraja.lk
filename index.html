@@ -274,6 +274,24 @@
             menuIcon.classList.toggle('toggle');
         }
     }
+     document.addEventListener("DOMContentLoaded", function() {
+        const video = document.getElementById('vesak-video');
+        const btn = document.getElementById('vesak-play-pause-btn');
+
+        if (video && btn) {
+            btn.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play();
+                    btn.textContent = 'Pause';
+                    btn.classList.add('playing');
+                } else {
+                    video.pause();
+                    btn.textContent = 'Play';
+                    btn.classList.remove('playing');
+                }
+            });
+        }
+    });
     </script>
     <script src="js/home_updates.js" type="module"></script>
     <script src="js/home.js" type="module"></script>
