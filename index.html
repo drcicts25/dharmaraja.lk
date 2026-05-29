@@ -85,7 +85,16 @@
                 </video>
             </div>
             <div class="video-controls">
-                <button id="vesak-play-pause-btn" class="play-btn">Play</button>
+                <button id="vesak-play-pause-btn" class="play-btn-round" aria-label="Play or Pause Video">
+                    <!-- Play Icon SVG -->
+                    <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 6.82v10.36c0 .79.86 1.27 1.53.84l8.14-5.18c.6-.38.6-1.29 0-1.67L9.53 5.98c-.67-.43-1.53.05-1.53.84z"/>
+                    </svg>
+                    <!-- Pause Icon SVG -->
+                    <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                    </svg>
+                </button>
             </div>
         </div>
 
@@ -106,7 +115,6 @@
     <!-- Bottom Stripe -->
     <div class="vesak-stripe"></div>
 </section>
-
                     <!-- Coaches Vacancy Block -->
         <div class="coaches-vacancy-container">
            <div class="vacancy-content">
@@ -282,16 +290,15 @@
             btn.addEventListener('click', function() {
                 if (video.paused) {
                     video.play();
-                    btn.textContent = 'Pause';
                     btn.classList.add('playing');
                 } else {
                     video.pause();
-                    btn.textContent = 'Play';
                     btn.classList.remove('playing');
                 }
             });
         }
     });
+     
     </script>
     <script src="js/home_updates.js" type="module"></script>
     <script src="js/home.js" type="module"></script>
