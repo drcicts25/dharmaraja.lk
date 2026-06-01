@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Events & News | DRCK</title>
+        <link rel="icon" type="image/x-icon" href="/media/Crest - Colored.png">
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/nav bar.css">
+        <link rel="stylesheet" href="css/common-2.css" />
+        <link rel="stylesheet" href="css/events_news.css" />
+    </head>
+    <body>
+        <main id="main">
+            <div id="banner">
+                <img src="media/events_news/561616096_1280356840770035_2933045079258342531_n.jpg" />
+                <img src="media/events_news/506943282_1179023224236731_7842668854135316776_n.jpg" />
+                <img src="media/events_news/520143624_1236831161789270_6120536901811783993_n.jpg" />
+                <img src="media/events_news/537684942_1236940095111710_471834203918734101_n.jpg" />
+                <img src="media/events_news/principal1.jpg" />
+                <h1>EVENTS AND NEWS</h1>
+                <section><i class="active"></i><i></i><i></i><i></i><i></i></section>
+            </div>
+         <div id="events">
+     <div id="events">
+            <h1>Our Latest Events</h1>
+           <img src="media/left-arrow-black.png" onclick="customScroll('events', -1)" alt="<" />
+           <img src="media/right-arrow-black.png" onclick="customScroll('events', 1)" alt=">" />
+    
+            <section></section> <template id="template_eventcard">
+                <div class="card-cnt">
+                    <div>
+                        <div class="card-front"><span>Event Name</span></div>
+                        <div class="card-back">
+                            <img src="media/logo.jpg" alt="Event Logo" />
+                            <p>Description</p>
+                            <button class="explore">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+
+            <div id="news">
+                <h1>Our Latest News</h1>
+                <img src="media/left-arrow-black.png" onclick="customScroll('news', -1)" alt="<" />
+                <img src="media/right-arrow-black.png" onclick="customScroll('news', 1)" alt=">" />
+                <section>
+                     
+                </section>
+            </div>
+        </main>
+
+
+<header>
+        <nav>
+          <a href="#"><div class="logo">
+          <img src="media/logo_dharmaraja.png" alt="Logo" class="nav-logo">
+           Dharmaraja College
+          </div></a>
+    <div class="menu-icon" id="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="nav-menu">
+                        <li><a href="./">Home</a></li>
+                        <li><a href="about.html">Who We Are</a></li>
+                        <li><a href="events_news.html">Events</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="societies.html">Societies</a></li>
+                        <li><a href="sports.html">Sports</a></li>
+                        <li><a href="#footer">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        <footer id="footer">
+            <section>
+                <div>
+                    <img src="media/logo-footer.png" alt="DRC" />
+                    <p>
+                        Dharmaraja College, founded in 1887 by Sir Henry Steel Olcott, is a premier Buddhist boys'
+                        school in Kandy, Sri Lanka with around 300+ teaching staff and over 5,000 students.
+                    </p>
+                </div>
+                <div>
+                    <h3></h3>
+                    <ul>
+                        <li><img src="media/call.png" />0812 234 495</li>
+                        <li><img src="media/location.png" />Louis Peiris Mawatha, Kandy.</li>
+                        <li><img src="media/mail.png" />info@dharmaraja.lk</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>FOLLOW US</h3>
+                    <h4>GET IN TOUCH WITH US</h4>
+                    <section>
+                        <a href="" target="_blank"><img src="media/facebook.png" alt="Facebook" /></a>
+                        <a href="" target="_blank"><img src="media/instagram.png" alt="Instagram" /></a>
+                        <a href="" target="_blank"><img src="media/whatsapp.png" alt="whatsapp" /></a>
+                    </section>
+                </div>
+            </section>
+            <hr />
+         <h5>All Rights Reserved © 2025 Dharmaraja College<br>PROJECT BY ICT SOCIETY OF THE DHARMARAJA COLLEGE</h5>
+        </footer>
+        <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navMenu = document.getElementById('nav-menu');
+
+        if(menuIcon && navMenu) {
+            menuIcon.onclick = function() {
+                navMenu.classList.toggle('active');
+                menuIcon.classList.toggle('toggle');
+            }
+        }
+
+        document.addEventListener('click', (e) => {
+            if (navMenu && navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuIcon.contains(e.target)) {
+                navMenu.classList.remove('active');
+                menuIcon.classList.remove('toggle');
+            }
+        });
+
+    function customScroll(sectionId, direction) {
+    const container = document.querySelector(`#${sectionId} section`);
+    
+    if (container) {
+        const firstCard = container.querySelector('.card-cnt');
+        
+        if (firstCard) {
+            const cardWidth = firstCard.offsetWidth + 25;
+            
+            container.scrollBy({
+                left: direction * cardWidth,
+                behavior: 'smooth'
+            });
+        }
+    } else {
+        console.error("Scroll container not found!");
+    }
+}
+    </script>
+    
+    <script src="js/sports.js"></script>
+    <script src="js/events_news.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+

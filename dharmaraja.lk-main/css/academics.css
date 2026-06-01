@@ -1,0 +1,65 @@
+#counter {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    margin: auto;
+    padding: 100px 0;
+    width: fit-content;
+
+    & > div {
+        font-size: 1.5em;
+        border-radius: 0.5em;
+        box-shadow: 3px 3px 10px rgba(0, 137, 155, 0.4);
+        text-align: center;
+        padding: 2em;
+
+        & > span {
+            font-family: "Old-English";
+            display: block;
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        & > span + span {
+            font-family: unset;
+            font-weight: 700;
+            font-size: 2em;
+        }
+    }
+}
+
+#papers {
+    background: linear-gradient(#000a, #000), url(../media//dm3-ls.jpg);
+    padding: 6em 8vw;
+    color: white;
+    & > h1 {
+        font-family: "Old-English";
+        font-size: 4.3em;
+        letter-spacing: 3.2px;
+        font-weight: 400;
+    }
+    & > h3 {
+        font-size: 2.5em;
+        letter-spacing: 3.2px;
+    }
+    & > a {
+        background-color: white;
+        border-color: white;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #counter {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 70px;
+    }
+
+    #counter > div {
+        font-size: 0.8em;
+    }
+
+    #papers {
+        font-size: 0.5em;
+    }
+}

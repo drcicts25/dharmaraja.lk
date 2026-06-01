@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Event | Dharmaraja College</title>
+    <meta name="description" id="page-desc" content="Event details — Dharmaraja College, Kandy">
+    <link rel="icon" type="image/x-icon" href="media/Crest - Colored.png">
+    <link rel="stylesheet" href="css/event_detail.css">
+</head>
+
+<body>
+
+    <nav class="site-nav" id="siteNav">
+        <a href="./" class="nav-brand">
+            <img src="media/Crest - Colored.png" alt="Crest">
+            Dharmaraja
+        </a>
+        <div class="nav-links">
+            <a href="./">Home</a>
+            <a href="events_news.html">Events</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <div class="loading-screen" id="loading">
+            <div class="spinner"></div>
+            Loading event details...
+        </div>
+    </main>
+
+    <!-- FOOTER (static, same as ODI) -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-col">
+                <img src="media/Crest - Colored.png" alt="Crest" class="footer-crest">
+                <p class="footer-school">Dharmaraja College</p>
+                <p class="footer-tagline">Excellence · Discipline · Tradition</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="./">Home</a>
+                <a href="events_news.html">Events & News</a>
+                <a href="about.html">Who We Are</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>info@dharmaraja.lk</p>
+                <p>0812 234 495</p>
+                <p>Kandy, Sri Lanka</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ICT Society of Dharmaraja College. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    const DETAILS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTa7pz-8Jhp7uzvIM28u_khLZuNx3lfAa76JIZDv8cmo6vaiIwj7WBhwVtYZIAaYmBvwBqubtwymxEs/pub?gid=323916186&single=true&output=csv";
+
+    const params = new URLSearchParams(window.location.search);
+    const eventId = params.get("id");
+
+    function parseCSV(csvText) {
+        const lines = csvText.trim().split("\n");
+        const headers = lines[0].split(",").map(h => h.trim().replace(/"/g, ""));
+
+        return lines.slice(1).filter(line => line.trim()).map(line => {
+            const values = [];
+            let current = "";
+            let inQuotes = false;
+            for (const char of line) {
+                if (char === '"') { inQuotes = !inQuotes; }
+                else if (char === ',' && !inQuotes) { values.push(current.trim()); current = ""; }
+                else { current += char; }
+            }
+            values.push(current.trim());
+
+            const obj = {};
+            headers.forEach((h, i) => { obj[h] = values[i] || ""; });
+            return obj;
+        });
+    }
+
+    function renderEvent(e) {
+        document.getElementById("page-title").textContent = `${e.title} ${e.year} | Dharmaraja College`;
+        document.getElementById("page-desc").setAttribute("content", e.hero_description || "");
+
+        const heroImages = [e.hero_image_1, e.hero_image_2, e.hero_image_3].filter(Boolean);
+        let heroImagesHTML = "";
+        if (heroImages.length > 1) {
+            heroImagesHTML = heroImages.map((src, i) =>
+                `<img src="${src}" alt="${e.title}" class="hero-slide ${i === 0 ? 'active' : ''}">`
+            ).join("");
+        } else if (heroImages.length === 1) {
+            heroImagesHTML = `<img src="${heroImages[0]}" alt="${e.title}" class="hero-static">`;
+        }
+
+        const stats = [
+            { value: e.stat1_value, label: e.stat1_label },
+            { value: e.stat2_value, label: e.stat2_label },
+            { value: e.stat3_value, label: e.stat3_label }
+        ].filter(s => s.value);
+
+        let statsHTML = "";
+        if (stats.length > 0) {
+            statsHTML = `<div class="hero-stats-row">` +
+                stats.map((s, i) => {
+                    let html = `<div class="hero-stat-text"><strong>${s.value}</strong><span>${s.label}</span></div>`;
+                    if (i < stats.length - 1) html += `<div class="hero-stat-divider"></div>`;
+                    return html;
+                }).join("") +
+            `</div>`;
+        }
+
+        const carouselImages = [e.carousel_image_1, e.carousel_image_2, e.carousel_image_3, e.carousel_image_4, e.carousel_image_5].filter(Boolean);
+        let carouselHTML = "";
+        if (carouselImages.length > 0) {
+            const slides = carouselImages.map((src, i) =>
+                `<div class="carousel-slide" data-index="${i}"><img src="${src}" alt="Event photo ${i + 1}"></div>`
+            ).join("");
+
+            carouselHTML = `
+            <div class="carousel-container" id="eventCarousel">
+                <button class="carousel-btn carousel-btn-left" aria-label="Previous" onclick="shiftCarousel('eventCarousel', -1)">&#8249;</button>
+                <div class="carousel-track">${slides}</div>
+                <button class="carousel-btn carousel-btn-right" aria-label="Next" onclick="shiftCarousel('eventCarousel', 1)">&#8250;</button>
+                <div class="carousel-dots" id="eventCarouselDots"></div>
+            </div>`;
+        }
+
+        const aboutStats = [
+            { value: e.about_stat1_value, label: e.about_stat1_label },
+            { value: e.about_stat2_value, label: e.about_stat2_label }
+        ].filter(s => s.value);
+
+        let aboutStatsHTML = "";
+        if (aboutStats.length > 0) {
+            aboutStatsHTML = `<div class="legacy-numbers">` +
+                aboutStats.map(s => `<div><strong>${s.value}</strong><span>${s.label}</span></div>`).join("") +
+            `</div>`;
+        }
+
+        function buildContentSection(heading, text, image, reversed) {
+            if (!heading) return "";
+            const imgHTML = image ? `<div class="content-image"><img src="${image}" alt="${heading}"></div>` : "";
+            return `
+            <section class="content-section in-view">
+                <div class="content-container${reversed ? ' reverse' : ''}">
+                    ${imgHTML}
+                    <div class="content-text">
+                        <h3>${heading}</h3>
+                        <p>${text || ""}</p>
+                    </div>
+                </div>
+            </section>`;
+        }
+
+        document.getElementById("main-content").innerHTML = `
+            <header class="hero">
+                <div class="hero-image-right" id="heroRightImg">
+                    ${heroImagesHTML}
+                </div>
+                <div class="hero-gradient-overlay"></div>
+                <div class="hero-inner">
+                    ${e.hero_label ? `<span class="hero-label">${e.hero_label}</span>` : ""}
+                    <h1>${e.title} <br>${e.year}</h1>
+                    ${e.hero_description ? `<p class="hero-desc">${e.hero_description}</p>` : ""}
+                    <div class="hero-actions">
+                        <a href="#about" class="btn-primary">Learn More <span>↗</span></a>
+                        <a href="events_news.html" class="btn-outline">All Events <span>↗</span></a>
+                    </div>
+                    ${statsHTML}
+                </div>
+            </header>
+
+            ${e.about_heading ? `
+            <section id="about" class="legacy in-view">
+                <div class="legacy-grid">
+                    <div class="legacy-text">
+                        <h2>${e.about_heading}</h2>
+                        ${e.about_text_1 ? `<p>${e.about_text_1}</p>` : ""}
+                        ${e.about_text_2 ? `<p>${e.about_text_2}</p>` : ""}
+                        ${aboutStatsHTML}
+                    </div>
+                    ${carouselHTML}
+                </div>
+            </section>` : ""}
+            ${buildContentSection(e.section1_heading, e.section1_text, e.section1_image, false)}
+            ${buildContentSection(e.section2_heading, e.section2_text, e.section2_image, true)}
+            ${buildContentSection(e.section3_heading, e.section3_text, e.section3_image, false)}
+        `;
+
+        if (heroImages.length > 1) {
+            const slides = document.querySelectorAll('.hero-slide');
+            let current = 0;
+            setInterval(() => {
+                const prev = current;
+                current = (current + 1) % slides.length;
+                slides[prev].classList.add('exit');
+                slides[prev].classList.remove('active');
+                slides[current].classList.add('active');
+                setTimeout(() => slides[prev].classList.remove('exit'), 1200);
+            }, 5000);
+        }
+
+        if (carouselImages.length > 0) {
+            initCarousel('eventCarousel');
+        }
+
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+        }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('section').forEach(s => obs.observe(s));
+    }
+
+    function showError(message) {
+        document.getElementById("main-content").innerHTML = `
+            <div class="error-screen">
+                <h2>Event Not Found</h2>
+                <p>${message}</p>
+                <a href="events_news.html">← Back to Events</a>
+            </div>
+        `;
+    }
+
+    const carouselState = {};
+
+    function initCarousel(containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const slides = container.querySelectorAll('.carousel-slide');
+        const total = slides.length;
+        carouselState[containerId] = { current: 0, total: total, autoTimer: null };
+
+        const dotsContainer = container.querySelector('.carousel-dots');
+        if (dotsContainer) {
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot';
+                dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                dot.addEventListener('click', () => goToSlide(containerId, i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        updateCarousel(containerId);
+        startAutoPlay(containerId);
+
+        container.addEventListener('mouseenter', () => stopAutoPlay(containerId));
+        container.addEventListener('mouseleave', () => startAutoPlay(containerId));
+    }
+
+    function updateCarousel(containerId) {
+        const container = document.getElementById(containerId);
+        const state = carouselState[containerId];
+        const slides = container.querySelectorAll('.carousel-slide');
+        const total = state.total;
+        const current = state.current;
+
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active', 'prev', 'next', 'far-prev', 'far-next');
+            const offset = (i - current + total) % total;
+            if (offset === 0) slide.classList.add('active');
+            else if (offset === 1 || (offset === 1 - total)) slide.classList.add('next');
+            else if (offset === total - 1 || (offset === -1)) slide.classList.add('prev');
+            else if (offset === 2 || offset === 2 - total) slide.classList.add('far-next');
+            else if (offset === total - 2 || offset === -2) slide.classList.add('far-prev');
+        });
+
+        const dots = container.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, i) => { dot.classList.toggle('active', i === current); });
+    }
+
+    function shiftCarousel(containerId, direction) {
+        const state = carouselState[containerId];
+        state.current = (state.current + direction + state.total) % state.total;
+        updateCarousel(containerId);
+    }
+
+    function goToSlide(containerId, index) {
+        carouselState[containerId].current = index;
+        updateCarousel(containerId);
+    }
+
+    function startAutoPlay(containerId) {
+        stopAutoPlay(containerId);
+        carouselState[containerId].autoTimer = setInterval(() => {
+            shiftCarousel(containerId, 1);
+        }, 4000);
+    }
+
+    function stopAutoPlay(containerId) {
+        if (carouselState[containerId] && carouselState[containerId].autoTimer) {
+            clearInterval(carouselState[containerId].autoTimer);
+            carouselState[containerId].autoTimer = null;
+        }
+    }
+
+    const nav = document.getElementById('siteNav');
+    let prevScroll = 0;
+    window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        nav.classList.toggle('show', y > 400 && y < prevScroll);
+        nav.classList.toggle('hide', y > 400 && y >= prevScroll);
+        if (y <= 400) { nav.classList.remove('show'); nav.classList.remove('hide'); }
+        prevScroll = y;
+    });
+
+    if (!eventId) {
+        showError("No event was specified. Please go back and select an event.");
+    } else {
+        fetch(DETAILS_CSV_URL)
+            .then(r => {
+                if (!r.ok) throw new Error("Failed to fetch event details");
+                return r.text();
+            })
+            .then(csv => {
+                const rows = parseCSV(csv);
+                const event = rows.find(r => r.id === eventId);
+
+                if (event) {
+                    renderEvent(event);
+                    console.log(`✅ Loaded event: ${event.title} ${event.year}`);
+                } else {
+                    showError(`Could not find event "${eventId}". Check the Google Sheet.`);
+                }
+            })
+            .catch(err => {
+                console.error("❌ Failed to load event:", err);
+                showError("Something went wrong loading this event. Please try again later.");
+            });
+    }
+    </script>
+
+</body>
+</html>

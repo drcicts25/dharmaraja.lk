@@ -1,0 +1,83 @@
+/**
+ * @ Author: MyoMoonlight
+ * @ Create Time: 2024-08-30 03:27:09
+ * @ Modified time: 2025-02-04 12:29:02
+ */
+
+/* For banner pages */
+
+#banner {
+    height: 90dvh;
+    width: 100%;
+    position: relative;
+    /* background-color: black; */
+    overflow: hidden;
+    &::before {
+        content: "";
+        display: block;
+        top: 0;
+        left: 0;
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.667);
+        z-index: 5;
+    }
+    & > h1 {
+        font-size: 4.3rem;
+        color: white;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 6;
+    }
+
+    & > section {
+        position: absolute;
+        bottom: 4em;
+        display: flex;
+        gap: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: auto;
+        z-index: 6;
+        & > i {
+            display: block;
+            width: 0.6em;
+            aspect-ratio: 1/1;
+            transition: 0.8s ease-in-out;
+            border-radius: 50%;
+            border: 3px solid rgb(255, 255, 255);
+            /* cursor: pointer;
+            &:hover, */
+            &.active {
+                background-color: rgb(255, 255, 255);
+            }
+        }
+    }
+
+    & > img {
+        z-index: 2;
+        left: 0;
+        top: 0;
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        object-fit: cover;
+        transform: translateX(-100%);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #banner {
+        height: 70vh;
+        & > h1 {
+            font-size: 2em;
+        }
+        & > section {
+            bottom: 40px;
+        }
+    }
+}
