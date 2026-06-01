@@ -113,7 +113,7 @@ section.in-view {
   min-height: 100vh;
   display: flex;
   align-items: flex-end;
-  background: linear-gradient(135deg, rgb(60, 8, 15) 0%, rgb(10, 20, 55) 100%);
+  background: linear-gradient(135deg, rgb(60, 8, 15) 0%, rgb(52, 152, 219) 100%);
   padding: 0;
   overflow: hidden;
 }
@@ -166,7 +166,7 @@ section.in-view {
 .hero-gradient-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 20, 55, 0.95) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(52, 152, 219, 0.95) 0%, transparent 60%);
   z-index: 2;
   pointer-events: none;
 }
