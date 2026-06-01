@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.C.E. Advanced Level Admissions | Dharmaraja College</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/nav bar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Color Variables & Theme Configurations */
+        :root {
+            --maroon-primary: #7A1C1C;
+            --maroon-light: #A33333;
+            --blue-accent: #3A8EBA;
+            --blue-light: #EBF5FB;
+            --bg-dark: #121212;
+            --bg-light: #F9F9FB;
+            --text-dark: #1C1C1C;
+            --text-light: #FFFFFF;
+            --glass-light: rgba(255, 255, 255, 0.75);
+            --glass-dark: rgba(20, 20, 20, 0.85);
+            --border-glass: rgba(255, 255, 255, 0.25);
+            --border-glass-dark: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Hero / Header Section Customization */
+        .admissions-hero {
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-dark) 40%, #1a2530 100%);
+            padding: 120px 8% 60px 8%;
+            overflow: hidden;
+        }
+
+        /* Abstract structural background shapes */
+        .hero-shape-1 {
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(122, 28, 28, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 1;
+        }
+
+        .hero-shape-2 {
+            position: absolute;
+            bottom: -10%;
+            right: -10%;
+            width: 45vw;
+            height: 45vw;
+            background: radial-gradient(circle, rgba(58, 142, 186, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 1;
+        }
+
+        .hero-content-box {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .hero-content-box h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero-content-box .subtitle {
+            font-size: 1.1rem;
+            color: var(--blue-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .hero-content-box p {
+            color: #CCCCCC;
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Guideline Sections Container */
+        .guidelines-container {
+            max-width: 1200px;
+            margin: -40px auto 80px auto;
+            padding: 0 4%;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Glass Blocks Layout */
+        .glass-block {
+            background: var(--glass-light);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1.5px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-block:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Grid for content distribution */
+        .guideline-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* Specific block designs */
+        .block-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(0,0,0,0.05);
+            padding-bottom: 12px;
+        }
+
+        .block-indicator {
+            width: 12px;
+            height: 24px;
+            border-radius: 4px;
+        }
+
+        .indicator-maroon {
+            background-color: var(--maroon-primary);
+        }
+
+        .indicator-blue {
+            background-color: var(--blue-accent);
+        }
+
+        .block-header h2 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .glass-block p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #444444;
+            margin-bottom: 15px;
+        }
+
+        .glass-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Clean lists for requirements and processes */
+        .guideline-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .guideline-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #444444;
+        }
+
+        .guideline-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .list-maroon li::before {
+            background-color: var(--maroon-primary);
+        }
+
+        .list-blue li::before {
+            background-color: var(--blue-accent);
+        }
+
+        /* Dark themed glass block for callouts/deadlines */
+        .glass-block-dark {
+            background: var(--glass-dark);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1.5px solid var(--border-glass-dark);
+            color: var(--text-light);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .glass-block-dark h2 {
+            color: var(--text-light);
+        }
+
+        .glass-block-dark p {
+            color: #DDDDDD;
+        }
+
+        /* Download Section & CTA */
+        .download-container {
+            background: linear-gradient(135deg, rgba(122, 28, 28, 0.08) 0%, rgba(58, 142, 186, 0.08) 100%);
+            border: 2px dashed rgba(122, 28, 28, 0.2);
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .download-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .download-subtitle {
+            font-size: 0.95rem;
+            color: #666666;
+            margin-bottom: 25px;
+        }
+
+        /* Standardized Action Button */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 5px 15px rgba(122, 28, 28, 0.2);
+            background-color: var(--maroon-primary);
+            color: var(--text-light) !important;
+        }
+
+        .btn-download:hover {
+            background-color: var(--maroon-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(122, 28, 28, 0.35);
+        }
+
+        .btn-download svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Mobile Responsive Adaptations */
+        @media (max-width: 992px) {
+            .admissions-hero {
+                padding-top: 140px;
+                min-height: auto;
+            }
+
+            .hero-content-box h1 {
+                font-size: 2.2rem;
+            }
+
+            .guideline-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .glass-block {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="index.html">
+                <div class="logo">
+                    <img src="media/logo_dharmaraja.png" alt="Logo" class="nav-logo">
+                    Dharmaraja College
+                </div>
+            </a>
+            <div class="menu-icon" id="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Who We Are</a></li>
+                <li><a href="events_news.html">Events</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="societies.html">Societies</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero / Header block -->
+    <section class="admissions-hero">
+        <div class="hero-shape-1"></div>
+        <div class="hero-shape-2"></div>
+        <div class="hero-content-box">
+            <span class="subtitle">Admissions Open</span>
+            <h1>Grade 12 Advanced Level Admissions</h1>
+            <p>Guidelines, eligibility parameters, and application procedures for students pursuing the National Curriculum path.</p>
+        </div>
+    </section>
+
+    <!-- Structural Guidelines Area -->
+    <main class="guidelines-container">
+        
+        <!-- General Overview Block (Dark themed glass block) -->
+        <article class="glass-block glass-block-dark">
+            <div class="block-header" style="border-bottom-color: rgba(255,255,255,0.1);">
+                <div class="block-indicator indicator-maroon"></div>
+                <h2>National Curriculum Intake</h2>
+            </div>
+            <p>Applications are called from students following the National Curriculum who wish to enter Grade 12 for the GCE Advanced Level.</p>
+            <p>Applications are opened after the release of GCE Ordinary Level (O/L) results. Specific dates and timelines will be announced through the College website and official communication channels.</p>
+        </article>
+
+        <!-- Two column grid for details -->
+        <div class="guideline-grid">
+            
+            <!-- Block 1: Requirements (Maroon Accented) -->
+            <section class="glass-block">
+                <div class="block-header">
+                    <div class="block-indicator indicator-maroon"></div>
+                    <h2>Entry Requirements</h2>
+                </div>
+                <ul class="guideline-list list-maroon">
+                    <li>Applicants must have obtained a minimum of six (6) A grades at the GCE Ordinary Level Examination to be eligible for consideration.</li>
+                    <li>Demonstrated excellence in sports and recognized co-curricular activities may be taken into account during the selection process.</li>
+                </ul>
+            </section>
+
+            <!-- Block 2: Process (Blue Accented) -->
+            <section class="glass-block">
+                <div class="block-header">
+                    <div class="block-indicator indicator-blue"></div>
+                    <h2>Application Process</h2>
+                </div>
+                <ul class="guideline-list list-blue">
+                    <li>All applications must be submitted through the College Online Admissions Portal during the designated application period.</li>
+                    <li>Each application is reviewed carefully. Based on academic performance and the number of available vacancies, shortlisted candidates will be invited for an interview with the Admissions Committee.</li>
+                    <li>As vacancies at this level are limited, admission is competitive and cannot be guaranteed. Final selections are subject to approval by the Board of Governors.</li>
+                </ul>
+            </section>
+
+        </div>
+
+        <!-- Download Action Block -->
+        <section class="download-container">
+            <h3 class="download-title">Application Documents</h3>
+            <p class="download-subtitle">Download the formal application package, complete the sections, and prepare the necessary enclosures.</p>
+            <a href="media/docs/admission_application.pdf" class="btn-download" download>
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
+                </svg>
+                Download Application Form
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer System -->
+    <footer id="footer">
+        <section>
+            <div>
+                <img src="media/logo-footer.png" alt="DRC" />
+                <p>Dharmaraja College, founded in 1887, is a premier Buddhist boys' school in Kandy, Sri Lanka.</p>
+            </div>
+            <div>
+                <ul>
+                    <li><img src="media/call.png" alt="Phone" />0812 234 495</li>
+                    <li><img src="media/location.png" alt="Address" />Kandy, Sri Lanka.</li>
+                    <li><img src="media/mail.png" alt="Email" />info@dharmaraja.lk</li>
+                </ul>
+            </div>
+            <div>
+                <section>
+                    <a href="#"><img src="media/facebook.png" alt="Facebook" /></a>
+                    <a href="#"><img src="media/instagram.png" alt="Instagram" /></a>
+                    <a href="#"><img src="media/whatsapp.png" alt="whatsapp" /></a>
+                </section>
+            </div>
+        </section>
+        <hr />
+        <h5>All Rights Reserved © 2026 Dharmaraja College</h5>
+    </footer>
+
+    <!-- Responsive Navigation Script -->
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navMenu = document.getElementById('nav-menu');
+
+        if(menuIcon && navMenu) {
+            menuIcon.onclick = function() {
+                navMenu.classList.toggle('active');
+                menuIcon.classList.toggle('toggle');
+            }
+        }
+    </script>
+</body>
+</html>
