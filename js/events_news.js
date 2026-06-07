@@ -1,5 +1,5 @@
 const eventCnt = document.querySelector("#events > section");
-const newsCnt = document.querySelector("#news > section");
+
 const template = document.getElementById("template_eventcard");
 
 if (template) {
@@ -40,7 +40,7 @@ if (template) {
             items.reverse();
 
             const events = items.filter(item => item.type && item.type.toLowerCase() === 'event');
-            const news = items.filter(item => item.type && item.type.toLowerCase() === 'news');
+
 
             function renderItems(container, dataArray) {
                 if (!container || !dataArray) return;
@@ -71,8 +71,7 @@ if (template) {
             // --- 1. RENDER EVENTS ---
             renderItems(eventCnt, events);
 
-            // --- 2. RENDER NEWS ---
-            renderItems(newsCnt, news);
+
         })
         .catch(err => {
             console.error("Data could not be loaded. Check your CSV path or Live Server.", err);
