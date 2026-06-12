@@ -111,6 +111,83 @@ a {
     overflow-x: hidden;
 }
 
+/* --- Admissions Banner Block Styles --- */
+
+.admissions-banner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f2f5; /* Light Gray Background */
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin: 25px 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-left: 5px solid #003366; /* Blue Accent Line */
+}
+
+.admissions-content {
+    max-width: 70%;
+}
+
+.admissions-title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #800000; /* Maroon Title */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.admissions-desc {
+    margin: 8px 0 0 0;
+    font-size: 0.95rem;
+    color: #444444; /* Dark Gray text for readability */
+}
+
+.admissions-action {
+    flex-shrink: 0; 
+}
+
+.admissions-btn {
+    display: inline-block;
+    background-color: #003366; /* Blue Button */
+    color: #ffffff; 
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.admissions-btn:hover {
+    background-color: #800000; /* Hover changes to Maroon */
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .admissions-banner-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        border-left: none;
+        border-top: 5px solid #003366; /* Moves accent line to top on mobile */
+    }
+
+    .admissions-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .admissions-title {
+        font-size: 1.2rem;
+    }
+}
 
 #hero > a.logo,
 #banner > a.logo {
