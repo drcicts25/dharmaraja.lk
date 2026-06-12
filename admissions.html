@@ -34,12 +34,12 @@
         /* Hero / Header Section Customization */
         .admissions-hero {
             position: relative;
-            min-height: 50vh;
+            min-height: 45vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, var(--bg-dark) 40%, #1a2530 100%);
-            padding: 120px 8% 60px 8%;
+            padding: 130px 8% 60px 8%;
             overflow: hidden;
         }
 
@@ -125,14 +125,6 @@
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
         }
 
-        /* Grid for content distribution */
-        .guideline-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
         /* Specific block designs */
         .block-header {
             display: flex;
@@ -163,15 +155,63 @@
             font-weight: 600;
         }
 
-        .glass-block p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #444444;
-            margin-bottom: 15px;
+        /* Stream-specific structure */
+        .streams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
         }
 
-        .glass-block p:last-child {
-            margin-bottom: 0;
+        .stream-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .stream-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--maroon-primary);
+            margin-bottom: 8px;
+        }
+
+        .medium-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+
+        .badge-dual {
+            background-color: var(--blue-light);
+            color: var(--blue-accent);
+        }
+
+        .badge-single {
+            background-color: #F0E6E6;
+            color: var(--maroon-primary);
+        }
+
+        .subject-list {
+            font-size: 0.9rem;
+            color: #555555;
+            line-height: 1.6;
+        }
+
+        /* Grid for content distribution */
+        .guideline-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
         }
 
         /* Clean lists for requirements and processes */
@@ -207,6 +247,29 @@
             background-color: var(--blue-accent);
         }
 
+        /* Mailing Address Box */
+        .address-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-left: 4px solid var(--maroon-primary);
+            padding: 15px 20px;
+            margin-top: 15px;
+            border-radius: 0 12px 12px 0;
+            font-family: inherit;
+        }
+
+        .address-box p {
+            margin: 2px 0;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* Highlight tag */
+        .highlight-tag {
+            color: var(--maroon-primary);
+            font-weight: 700;
+        }
+
         /* Dark themed glass block for callouts/deadlines */
         .glass-block-dark {
             background: var(--glass-dark);
@@ -217,12 +280,10 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .glass-block-dark h2 {
-            color: var(--text-light);
-        }
-
         .glass-block-dark p {
             color: #DDDDDD;
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
 
         /* Download Section & CTA */
@@ -240,12 +301,6 @@
             font-weight: 600;
             color: var(--text-dark);
             margin-bottom: 10px;
-        }
-
-        .download-subtitle {
-            font-size: 0.95rem;
-            color: #666666;
-            margin-bottom: 25px;
         }
 
         /* Standardized Action Button */
@@ -288,7 +343,7 @@
             }
 
             .hero-content-box h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .guideline-grid {
@@ -298,6 +353,10 @@
 
             .glass-block {
                 padding: 30px 20px;
+            }
+
+            .streams-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -330,48 +389,130 @@
         </nav>
     </header>
 
-    <!-- Hero / Header block -->
+    <!-- Hero Block -->
     <section class="admissions-hero">
         <div class="hero-shape-1"></div>
         <div class="hero-shape-2"></div>
         <div class="hero-content-box">
-            <span class="subtitle">Admissions Open</span>
-            <h1>Grade 12 Advanced Level Admissions<br>(2028 A/L)</h1>
+            <span class="subtitle">Admissions 2028</span>
+            <h1>Admission to Advanced Level (A/L) Classes</h1>
+            <p>Applications are now open for admission to the G.C.E. Advanced Level (A/L) classes of Dharmaraja College based on the 2025 G.C.E. Ordinary Level (O/L) Examination results.</p>
         </div>
     </section>
 
     <!-- Structural Guidelines Area -->
     <main class="guidelines-container">
         
-        <!-- General Overview Block (Dark themed glass block) -->
-        <article class="glass-block glass-block-dark">
-            <p>At Dharmaraja College, education is merely the foundation. Our true goal is the cultivation of exceptional character. We invite young minds to enter our historic gates, honor our rich traditions, and embark on a transformative journey toward a visionary and impactful future.</p>
+        <!-- Stream Availability Section (Glass Block) -->
+        <article class="glass-block">
+            <div class="block-header">
+                <div class="block-indicator indicator-maroon"></div>
+                <h2>Available Streams & Subjects</h2>
+            </div>
+            
+            <div class="streams-grid">
+                
+                <!-- Stream 1 -->
+                <div class="stream-card">
+                    <div>
+                        <div class="stream-title">Physical Science (Mathematics)</div>
+                        <span class="medium-badge badge-dual">Sinhala & English Medium</span>
+                    </div>
+                    <div class="subject-list">
+                        Combined Mathematics, Physics, Chemistry, ICT
+                    </div>
+                </div>
+
+                <!-- Stream 2 -->
+                <div class="stream-card">
+                    <div>
+                        <div class="stream-title">Biological Science</div>
+                        <span class="medium-badge badge-dual">Sinhala & English Medium</span>
+                    </div>
+                    <div class="subject-list">
+                        Biology, Physics, Chemistry, Agricultural Science
+                    </div>
+                </div>
+
+                <!-- Stream 3 -->
+                <div class="stream-card">
+                    <div>
+                        <div class="stream-title">Commerce</div>
+                        <span class="medium-badge badge-dual">Sinhala & English Medium</span>
+                    </div>
+                    <div class="subject-list">
+                        Accounting, Business Studies, Economics, ICT
+                    </div>
+                </div>
+
+                <!-- Stream 4 -->
+                <div class="stream-card">
+                    <div>
+                        <div class="stream-title">Arts</div>
+                        <span class="medium-badge badge-single">Sinhala Medium Only</span>
+                    </div>
+                    <div class="subject-list">
+                        Sinhala, Political Science, Geography, Logic & Scientific Method, Economics, Communication & Media Studies, ICT, History of India & Europe, Agriculture, Home Economics, Eastern Music, Western Music, Art, Dancing, Drama & Theatre, English, Chinese, French, German, Korean, Buddhist Civilization
+                    </div>
+                </div>
+
+                <!-- Stream 5 -->
+                <div class="stream-card">
+                    <div>
+                        <div class="stream-title">Engineering Technology</div>
+                        <span class="medium-badge badge-single">Sinhala Medium Only</span>
+                    </div>
+                    <div class="subject-list">
+                        Science For Technology, Engineering Technology, ICT, Geography, Art, Agricultural Science, Mathematics, Home Economics, Business Studies
+                    </div>
+                </div>
+
+                <!-- Stream 6 -->
+                <div class="stream-card">
+                    <div>
+                        <div class="stream-title">Bio Systems Technology</div>
+                        <span class="medium-badge badge-single">Sinhala Medium Only</span>
+                    </div>
+                    <div class="subject-list">
+                        Science For Technology, Bio Systems Technology, Agricultural Science, Home Economics, ICT, Geography, Art, Mathematics, Business Studies
+                    </div>
+                </div>
+
+            </div>
         </article>
 
         <!-- Two column grid for details -->
         <div class="guideline-grid">
             
-            <!-- Block 1: Requirements (Maroon Accented) -->
+            <!-- Block 1: How to Apply (Maroon Accented) -->
             <section class="glass-block">
                 <div class="block-header">
                     <div class="block-indicator indicator-maroon"></div>
-                    <h2>Application Procedure</h2>
+                    <h2>How to Apply</h2>
                 </div>
                 <ul class="guideline-list list-maroon">
-                    <li>Obtain the application PDF below and complete it manually.</li>
-                    <li>Post your completed application with necessary attachments to "Dharmaraja College, Louis Peiris Mawatha, Kandy."</li>
+                    <li>Download the application form below and complete the required sections.</li>
+                    <li>Send the completed application by post on or before <span class="highlight-tag">25th of June 2026</span>.</li>
+                    <li>Ensure <strong>"Admission to A/L Classes"</strong> is written on the top left corner of the envelope.</li>
                 </ul>
+                <div class="address-box">
+                    <p style="font-weight: 700; color: var(--maroon-primary); margin-bottom: 5px;">Postal Address:</p>
+                    <p>The Principal,</p>
+                    <p>Dharmaraja College,</p>
+                    <p>Kandy.</p>
+                </div>
             </section>
 
-            <!-- Block 2: Process (Blue Accented) -->
+            <!-- Block 2: Selection (Blue Accented) -->
             <section class="glass-block">
                 <div class="block-header">
                     <div class="block-indicator indicator-blue"></div>
-                    <h2>Interview & Selection</h2>
+                    <h2>Selection Process</h2>
                 </div>
                 <ul class="guideline-list list-blue">
-                    <li>Applicants will be shortlisted based on certain criteria for the interview stage.</li>
-                    <li>Therefore, ensure your contact details are accurate and active so we can reach you directly.</li>
+                    <li>Students will be evaluated and selected based on available vacancies and educational qualifications.</li>
+                    <li>Selected applicants will be called directly for an official interview.</li>
+                    <li>Applicants must attend the interview on the designated date. Those who fail to do so will not be reconsidered for admission.</li>
                 </ul>
             </section>
 
@@ -379,8 +520,8 @@
 
         <!-- Download Action Block -->
         <section class="download-container">
-            <h3 class="download-title">Download your Application Here.</h3>
-            <p class="download-subtitle"></p>
+            <h3 class="download-title">Download your Application Here</h3>
+            <p style="color: #666; margin-bottom: 20px; font-size: 0.95rem;">Please download, print, and fill out this document to start your application process.</p>
             <a href="media/docs/admission_application.pdf" class="btn-download" download>
                 <svg viewBox="0 0 24 24">
                     <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
