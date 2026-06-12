@@ -188,48 +188,48 @@ h1 {
     }
 }
 
-/* --- Coaches Vacancy Block Styles --- */
+/* --- Admissions Banner Block Styles --- */
 
-.coaches-vacancy-container {
+.admissions-banner-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #800000; /* Dharmaraja Maroon */
-    color: #ffffff;
+    background-color: #f0f2f5; /* Light Gray Background */
     padding: 25px 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    margin: 25px 0; /* Creates space between the scoreboard and this block */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin: 25px 0; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-left: 5px solid #ADD8E6; /* Dharmaraja Gold Accent */
+    border-left: 5px solid #003366; /* Blue Accent Line */
 }
 
-.vacancy-content {
+.admissions-content {
     max-width: 70%;
 }
 
-.vacancy-title {
+.admissions-title {
     margin: 0;
     font-size: 1.4rem;
     font-weight: 700;
+    color: #800000; /* Maroon Title */
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
 
-.vacancy-desc {
+.admissions-desc {
     margin: 8px 0 0 0;
     font-size: 0.95rem;
-    color: #e0e0e0;
+    color: #444444; /* Dark Gray text for readability */
 }
 
-.vacancy-action {
-    flex-shrink: 0; /* Prevents the button from shrinking on smaller screens */
+.admissions-action {
+    flex-shrink: 0; 
 }
 
-.vacancy-btn {
+.admissions-btn {
     display: inline-block;
-    background-color: #ADD8E6; /* Dharmaraja Gold */
-    color: #800000; /* Maroon Text */
+    background-color: #003366; /* Blue Button */
+    color: #ffffff; 
     text-decoration: none;
     padding: 12px 24px;
     font-size: 1rem;
@@ -239,208 +239,30 @@ h1 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.vacancy-btn:hover {
-    background-color: #ffea75; /* Lighter Gold on hover */
+.admissions-btn:hover {
+    background-color: #800000; /* Hover changes to Maroon */
+    color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    color: #800000;
 }
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
-    .coaches-vacancy-container {
+    .admissions-banner-container {
         flex-direction: column;
         text-align: center;
         padding: 20px;
         border-left: none;
-        border-top: 5px solid #ADD8E6; /* Moves the accent line to the top on mobile */
+        border-top: 5px solid #003366; /* Moves accent line to top on mobile */
     }
 
-    .vacancy-content {
+    .admissions-content {
         max-width: 100%;
         margin-bottom: 20px;
     }
 
-    .vacancy-title {
+    .admissions-title {
         font-size: 1.2rem;
-    }
-}
-
-/* Vesak Zone Section Styles (with 15px inward padding) */
-.vesak-zone-section {
-    width: 100%;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    box-sizing: border-box;
-}
-
-/* Horizontal Colored Stripes */
-.vesak-stripe {
-    width: 100%;
-    height: 14px;
-    background: linear-gradient(to bottom, 
-        #0015ff 0%, #0015ff 22%, 
-        #ffff00 22%, #ffff00 44%, 
-        #ff0000 44%, #ff0000 66%, 
-        transparent 66%, transparent 78%, 
-        #ff9000 78%, #ff9000 100%
-    );
-}
-
-/* Content Container */
-.vesak-content-container {
-    max-width: 1200px;
-    margin: 35px auto;
-    padding: 0 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    box-sizing: border-box;
-}
-
-/* Video Column styling (Portrait 9:16 layout) */
-.vesak-video-col {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 320px; /* Scaled down to prevent the portrait video from being overly tall */
-    width: 100%;
-}
-
-.video-wrapper {
-    width: 100%;
-    aspect-ratio: 9 / 16; /* Adjusted for 576 x 1024 portrait video aspect ratio */
-    background-color: #000000;
-    border-radius: 1.5rem;
-    overflow: hidden;
-    position: relative;
-}
-
-.video-wrapper video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 1.5rem;
-}
-
-/* Round Play/Pause Button */
-.play-btn-round {
-    margin-top: 25px;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    border: 2px solid #000000;
-    background-color: #ffffff;
-    color: #000000;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 0;
-    outline: none;
-}
-
-.play-btn-round:hover {
-    background-color: #000000;
-    color: #ffffff;
-    transform: scale(1.05);
-}
-
-.play-btn-round svg {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.2s ease;
-}
-
-/* Toggle icon states based on video playing class */
-.play-btn-round .icon-pause {
-    display: none;
-}
-
-.play-btn-round.playing .icon-play {
-    display: none;
-}
-
-.play-btn-round.playing .icon-pause {
-    display: block;
-}
-
-/* Text Column styling */
-.vesak-text-col {
-    flex: 1.2;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.vesak-title {
-    font-family: "Old-English", serif;
-    font-size: 3em;
-    font-weight: 500;
-    margin-bottom: 20px;
-    color: #111111;
-    line-height: 1.2;
-}
-
-.vesak-desc {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #333333;
-    max-width: 550px;
-    margin-bottom: 30px;
-}
-
-.vesak-tags {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 1.1em;
-    color: #555555;
-}
-
-/* Responsive Rules for Tablets and Mobiles */
-@media screen and (max-width: 860px) {
-    .vesak-content-container {
-        flex-direction: column;
-        gap: 40px;
-        margin: 30px auto;
-    }
-
-    .vesak-video-col, .vesak-text-col {
-        max-width: 100%;
-    }
-
-    .video-wrapper {
-        max-width: 280px; /* Compact width for mobile screens */
-        margin: 0 auto;
-    }
-
-    .vesak-title {
-        font-size: 2.2em;
-    }
-
-    .vesak-desc {
-        font-size: 1.1em;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .video-wrapper {
-        max-width: 240px;
-    }
-    
-    .vesak-title {
-        font-size: 1.8em;
     }
 }
 
