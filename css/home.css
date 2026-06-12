@@ -194,13 +194,13 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f0f2f5; /* Light Gray Background */
+    background-color: #1e1e1e; /* Light Gray Background */
     padding: 25px 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     margin: 25px 0; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-left: 5px solid #003366; /* Blue Accent Line */
+    border-left: 5px solid #760316; /* Blue Accent Line */
 }
 
 .admissions-content {
@@ -211,7 +211,7 @@ h1 {
     margin: 0;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #800000; /* Maroon Title */
+    color: #f1d921; /* Maroon Title */
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
@@ -219,7 +219,7 @@ h1 {
 .admissions-desc {
     margin: 8px 0 0 0;
     font-size: 0.95rem;
-    color: #444444; /* Dark Gray text for readability */
+    color: #ffffff; /* Dark Gray text for readability */
 }
 
 .admissions-action {
@@ -228,7 +228,7 @@ h1 {
 
 .admissions-btn {
     display: inline-block;
-    background-color: #003366; /* Blue Button */
+    background-color: #2e96ff; /* Blue Button */
     color: #ffffff; 
     text-decoration: none;
     padding: 12px 24px;
@@ -253,7 +253,7 @@ h1 {
         text-align: center;
         padding: 20px;
         border-left: none;
-        border-top: 5px solid #003366; /* Moves accent line to top on mobile */
+        border-top: 5px solid #760316; /* Moves accent line to top on mobile */
     }
 
     .admissions-content {
