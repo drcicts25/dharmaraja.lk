@@ -120,6 +120,83 @@ nav ul li a:hover {
     border-radius: 2px;
 }
 
+footer {
+    background-color: black;
+    color: white;
+    padding-top: 50px;
+    & > hr {
+        border: none;
+        height: 0.4em;
+        width: 80%;
+        background-color: rgb(87, 87, 87);
+        border-radius: 0.2em;
+
+        margin: auto;
+    }
+
+    & > h5 {
+        text-align: center;
+        padding: 2em;
+        font-weight: 500;
+        color: rgb(180, 180, 180);
+    }
+    & > section {
+        padding: 30px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+
+        & > div {
+            min-width: 200px;
+            & > img {
+                width: 250px;
+                filter: drop-shadow(0 0 0.05em rgb(255, 255, 255));
+                backdrop-filter: blur(20px) saturate(0);
+            }
+            & > p {
+                font-weight: 500;
+                color: rgb(185, 185, 185);
+                font-size: 0.99em;
+                max-width: 370px;
+            }
+            & > a{
+                filter: drop-shadow(0 0 0.5em rgb(255, 255, 255));
+                backdrop-filter: blur(20px) saturate(0);
+
+            }
+            & > ul {
+                list-style-type: none;
+                & > li {
+                    text-align: left;
+                    line-height: 2em;
+                    margin: 0.1em 0;
+                    & > img {
+                        height: 1.1em;
+                        width: 2.2em;
+                        object-fit: contain;
+                        vertical-align: middle;
+                        padding: 0.45em;
+                        padding-right: 0.8em;
+                        
+                    }
+                }
+            }
+
+            & > section {
+                display: flex;
+                & > a {
+                    display: block;
+                    margin: 20px 20px 0 0;
+                    & > img {
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 /* --- MOBILE RESPONSIVE SETTINGS  --- */
 @media (max-width: 992px) {
     
@@ -295,6 +372,38 @@ nav ul li a:hover {
     font-weight: 400;
     text-align: justify;
 }
+footer > section {
+        flex-direction: column;
+        gap: 15px;
+        & > img{
+            margin: 10px;
+        }
+        & > div {
+            width: fit-content;
+            margin: auto;
+            text-align: center;
+            &:nth-child(3) {
+                margin: auto;
+                padding: 0 1.5em;
+                width: 100%;
+                max-width: 400px;
+                box-sizing: border-box;
+                justify-content: space-between;
+            }
+            & > div {
+                text-align: left;
+            }
+            
+            /* socal icons */
+            & > section {
+                justify-content: space-evenly;
+                & > a {
+                    margin: 10px 12px 0px 0px;
+                }
+            }
+        }
+    }
+}
 
 /* Mobile එකේදී එක යට එක පේන්න */
 @media (max-width: 768px) {
@@ -313,6 +422,21 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     gap: 50px;
+}
+ footer {
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 4px;
+            border-radius: 2px;
+            width: 5em;
+            background-color: #a9a9a9;
+            top: 2em;
+            left: calc(50% - 2.5em);
+        }
+    }
 }
 
 @media (max-width: 768px) {
