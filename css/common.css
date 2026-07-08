@@ -4,6 +4,8 @@
  * @ Modified time: 2025-05-12 18:21:15
  */
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @font-face {
     font-family: "Old-English";
     src: url(../fonts/oldenglish.ttf);
@@ -12,9 +14,16 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: poppins,sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
+h1 {
+    font-family: 'DM Serif Display', serif !important;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: "Old-English", serif !important;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -465,5 +474,14 @@ footer {
             top: 2em;
             left: calc(50% - 2.5em);
         }
+    }
+}
+
+/* ── Mobile Responsiveness ── */
+@media screen and (max-width: 768px) {
+    .explore {
+        font-size: 1.1em;
+        letter-spacing: 0.1em;
+        padding: 0.4em 1.4em;
     }
 }

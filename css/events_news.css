@@ -13,7 +13,6 @@
         width: fit-content;
         margin: auto;
         text-align: center;
-        font-family: "Old-English";
         font-weight: 500;
         line-height: 1em;
         font-size: 2.2em;
@@ -85,7 +84,6 @@
     width: 200px;
     aspect-ratio: 1/1.5;
     background-color: transparent;
-    perspective: 2000px;
     flex-shrink: 0;
 
     & > div {
@@ -94,22 +92,23 @@
         max-width: 300px;
         max-height: 450px;
         position: relative;
-        transform-style: preserve-3d;
-        transition: 0.7s ease-in-out;
         box-shadow: 0px 5px 20px #0006;
         border-radius: 20px;
+        overflow: hidden;
 
-        /* Front and back */
-        & > div {
+        /* card-front */
+        & > div:nth-child(1) {
             border-radius: 20px;
-            height: inherit;
-            width: inherit;
+            height: 100%;
+            width: 100%;
             position: absolute;
             top: 0;
+            left: 0;
             background-size: cover;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            overflow: hidden;
+            background-position: center;
+            color: white;
+            font-size: 0.9em;
+            transition: transform 0.5s ease;
 
             & > span {
                 position: absolute;
@@ -117,50 +116,76 @@
                 box-sizing: border-box;
                 padding: 1.5em 1em;
                 width: 100%;
-                /* bottom: 1em; */
                 bottom: 0;
                 background-image: linear-gradient(0deg, #000a 60%, transparent);
+                transition: opacity 0.3s ease;
             }
+        }
+
+        /* card-back (now the overlay) */
+        & > div:nth-child(2) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            min-height: 50%;
+            padding: 2em 1em 1.5em 1em;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8em;
+            justify-content: flex-end;
+            align-items: center;
+            background-image: linear-gradient(0deg, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.85) 60%, transparent 100%);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 2;
 
             & > img {
-                width: 100%;
+                width: 40px;
+                height: 40px;
+                object-fit: contain;
+                margin-bottom: 0.2em;
             }
 
             & > p {
                 text-align: center;
+                font-size: 0.85em;
+                line-height: 1.3;
+                margin: 0;
             }
 
             & > button {
-                /* padding: 0.4em 1.3em;
+                padding: 0.5em 1.2em;
                 border: none;
-                font-weight: 500;
+                font-weight: 600;
                 background-color: #fff;
-                border-radius: 1.2em;
-                font-size: 1.2em; */
-                font-size: 1em;
-            }
-
-            &:nth-child(1) {
-                background-color: white;
-                color: white;
+                color: #8a1528;
+                border-radius: 2em;
+                cursor: pointer;
                 font-size: 0.9em;
-            }
-
-            &:nth-child(2) {
-                transform: rotateY(180deg);
-                padding: 1em;
-                box-sizing: border-box;
-                display: flex;
-                flex-direction: column;
-                gap: 0.5em;
-                justify-content: center;
-                align-items: center;
+                transition: background 0.2s;
+                margin-top: 0.5em;
+                
+                &:hover {
+                    background-color: #f0f0f0;
+                }
             }
         }
     }
 
-    &:hover > div {
-        transform: rotateY(180deg);
+    &:hover > div > div:nth-child(1) {
+        transform: scale(1.05);
+    }
+    
+    &:hover > div > div:nth-child(1) > span {
+        opacity: 0;
+    }
+
+    &:hover > div > div:nth-child(2) {
+        transform: translateY(0);
     }
 }
 
@@ -169,10 +194,10 @@
     #news > img {
         transform: translate(-50%, -50%);
         &:nth-child(2) {
-            left: calc(50vw - 375px);
+            left: 5px;
         }
         &:nth-child(3) {
-            left: calc(50vw + 375px);
+            right: 5px; left: auto;
         }
     }
     #events > section,
@@ -182,24 +207,31 @@
 }
 
 /* Mobile */
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
+    /* Hide arrows on small screens, rely on touch swipe */
     #events > img,
     #news > img {
-        transform: translate(-50%, -50%);
-        &:nth-child(2) {
-            left: calc(50vw - 172px);
-        }
-        &:nth-child(3) {
-            left: calc(50vw + 172px);
-        }
+        display: none;
     }
+    
     #events > section,
     #news > section {
-        width: 80vw;
-        max-width: 270px;
-        & > div {
-            width: 80vw;
-            max-width: 270px;
-        }
+        width: 100%;
+        max-width: 100vw;
+        padding: 20px 10vw;
+        box-sizing: border-box;
+        gap: 20px; /* Reduce gap between cards */
+    }
+
+    .card-cnt {
+        width: 75vw;
+        max-width: 300px;
+        aspect-ratio: 1/1.4; /* Slightly more compact height */
+    }
+    
+    /* Ensure the inner divs inherit the correct mobile width */
+    .card-cnt > div {
+        width: 100%;
+        max-width: 100%;
     }
 }

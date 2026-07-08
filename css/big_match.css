@@ -26,7 +26,6 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
   color: var(--gray-900);
   background: var(--off-white);
   -webkit-font-smoothing: antialiased;
@@ -76,7 +75,6 @@ section.in-view {
   gap: 10px;
   text-decoration: none;
   color: var(--gray-900);
-  font-family: 'DM Serif Display', serif;
   font-weight: 400;
   font-size: 1.3rem;
 }
@@ -182,7 +180,6 @@ section.in-view {
 }
 
 .hero h1 {
-  font-family: 'DM Serif Display', serif;
   font-size: 5.5rem;
   font-weight: 400;
   color: var(--cream);
@@ -278,7 +275,6 @@ section.in-view {
 }
 
 .hero-stat-text strong {
-  font-family: 'DM Serif Display', serif;
   font-size: 1.8rem;
   color: var(--cream);
   display: block;
@@ -312,7 +308,6 @@ section.in-view {
 }
 
 .countdown strong {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.2rem;
   font-weight: 400;
   color: #fff;
@@ -342,7 +337,6 @@ section {
 }
 
 h2 {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.4rem;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -459,7 +453,6 @@ h2 {
 }
 
 .legacy-numbers div strong {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.5rem;
   color: var(--maroon);
   display: block;
@@ -701,7 +694,6 @@ h2 {
 }
 
 .rivalry-stat strong {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.5rem;
   color: #fff;
   display: block;
@@ -815,7 +807,6 @@ h2 {
 }
 
 .sb-team h3 {
-  font-family: 'DM Serif Display', serif;
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -825,7 +816,6 @@ h2 {
 }
 
 .sb-runs {
-  font-family: 'DM Serif Display', serif;
   font-size: 4rem;
   font-weight: 400;
   line-height: 1;
@@ -847,7 +837,6 @@ h2 {
 }
 
 .sb-vs {
-  font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   font-weight: 800;
   color: #fff;
@@ -960,7 +949,6 @@ footer {
 }
 
 .footer-school {
-  font-family: 'DM Serif Display', serif;
   font-size: 1.4rem;
   color: #fff;
   margin-bottom: 0.3rem;
@@ -1135,7 +1123,6 @@ footer {
 
 .squad-card-name {
   color: #fff;
-  font-family: 'DM Serif Display', serif;
   font-size: 1.3rem;
   margin-bottom: 0.2rem;
 }
@@ -1357,7 +1344,6 @@ footer {
 }
 
 .innings-team-name {
-  font-family: 'DM Serif Display', serif;
   font-size: 1.1rem;
   font-weight: 400;
 }
@@ -1370,7 +1356,6 @@ footer {
 }
 
 .sb-runs-sm {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 1;
@@ -1388,7 +1373,6 @@ footer {
 /* ── Result Banner ── */
 .sb-result {
   text-align: center;
-  font-family: 'DM Serif Display', serif;
   font-size: 1.15rem;
   font-weight: 400;
   padding: 0.9rem 1.5rem;

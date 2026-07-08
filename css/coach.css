@@ -12,7 +12,6 @@
 
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
     background-color: var(--dark-bg);
     color: #ffffff;
 }
@@ -42,7 +41,6 @@ body {
 }
 
 .hero-text h1 {
-    font-family: 'Oswald', sans-serif;
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     color: var(--gold);
     text-transform: uppercase;
@@ -105,7 +103,6 @@ body {
 }
 
 .form-container h2 {
-    font-family: 'Oswald', sans-serif;
     font-size: 2.2rem;
     color: var(--gold);
     text-align: center;
@@ -130,7 +127,6 @@ body {
 }
 
 .input-group label {
-    font-family: 'Oswald', sans-serif;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -153,7 +149,6 @@ body {
     border-radius: 8px !important;
     padding: 14px 18px !important;
     color: white !important;
-    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     width: 100%;
     box-sizing: border-box;
@@ -184,7 +179,6 @@ body {
 }
 
 .checkbox-group label {
-    font-family: 'Inter', sans-serif !important;
     text-transform: none !important;
     letter-spacing: 0 !important;
     color: #ccc !important;
@@ -196,7 +190,6 @@ body {
 }
 
 .submit-btn {
-    font-family: 'Oswald', sans-serif;
     background: linear-gradient(135deg, var(--maroon) 0%, #a00000 100%);
     color: var(--gold);
     border: none;

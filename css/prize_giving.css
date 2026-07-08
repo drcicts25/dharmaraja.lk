@@ -26,7 +26,6 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
   color: var(--gray-900);
   background: var(--off-white);
   -webkit-font-smoothing: antialiased;
@@ -76,7 +75,6 @@ section.in-view {
   gap: 10px;
   text-decoration: none;
   color: var(--gray-900);
-  font-family: 'DM Serif Display', serif;
   font-weight: 400;
   font-size: 1.3rem;
 }
@@ -178,7 +176,6 @@ section.in-view {
 }
 
 .hero h1 {
-  font-family: 'DM Serif Display', serif;
   font-size: 5.5rem;
   font-weight: 400;
   color: var(--cream);
@@ -265,7 +262,6 @@ section.in-view {
 }
 
 .hero-stat-text strong {
-  font-family: 'DM Serif Display', serif;
   font-size: 1.8rem;
   color: var(--cream);
   display: block;
@@ -288,7 +284,6 @@ section {
 }
 
 h2 {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.4rem;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -346,7 +341,6 @@ h2 {
 }
 
 .about-numbers div strong {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.5rem;
   color: var(--maroon);
   display: block;
@@ -485,7 +479,6 @@ h2 {
 }
 
 .guest-info h3 {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.2rem;
   font-weight: 400;
   color: var(--gray-900);
@@ -547,7 +540,6 @@ h2 {
 }
 
 .award-card h4 {
-  font-family: 'DM Serif Display', serif;
   font-size: 1.3rem;
   font-weight: 400;
   color: var(--gray-900);
@@ -584,7 +576,6 @@ h2 {
 }
 
 .pinnacle-box h3 {
-  font-family: 'DM Serif Display', serif;
   font-size: 2rem;
   font-weight: 400;
   color: var(--cream);
@@ -627,7 +618,6 @@ footer {
 }
 
 .footer-school {
-  font-family: 'DM Serif Display', serif;
   font-size: 1.4rem;
   color: #fff;
   margin-bottom: 0.3rem;

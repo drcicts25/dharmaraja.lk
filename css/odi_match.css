@@ -26,7 +26,6 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
   color: var(--gray-900);
   background: var(--off-white);
   -webkit-font-smoothing: antialiased;
@@ -76,7 +75,6 @@ section.in-view {
   gap: 10px;
   text-decoration: none;
   color: var(--gray-900);
-  font-family: 'DM Serif Display', serif;
   font-weight: 400;
   font-size: 1.3rem;
 }
@@ -182,7 +180,6 @@ section.in-view {
 }
 
 .hero h1 {
-  font-family: 'DM Serif Display', serif;
   font-size: 5.5rem;
   font-weight: 400;
   color: var(--cream);
@@ -269,7 +266,6 @@ section.in-view {
 }
 
 .hero-stat-text strong {
-  font-family: 'DM Serif Display', serif;
   font-size: 1.8rem;
   color: var(--cream);
   display: block;
@@ -303,7 +299,6 @@ section.in-view {
 }
 
 .countdown strong {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.2rem;
   font-weight: 400;
   color: #fff;
@@ -333,7 +328,6 @@ section {
 }
 
 h2 {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.4rem;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -445,7 +439,6 @@ h2 {
 }
 
 .legacy-numbers div strong {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.5rem;
   color: var(--maroon);
   display: block;
@@ -716,7 +709,6 @@ h2 {
 }
 
 .innings-team-name {
-  font-family: 'DM Serif Display', serif;
   font-size: 1.1rem;
   font-weight: 400;
 }
@@ -729,7 +721,6 @@ h2 {
 }
 
 .sb-runs-sm {
-  font-family: 'DM Serif Display', serif;
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 1;
@@ -742,7 +733,6 @@ h2 {
 /* ── Result Banner ── */
 .sb-result {
   text-align: center;
-  font-family: 'DM Serif Display', serif;
   font-size: 1.15rem;
   font-weight: 400;
   padding: 0.9rem 1.5rem;
@@ -816,7 +806,6 @@ h2 {
 }
 
 .history-year {
-  font-family: 'DM Serif Display', serif;
   font-size: 1.6rem;
   color: var(--cream);
   margin-bottom: 0.5rem;
@@ -826,7 +815,6 @@ h2 {
 }
 
 .history-year .match-number {
-  font-family: 'Inter', sans-serif;
   font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -882,7 +870,6 @@ h2 {
 }
 
 .trophy-banner h3 {
-  font-family: 'DM Serif Display', serif;
   font-size: 1.6rem;
   font-weight: 400;
   color: var(--gray-900);
@@ -933,7 +920,6 @@ footer {
 }
 
 .footer-school {
-  font-family: 'DM Serif Display', serif;
   font-size: 1.4rem;
   color: #fff;
   margin-bottom: 0.3rem;

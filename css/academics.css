@@ -14,14 +14,12 @@
         padding: 2em;
 
         & > span {
-            font-family: "Old-English";
             display: block;
             font-size: 1em;
             font-weight: 500;
         }
 
         & > span + span {
-            font-family: unset;
             font-weight: 700;
             font-size: 2em;
         }
@@ -33,7 +31,6 @@
     padding: 6em 8vw;
     color: white;
     & > h1 {
-        font-family: "Old-English";
         font-size: 4.3em;
         letter-spacing: 3.2px;
         font-weight: 400;
@@ -45,6 +42,26 @@
     & > a {
         background-color: white;
         border-color: white;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #counter {
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+    #counter > div {
+        font-size: 1em;
+    }
+    #papers > h1 {
+        font-size: 2.5em;
+    }
+    #papers > h3 {
+        font-size: 1.5em;
+    }
+    #papers {
+        padding: 3em 5vw;
     }
 }
 

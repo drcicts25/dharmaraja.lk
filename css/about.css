@@ -67,7 +67,6 @@ h1 {
 
 #vm h2 {
     font-size: 2.8em;
-    font-family: "Old-English", serif;
     margin-bottom: 0.6em;
     color: #800000; /* Maroon */
 }
@@ -91,7 +90,6 @@ h1 {
 
 #history > h1 {
     font-size: 3.2em;
-    font-family: "Old-English", serif;
     margin-bottom: 40px;
 }
 
@@ -170,7 +168,6 @@ h1 {
 
 #symb > h1 {
     font-size: 3em;
-    font-family: "Old-English", serif;
     margin-bottom: 50px;
 }
 
@@ -198,4 +195,16 @@ h1 {
     #history > p { text-align: left; font-size: 1rem; }
     #history > section > div { width: 100%; max-width: 280px; }
     #symb > img { width: 90%; }
+}
+
+@media screen and (max-width: 768px) {
+    #vm h2 {
+        font-size: 1.8em;
+    }
+    #history > h1 {
+        font-size: 1.8em;
+    }
+    #symb > h1 {
+        font-size: 1.8em;
+    }
 }

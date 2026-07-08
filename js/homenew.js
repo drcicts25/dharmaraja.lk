@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const videos = document.querySelectorAll(".background-video");
-  if (videos.length === 0) return;
+  if (videos.length <= 1) return; // Let HTML autoplay handle single videos smoothly
 
   let current = 0;
 

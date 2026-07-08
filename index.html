@@ -16,10 +16,9 @@
    <link rel="stylesheet" href="css/nav bar.css">
     <!-- <link rel="stylesheet" href="css/common-2.css" /> -->
     <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/Loading SCR2.css" />
 </head>
 
- <body onload="myFunction()">
+<body>
     
 
 <!-- Navigation bar -->
@@ -53,7 +52,7 @@
 
         
             <div class="video-container">
-               <video muted playsinline class="background-video">
+               <video autoplay loop muted playsinline preload="metadata" class="background-video">
                     <source src="media/Timeline4 (1) (1).mp4" type="video/mp4">
                 </video>
             </div>
@@ -82,45 +81,18 @@
     </div>
 </div>
    
-        <div id="about">
-            <section>
-                <h2>About Us</h2>
-                <p>
-                    The Kandy Buddhist High School, founded in 1887 by Sir Henry Steel Olcott, faced challenges
-                    securing a plot near the Tooth Relic Temple due to a sacred Bo tree. Despite British opposition,
-                    Wadugodapitiya Punchirala Korale removed the tree overnight to build the school, facing severe
-                    consequences from the British rulers for the perceived sacrilege. Today, with 4100 students and
-                    192 staff, the school thrives. Recent infrastructural additions, including a Swimming Pool
-                    Complex and an International Cricket Ground, mark its growth despite historical obstacles.
-                </p>
-                <a href="about.html" class="explore">Explore</a>
-            </section>
-            <img src="media/dm1-ls.jpeg" alt="about-img" />
-        </div>
-    </section>
-
-
-     
         <div id="updates">
             <h1>GET IN TOUCH WITH RAJANS</h1>
             <hr />
             <h3>LATEST NEWS AND UPDATES</h3>
-            <section>
-                <a href="events_news.html"
-                    style="background-image: url(&quot;media/event/event02.jpeg&quot;);"><span></span></a>
-                <a href="events_news.html"
-                    style="background-image: url(&quot;media/event/event01.jpeg&quot;);"><span></span></a>
-                <a href="events_news.html"
-                    style="background-image: url(&quot;media/event/event03.jpeg&quot;);"><span></span></a>
-                <a href="events_news.html"
-                    style="background-image: url(&quot;media/event/event04.jpeg&quot;);"><span></span></a>
-                <a href="events_news.html" style="
-                            background-image: url(media/right-arrow-white.png);
-                            background-color: #0b0b0b;
-                            background-size: auto 80px;
-                        "><span>Explore</span></a>
+            <section id="home-events-container">
             </section>
         </div>
+
+
+
+     
+
         <div id="features">
             <section>
                 <div>
@@ -134,8 +106,8 @@
                     <a href="academics.html" class="explore">Explore</a>
                 </div>
                 <section>
-                    <img src="media/dm3-ls.jpg" /><img src="media/dm2-ls.jpg" /><img
-                        src="media/Academics/middle/middle01.jpeg" />
+                    <img src="media/dm3-ls.jpg" loading="lazy" /><img src="media/dm2-ls.jpg" loading="lazy" /><img
+                        src="media/Academics/middle/middle01.jpeg" loading="lazy" />
                 </section>
             </section>
             <section>
@@ -150,8 +122,8 @@
                     <a href="societies.html" class="explore">Explore</a>
                 </div>
                 <section>
-                    <img src="media/dc-s&c-1.jpg" /><img src="media/dc-s&c-2.jpg" /><img
-                        src="media/event/WhatsApp Image 2025-12-25 at 1.34.58 AM.jpeg" />
+                    <img src="media/dc-s&c-1.jpg" loading="lazy" /><img src="media/dc-s&c-2.jpg" loading="lazy" /><img
+                        src="media/event/WhatsApp Image 2025-12-25 at 1.34.58 AM.jpeg" loading="lazy" />
                 </section>
             </section>
             <section>
@@ -166,8 +138,8 @@
                     <a href="sports.html" class="explore">Explore</a>
                 </div>
                 <section>
-                    <img src="media/dc-s&g-1.jpg" /><img src="media/Academics/primary/primary01.jpeg" /><img
-                        src="media/dc-s&g-3.jpg" />
+                    <img src="media/dc-s&g-1.jpg" loading="lazy" /><img src="media/Academics/primary/primary01.jpeg" loading="lazy" /><img
+                        src="media/dc-s&g-3.jpg" loading="lazy" />
                 </section>
             </section>
         </div>
@@ -194,7 +166,7 @@
     <footer id="footer">
         <section>
             <div>
-                <img src="media/logo-footer.png" alt="DRC" />
+                <img src="media/logo-footer.png" alt="DRC" loading="lazy" />
                 <p>Dharmaraja College, founded in 1887, is a premier Buddhist boys' school in Kandy, Sri Lanka.</p>
             </div>
             <div>
@@ -206,9 +178,9 @@
             </div>
             <div>
                 <section>
-                    <a href="#"><img src="media/facebook.png" alt="Facebook" /></a>
-                    <a href="#"><img src="media/instagram.png" alt="Instagram" /></a>
-                    <a href="#"><img src="media/whatsapp.png" alt="whatsapp" /></a>
+                    <a href="#"><img src="media/facebook.png" alt="Facebook" loading="lazy" /></a>
+                    <a href="#"><img src="media/instagram.png" alt="Instagram" loading="lazy" /></a>
+                    <a href="#"><img src="media/whatsapp.png" alt="whatsapp" loading="lazy" /></a>
                 </section>
             </div>
         </section>
@@ -216,18 +188,8 @@
         <h5>All Rights Reserved © 2026 Dharmaraja College</h5>
     </footer>
     <script>
-        
         const header = document.querySelector("#header");
         
-        function myFunction() {
-            // Wait exactly 3.5 seconds before removing loader
-            setTimeout(showPage, 2000);
-        }
-        
-        function showPage() {
-            const loader = document.getElementById("loader");
-            loader.style.display = "none";
-        }
         const menuIcon = document.getElementById('menu-icon');
     const navMenu = document.getElementById('nav-menu');
 
@@ -255,7 +217,7 @@
     });
      
     </script>
-    <script src="js/home_updates.js" type="module"></script>
+    <script src="js/home_events.js?v=2" defer></script>
     <script src="js/home.js" type="module"></script>
     <script src="js/homenew.js" type="module"></script>
 </body>

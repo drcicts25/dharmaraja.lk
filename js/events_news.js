@@ -45,26 +45,36 @@ if (template) {
             function renderItems(container, dataArray) {
                 if (!container || !dataArray) return;
                 dataArray.forEach(item => {
-                    const clone = eventCardTemplate.cloneNode(true);
-                    const cardInner = clone.querySelector(".card-cnt > div");
+                    try {
+                        const clone = eventCardTemplate.cloneNode(true);
+                        const cardInner = clone.querySelector(".card-cnt > div");
 
-                    // Front - check if image is a direct URL or a local file
-                    const imgUrl = item.image.startsWith('http') ? item.image : `./media/events_news/${item.image}`;
-                    cardInner.children[0].style.backgroundImage = `url(${imgUrl})`;
-                    cardInner.children[0].querySelector("span").innerText = item.title;
+                        // Safe fallbacks in case a cell is completely empty in the spreadsheet
+                        const imageStr = item.image || "";
+                        const titleStr = item.title || "Untitled Event";
+                        const logoStr = item.logo || "./media/logo.jpg";
+                        const descStr = item.description || "";
 
-                    // Back
-                    cardInner.children[1].querySelector("img").src = item.logo;
-                    cardInner.children[1].querySelector("p").innerText = item.description;
+                        // Front
+                        const imgUrl = imageStr.startsWith('http') ? imageStr : `./media/events_news/${imageStr}`;
+                        cardInner.children[0].style.backgroundImage = `url("${imgUrl}")`;
+                        cardInner.children[0].querySelector("span").innerText = titleStr;
 
-                    // Click Logic
-                    const exploreBtn = cardInner.children[1].querySelector(".explore");
-                    if (exploreBtn && item.reference) {
-                        exploreBtn.onclick = () => {
-                            window.location.href = item.reference;
-                        };
+                        // Back
+                        cardInner.children[1].querySelector("img").src = logoStr;
+                        cardInner.children[1].querySelector("p").innerText = descStr;
+
+                        // Click Logic
+                        const exploreBtn = cardInner.children[1].querySelector(".explore");
+                        if (exploreBtn && item.reference) {
+                            exploreBtn.onclick = () => {
+                                window.location.href = item.reference;
+                            };
+                        }
+                        container.appendChild(clone);
+                    } catch (e) {
+                        console.error("Error rendering item: ", item, e);
                     }
-                    container.appendChild(clone);
                 });
             }
 

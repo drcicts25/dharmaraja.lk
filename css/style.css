@@ -12,7 +12,6 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
 }
 
@@ -305,7 +304,6 @@ footer {
 }
 
 .hero-content h1 {
-    font-family: 'Playfair Display', serif;
     font-size: 4rem;
     line-height: 1.1;
 }
