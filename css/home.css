@@ -58,6 +58,7 @@ h1 {
 .overlay h1 {
   font-size: 3rem;
   margin: 10px 0;
+  font-family: "Old-English", serif !important;
 }
 
 .overlay h2,
@@ -308,7 +309,7 @@ h1 {
         height: 60dvh;
         gap: 2em;
 
-        & > a {
+        & > .event-card {
             position: relative;
             width: 230px;
             display: block;
@@ -320,8 +321,9 @@ h1 {
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            cursor: pointer;
 
-            & > span {
+            & > .event-title {
                 transition: inherit;
                 box-sizing: border-box;
                 width: 100%;
@@ -333,16 +335,45 @@ h1 {
                 font-weight: 500;
                 font-size: 1.3em;
                 line-break: auto;
-                padding: 1.0em 1em;
+                padding: 1.5em 1em 1em;
                 opacity: 0;
+                z-index: 1;
+            }
+
+            & > .event-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                border: 2px solid #ffffff;
+                color: #ffffff;
+                padding: 0.5em 1.8em;
+                border-radius: 2em;
+                font-size: 1.2rem;
+                letter-spacing: 0.15em;
+                font-weight: 500;
+                text-decoration: none;
+                opacity: 0;
+                pointer-events: none;
+                transition: 0.6s;
+                z-index: 2;
+            }
+            
+            & > .event-btn:hover {
+                filter: drop-shadow(0 0 0.5rem rgb(255, 255, 255));
+                backdrop-filter: blur(5px) saturate(2);
+                color: #ffffff;
             }
         }
 
-        &:not(:hover) > a:nth-child(0),
-        & > a:hover {
+        & > .event-card:hover,
+        & > .event-card.active {
             width: 400px;
-            & > span {
+            & > .event-title,
+            & > .event-btn {
                 opacity: 1;
+                pointer-events: auto;
             }
         }
     }
@@ -652,7 +683,7 @@ h1 {
   }
   .sb-runs-sm { font-size: 1.6rem; }
   .innings-team-name { font-size: 0.9rem; }
-  .sb-logo-sm { width: 36px; }
+    .score-section h1 {
 }
 
 /* ── Mobile Responsiveness ── */
@@ -672,19 +703,32 @@ h1 {
         width: 90%;
     }
     #updates > section {
-        width: 90vw;
-        height: auto;
-        flex-direction: column;
-        align-items: center;
-        gap: 1em;
+        width: 95vw;
+        height: 400px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        justify-content: center;
+        align-items: stretch;
+        gap: 0.5em;
+        padding-bottom: 20px;
     }
-    #updates > section > a {
+    #updates > section > .event-card {
+        flex: 1 1 0;
         width: 100% !important;
-        height: 200px;
-        border-radius: 20px;
+        min-width: 0;
+        height: 100%;
+        border-radius: 30px;
+        transition: flex 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
-    #updates > section > a > span {
-        opacity: 1 !important;
+    #updates > section > .event-card.active {
+        flex: 6 1 0;
+    }
+    #updates > section > .event-card.explore-card.active {
+        flex: 6 1 0;
+    }
+    #updates > section > .event-card:nth-child(n+5):not(.explore-card) {
+        display: none !important;
     }
 
     #about {
@@ -754,3 +798,7 @@ h1 {
     }
 }
 
+#features h2 {
+    font-family: "Old-English", serif !important;
+    text-transform: capitalize !important;
+}

@@ -52,29 +52,60 @@ if (container) {
 
                 const imgUrl = imageStr.startsWith('http') ? imageStr : `./media/events_news/${imageStr}`;
                 
-                const aTag = document.createElement("a");
-                aTag.href = refStr;
-                aTag.style.backgroundImage = `url("${imgUrl}")`;
+                const cardTag = document.createElement("div");
+                cardTag.className = "event-card";
+                cardTag.style.backgroundImage = `url("${imgUrl}")`;
 
                 const spanTag = document.createElement("span");
+                spanTag.className = "event-title";
                 spanTag.innerText = titleStr;
 
-                aTag.appendChild(spanTag);
-                container.appendChild(aTag);
+                const btnTag = document.createElement("a");
+                btnTag.className = "event-btn";
+                btnTag.innerText = "View";
+                btnTag.href = refStr;
+                
+                // Toggle active class on tap for mobile
+                cardTag.addEventListener("click", (e) => {
+                    // Prevent triggering if they clicked the button
+                    if (e.target === btnTag) return;
+                    
+                    // Close others
+                    document.querySelectorAll('.event-card').forEach(card => {
+                        if (card !== cardTag) card.classList.remove('active');
+                    });
+                    
+                    cardTag.classList.toggle("active");
+                });
+
+                cardTag.appendChild(spanTag);
+                cardTag.appendChild(btnTag);
+                container.appendChild(cardTag);
             });
 
             // Add the final 'Explore' button capsule
             const exploreTag = document.createElement("a");
+            exploreTag.className = "event-card explore-card";
             exploreTag.href = "events_news.html";
             exploreTag.style.backgroundImage = "url(media/right-arrow-white.png)";
             exploreTag.style.backgroundColor = "#0b0b0b";
             exploreTag.style.backgroundSize = "auto 80px";
             
             const exploreSpan = document.createElement("span");
+            exploreSpan.className = "event-title";
             exploreSpan.innerText = "Explore All";
             exploreTag.appendChild(exploreSpan);
 
             container.appendChild(exploreTag);
+
+            // Add global click listener to collapse cards when clicking outside
+            document.addEventListener("click", (e) => {
+                if (!e.target.closest(".event-card")) {
+                    document.querySelectorAll(".event-card").forEach(card => {
+                        card.classList.remove("active");
+                    });
+                }
+            });
         })
         .catch(err => {
             console.error("Data could not be loaded.", err);

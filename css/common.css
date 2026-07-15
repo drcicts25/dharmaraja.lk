@@ -17,13 +17,16 @@
     font-family: 'Montserrat', sans-serif !important;
 }
 
-h2, h3, h4, h5, h6 {
-    font-family: 'DM Serif Display', serif !important;
-}
-
 h1 {
     font-family: "Old-English", serif !important;
+    text-transform: capitalize !important;
 }
+
+h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', serif !important;
+    text-transform: uppercase !important;
+}
+
 html {
     scroll-behavior: smooth;
 }
