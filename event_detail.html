@@ -151,7 +151,7 @@
                 <div class="content-container${reversed ? ' reverse' : ''}">
                     ${imgHTML}
                     <div class="content-text">
-                        <h3>${Heading}</h3>
+                        <h3>${heading}</h3>
                         <p>${text || ""}</p>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                 <div class="hero-gradient-overlay"></div>
                 <div class="hero-inner">
                     ${e.hero_label ? `<span class="hero-label">${e.hero_label}</span>` : ""}
-                    <h1>${E.Title} <br>${E.Year}</h1>
+                    <h1>${e.title} <br>${e.year}</h1>
                     ${e.hero_description ? `<p class="hero-desc">${e.hero_description}</p>` : ""}
                     <div class="hero-actions">
                         <a href="#about" class="btn-primary">Learn More <span>↗</span></a>
@@ -180,7 +180,7 @@
             <section id="about" class="legacy in-view">
                 <div class="legacy-grid">
                     <div class="legacy-text">
-                        <h2>${E.About_heading}</h2>
+                        <h2>${e.about_heading}</h2>
                         ${e.about_text_1 ? `<p>${e.about_text_1}</p>` : ""}
                         ${e.about_text_2 ? `<p>${e.about_text_2}</p>` : ""}
                         ${aboutStatsHTML}
